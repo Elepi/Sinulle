@@ -2,7 +2,7 @@
 const express = require("express");
 //require("./config/db");
 const exphbs = require("express-handlebars");
-//const router = require("./routes/index");
+const router = require("./routes/index");
 //const bodyParser = require("body-parser");
 
 // Habilitar el archivo de variables de entorno
@@ -20,9 +20,8 @@ const app = express();
 //app.use(bodyParser.urlencoded({ extended: true }));
 
 // Implementar nuestro router
-//app.use("/", router());
+// si el endpoint no existe retornara error 404
+app.use("/", router());
 
-app.use("/",(req, res,next)=> {
-    res.send("Bienvenido a Sinulle");
-});
+
 app.listen(process.env.PORT);
