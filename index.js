@@ -4,7 +4,7 @@ const express = require("express");
 require("./config/db");
 const exphbs = require("express-handlebars");
 const router = require("./routes/index");
-//const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 
 // Habilitar el archivo de variables de entorno
 require("dotenv").config({ path: ".env" });
@@ -18,7 +18,7 @@ app.engine("hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));
 app.set("view engine", "hbs");
 
 // Habilitar body-parser para obtener el cuerpo de la petición
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Implementar nuestro router
 // si el endpoint no existe retornara error 404
