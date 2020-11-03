@@ -12,6 +12,9 @@ const session  = require("express-session");
 const MongoStore  = require("connect-mongo")(session);
 const flash = require("connect-flash");
 
+//Declaración de la variables path
+const path = require("path");
+
 // Habilitar el archivo de variables de entorno
 require("dotenv").config({ path: ".env" });
 
@@ -35,6 +38,9 @@ app.use(
         store: new MongoStore({ mongooseConnection: mongoose.connection }),
     })
 );
+
+// Llama los archivos de la carpeta public
+app.use(express.static(path.join(__dirname, "public")));
 
 //Habilitar passport y la estrategia local
 app.use(passport.initialize());
