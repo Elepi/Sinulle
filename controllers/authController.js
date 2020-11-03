@@ -2,6 +2,7 @@ const passport = require("passport");
 const mongoose = require("mongoose");
 const Usuario= mongoose.model("Usuarios");
 
+//Autenticar
 exports.autenticarUsuario = passport.authenticate("local",
 {
     successRedirect: "/administrar",
