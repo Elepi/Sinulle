@@ -2,6 +2,7 @@
 body{
     font-family: 'Oswald', sans-serif;
     background-color: black;
+ 
 }
 
 .navbar{
@@ -200,3 +201,28 @@ input {
 .container.right-panel-active .overlay-right {
     transform: translateX(20%);}
 /* Fin del estilo para Registrarse e iniciar seción*/
+
+/* inicio del Footer */
+.footer{
+    padding-top: 5%;
+    background-color: #393E46;
+}
+        .tituloColumnaFooter {
+            padding-top: 5%;
+            font-family: "Roboto",sans-serif;
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .titulo2 {
+            font-weight: 700;
+        }
+
+        .SobreNosotros {
+            color: #FFFFFF;
+            font-size: 16px;
+            padding-right: 5%;
+        }
+
+/* Fin del Footer */
