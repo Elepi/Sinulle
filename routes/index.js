@@ -22,5 +22,10 @@ router.get("/iniciar-sesion", usuarioController.formularioIniciarSesion);
 
 router.post("/iniciar-sesion", authController.autenticarUsuario);
 
+//Rutas de administracion
+router.get("/administrar", (req, res, next)=> {
+  res.send("Administración del sitio");
+});
+
   return router;
 };
