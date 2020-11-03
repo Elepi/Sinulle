@@ -27,5 +27,5 @@ exports.crearCuenta = async (req, res, next) => {
 
 //Renderizar la vista de formulario de inicio de sesión
 exports.formularioIniciarSesion = (req, res, next) => {
-    res.render("iniciarSesion", { layout: "auth" });
+    res.render("iniciarSesion", { layout: "main" });
 }
