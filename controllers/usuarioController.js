@@ -4,7 +4,7 @@ const Usuario = mongoose.model("Usuarios");
 
 //Cargar el formulario de creación de una cuenta de usuario
 exports.formularioCrearCuenta = (req, res, next) =>{
-    res.render("registrarse", { layout: "auth" });
+    res.render("registrarse", { layout: "main" });
 }
 
 //Procesar el formulario de creación de cuenta 
