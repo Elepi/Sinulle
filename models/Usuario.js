@@ -59,6 +59,16 @@ usuarioSchema.pre("save", function(next) {
     next();
 });
 
+//Hooks para acceder a los errores de MongoDB (unique key)
+usuarioSchema.post("save", function(err, doc, next) {
+    //Verificar si ocurrió un error al momento de almacenar
+    if(err.name == "MongoError" && err.code == 11000) {
+        next("Ya existe el usuario con las dirección de correo electrónico ingresada");
+    } else {
+        next(err);
+    }
+});
+
 //Método que verifica el password candidato del login con el que está almacenado
 //en la BD
 usuarioSchema.methods.comparePassword = function(candidatePassword) {
