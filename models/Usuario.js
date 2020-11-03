@@ -59,5 +59,19 @@ usuarioSchema.pre("save", function(next) {
     next();
 });
 
+//Método que verifica el password candidato del login con el que está almacenado
+//en la BD
+usuarioSchema.methods.comparePassword = function(candidatePassword) {
+    const user = this;
+    return new Promise((resolve, reject) => {
+        bcrypt.compare(candidatePassword, user.password, (err, isMatch) => {
+            //Promesa incumplida
+            if(err) return reject(err);
+            //Promesa cumplida
+            if(!isMatch) return reject(err);
+            resolve(true);
+        });
+    }).catch(console.log("Error al momento de comparar las contraseñas"));
+};
 
 module.exports = mongoose.model("Usuarios", usuarioSchema);
