@@ -19,7 +19,7 @@ exports.crearCuenta = async (req, res, next) => {
             password,
             nombre
         });
-        // res.redirect("/iniciar-sesion");
+        res.redirect("/iniciar-sesion");
     } catch (error) {
         console.log(error);
     }
