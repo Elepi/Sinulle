@@ -1,0 +1,27 @@
+/* hoja de estilo principal */
+body{
+    font-family: 'Oswald', sans-serif;
+    background-color: black;
+}
+
+.navbar{
+    font-family: 'Caesar Dressing', cursive;
+    background-color: black;
+}
+.navbars{
+    font-family: 'Caesar Dressing', cursive;
+    background-color: #B55300;
+    padding-top: 1%;
+    padding-left: 3%;
+    padding-bottom: 1%;
+}
+.fondo{
+    
+    padding-left: 0%; 
+    width: "auto"; 
+    height: 600px; 
+    background-size: cover;
+    background-image: url("/img/fondo2.png" ) ;
+ 
+}
+/* Fin de la hoja de estilo principal */
