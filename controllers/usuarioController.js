@@ -24,3 +24,8 @@ exports.crearCuenta = async (req, res, next) => {
         console.log(error);
     }
 }
+
+//Renderizar la vista de formulario de inicio de sesión
+exports.formularioIniciarSesion = (req, res, next) => {
+    res.render("iniciarSesion", { layout: "auth" });
+}
