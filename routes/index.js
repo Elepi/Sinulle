@@ -17,7 +17,7 @@ module.exports = () => {
   // Rutas para usuario
   router.get("/crear-cuenta", usuarioController.formularioCrearCuenta);
 
- router.post("/registrarse",
+ router.post("/crear-cuenta",
  [
   //Realizar una verificación de los atributos del formulario
   check("nombre", "Debes ingresar tu nombre.")
@@ -38,6 +38,8 @@ module.exports = () => {
 router.get("/iniciar-sesion", usuarioController.formularioIniciarSesion);
 
 router.post("/iniciar-sesion", authController.autenticarUsuario);
+
+router.get("/olvide-password", authController.formularioRestablecerPassword);
 
 //Rutas de administracion
 router.get("/administrar", (req, res, next)=> {
