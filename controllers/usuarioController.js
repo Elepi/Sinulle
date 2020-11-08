@@ -12,27 +12,32 @@ exports.formularioCrearCuenta = (req, res, next) =>{
 exports.crearCuenta = async (req, res, next) => {
     //Verificar que no existan errores de validación
     const errores = validationResult(req);
-    const erroresArray = [];
+    const messages =  { messages: [] };
+
+    //Obtener variables del body
+    const { nombre, email, password } = req.body;
+
     //Si hay errores
     if(!errores.isEmpty()) {
         //Utilizar la funcion map para navegar dentro de un arreglo
-        errores.array().map(error => erroresArray.push(error.msg));
+        errores.array().map((error) => 
+        messages.messages.push({ message: error.msg, alertType: "danger" }));
 
-        console.log(erroresArray);
+        console.log(messages);
 
-        //\Agregar los errores a nuestros mensajes flash 
-        req.flash("error", erroresArray);
+        //Agregar los errores a nuestros mensajes flash 
+        req.flash("error", messages);
 
         res.render("registrarse", {
             layout: "auth",
-            messages: req.flash()
+            messages,
+            nombre,
+            email,
+            password,
         });
     }
-
-    //Crear el usuario
-    const { nombre, email, password } = req.body;
-
-    // //Intentar almacenar los datos del usuario
+    else {
+         //Intentar almacenar los datos del usuario
     try {
         //Crear el usuario
         await Usuario.create({
@@ -40,13 +45,20 @@ exports.crearCuenta = async (req, res, next) => {
             password,
             nombre
         });
-        res.redirect("/iniciar-sesion");
-    } catch (error) {
+         // Mostrar un mensaje luego de registrarse existosamente
+         messages.messages.push({ message: "Usuario creado satisfactoriamente.", alertType: "success" });
+         req.flash("error", messages);
+         res.redirect("/iniciar-sesion");
+        } catch (error) {
         console.log(error);
-    }
-}
+        }
+    } 
+};
 
 //Renderizar la vista de formulario de inicio de sesión
 exports.formularioIniciarSesion = (req, res, next) => {
-    res.render("iniciarSesion", { layout: "main" });
-}
+    res.render("iniciarSesion", { 
+        layout: "main",
+        messages: req.flash(),
+        });
+};
