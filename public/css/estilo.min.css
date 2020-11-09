@@ -106,6 +106,16 @@ input {
     min-height: 480px;
 }
 
+.errores {
+    background-color: black;
+    right: 50px;
+    position: sticky;
+  
+    width: 500px;
+    max-width: 100%;
+    min-height: 200px;
+}
+
 .form-container{
     color:#FFFFFF;
     position: absolute;

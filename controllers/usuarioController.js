@@ -29,7 +29,7 @@ exports.crearCuenta = async (req, res, next) => {
         req.flash("error", messages);
 
         res.render("registrarse", {
-            layout: "auth",
+            layout: "main",
             messages,
             nombre,
             email,
