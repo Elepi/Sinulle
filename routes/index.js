@@ -41,6 +41,8 @@ router.post("/iniciar-sesion", authController.autenticarUsuario);
 
 router.get("/olvide-password", authController.formularioRestablecerPassword);
 
+router.post("/olvide-password", authController.enviarToken);
+
 //Rutas de administracion
 router.get("/administrar", (req, res, next)=> {
   res.send("Administración del sitio");
