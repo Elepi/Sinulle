@@ -23,5 +23,9 @@ exports.cerrarSesion = (req, res, next) => {
 
 //Mostrar el formulario de restablecer contraseña;
 exports.formularioRestablecerPassword = (req, res, next) => {
-    res.send("Formulario de restablecer contraseña");
+    res.render("restablecerPassword", { layout: "main" });
 }
+
+// Enviamos un token de autenticación al usuario para cambiar su
+// contraseña. El token se envía al correo del usuario.
+exports.enviarToken = async (req, res, next) => {};
