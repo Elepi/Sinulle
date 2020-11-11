@@ -12,7 +12,7 @@ exports.formularioCrearCuenta = (req, res, next) =>{
 exports.crearCuenta = async (req, res, next) => {
     //Verificar que no existan errores de validación
     const errores = validationResult(req);
-    const messages =  { messages: [] };
+    const messages = [];
 
     //Obtener variables del body
     const { nombre, email, password } = req.body;
@@ -21,20 +21,14 @@ exports.crearCuenta = async (req, res, next) => {
     if(!errores.isEmpty()) {
         //Utilizar la funcion map para navegar dentro de un arreglo
         errores.array().map((error) => 
-        messages.messages.push({ message: error.msg, alertType: "danger" }));
+        messages.push({ message: error.msg, alertType: "danger" })
 
-        console.log(messages);
+        );
 
         //Agregar los errores a nuestros mensajes flash 
-        req.flash("error", messages);
+        req.flash("messages", messages);
 
-        res.render("registrarse", {
-            layout: "main",
-            messages,
-            nombre,
-            email,
-            password,
-        });
+        res.redirect("/crear-cuenta");
     }
     else {
          //Intentar almacenar los datos del usuario
