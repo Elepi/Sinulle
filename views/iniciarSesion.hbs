@@ -1,6 +1,11 @@
 
 
 {{!-- Formulario de inicio de sesion --}}
+<div class="errores " id="errores">
+   
+{{> showMessages messages}}
+</div>
+
 <div class="container mt-5" id="container">
     <div class="form-container sign-in-container">
       <form method="POST" class="form" action="/iniciar-sesion">
