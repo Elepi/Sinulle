@@ -40,19 +40,25 @@ exports.crearCuenta = async (req, res, next) => {
             nombre
         });
          // Mostrar un mensaje luego de registrarse existosamente
-         messages.messages.push({ message: "Usuario creado satisfactoriamente.", alertType: "success" });
-         req.flash("error", messages);
+         messages.push({ message: "Usuario creado satisfactoriamente.", alertType: "success" });
+         req.flash("messages", messages);
          res.redirect("/iniciar-sesion");
         } catch (error) {
-        console.log(error);
+            messages.push({
+                message: error,
+                alertType: "danger",
+              });
+              req.flash("messages", messages);
+              res.redirect("/crear-cuenta");
         }
     } 
 };
 
 //Renderizar la vista de formulario de inicio de sesión
 exports.formularioIniciarSesion = (req, res, next) => {
+    console.log(req.flash());
     res.render("iniciarSesion", { 
         layout: "main",
-        messages: req.flash(),
+        
         });
 };

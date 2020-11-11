@@ -8,7 +8,7 @@ const { send } = require("process");
 //Autenticar
 exports.autenticarUsuario = passport.authenticate("local",
 {
-    successRedirect: "/administrar",
+  successRedirect: "/",
     failureRedirect: "/iniciar-sesion",
     failureFlash: true,
     badRequestMessage: ["Debes ingresar sus credenciales"],
@@ -16,10 +16,17 @@ exports.autenticarUsuario = passport.authenticate("local",
 
 //Cerrar la sesion del usuario
 exports.cerrarSesion = (req, res, next) => {
+  const messages = [];
+
     //Cerrar la sesion 
     req.logout();
 
-    req.flash("succes", ["Has cerrado correctamente tu sesón",]);
+    messages.push({
+      message: "Has cerrado correctamente tu sesión. ¡Vuelve pronto!",
+      alertType: "success",
+    });
+  
+    req.flash("messages", messages);
 
     return res.redirect("/iniciar-sesion");
 }
