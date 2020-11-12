@@ -35,11 +35,7 @@ exports.cerrarSesion = (req, res, next) => {
 exports.formularioRestablecerPassword = (req, res, next) => {
     res.render("restablecerPassword", {
       layout: "main",
-      typePage: "register-page",
-      signButtonValue: "/iniciar-sesion",
-      signButtonText: "Iniciar sesión",
-      year: new Date().getFullYear(),
-      messages: req.flash(),
+     
     });
   };
   
