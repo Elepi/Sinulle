@@ -51,6 +51,10 @@ router.post("/olvide-password/:token", authController.almacenarNuevaPassword);
 router.get("/administrar", (req, res, next)=> {
   res.send("Administración del sitio");
 });
+  
+router.get("/ordenServicio", (req, res, next) => {
+  res.render("ordenServicio");
+});
 
   return router;
 };
