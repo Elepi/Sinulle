@@ -5,7 +5,7 @@ const { validationResult } = require("express-validator");
 
 //Cargar el formulario de creación de una cuenta de usuario
 exports.formularioCrearCuenta = (req, res, next) =>{
-    res.render("registrarse", { layout: "main" });
+    res.render("registrarse", { layout: "auth" });
 }
 
 //Procesar el formulario de creación de cuenta 
@@ -58,7 +58,7 @@ exports.crearCuenta = async (req, res, next) => {
 exports.formularioIniciarSesion = (req, res, next) => {
     console.log(req.flash());
     res.render("iniciarSesion", { 
-        layout: "main",
+        layout: "auth",
         
         });
 };
