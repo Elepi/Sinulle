@@ -8,7 +8,7 @@ const { send } = require("process");
 //Autenticar
 exports.autenticarUsuario = passport.authenticate("local",
 {
-  successRedirect: "/ordenServicio", layout: "auth",
+  successRedirect: "/",
     failureRedirect: "/iniciar-sesion",
     failureFlash: true,
     badRequestMessage: ["Debes ingresar sus credenciales"],
