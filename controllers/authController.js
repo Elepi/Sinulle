@@ -206,3 +206,12 @@ exports.almacenarNuevaPassword = async (req, res, next) => {
     res.redirect("/olvide-password");
   }
 };
+
+//verifica que el usuario se encuentre autenticado
+exports.verificarInicioSesion = (req, res, next) => {
+  // si el usuario se encuentra autenticado que siga con el siguiente middleware
+  if(req.isAuthenticated()) return next();
+  
+  //si no se ha autenticado, redireccionar al inicio de sesion
+  res.redirect("/iniciar-sesion");
+  };
