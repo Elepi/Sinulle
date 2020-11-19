@@ -47,12 +47,15 @@ router.get("/olvide-password/:token", authController.formularioNuevoPassword);
 
 router.post("/olvide-password/:token", authController.almacenarNuevaPassword);
 
+//Cerrar Sesion
+router.get("/salir",authController.cerrarSesion);
+
 //Rutas de administracion
 router.get("/administrar", (req, res, next)=> {
   res.send("Administración del sitio");
 });
   
-router.get("/ordenServicio", (req, res, next) => {
+router.get("/orden-servicio", (req, res, next) => {
   res.render("ordenServicio");
 });
 
