@@ -11,7 +11,7 @@ const router = express.Router();
 module.exports = () => {
   // Rutas disponibles y su tipo de peticion
   router.get("/", (req, res, next) => {
-    res.send("¡Bienvenido a Cashize!");
+    res.render("index");
   });
 
   // Rutas para usuario
