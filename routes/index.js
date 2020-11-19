@@ -55,7 +55,7 @@ router.get("/administrar", (req, res, next)=> {
   res.send("Administración del sitio");
 });
   
-router.get("/orden-servicio", (req, res, next) => {
+router.get("/orden-servicio",authController.verificarInicioSesion, (req, res, next) => {
   res.render("ordenServicio");
 });
 
