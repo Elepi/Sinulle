@@ -19,6 +19,17 @@ const usuarioSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    
+    direcciones: [String],
+
+    servicio: {
+        type: mongoose.Schema.ObjectId,
+        ref: "Servicio",
+      },
+
+
+
+    tipoUsuario: String,  
     token: String,
     expira: Date,
     gravatar: String,
