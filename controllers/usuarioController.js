@@ -62,3 +62,7 @@ exports.formularioIniciarSesion = (req, res, next) => {
         
         });
 };
+
+exports.miPerfil = (req, res, next) => {
+    res.render("perfil");
+}
