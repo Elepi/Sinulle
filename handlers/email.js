@@ -33,7 +33,7 @@ transport.use(
 // Encabezado del correo electrónico
 exports.enviarCorreo = async (opciones) => {
   const opcionesCorreo = {
-    from: " Cashize <hola@cashize.com>",
+    from: " Sinulle <hola@sinulle.com>",
     to: opciones.to,
     subject: opciones.subject,
     template: opciones.template,

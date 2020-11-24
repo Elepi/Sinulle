@@ -54,6 +54,8 @@ router.get("/salir",authController.cerrarSesion);
 router.get("/administrar", (req, res, next)=> {
   res.send("Administración del sitio");
 });
+
+router.get("/miperfil", usuarioController.miPerfil);
   
 router.get("/orden-servicio",authController.verificarInicioSesion, (req, res, next) => {
   res.render("ordenServicio");
