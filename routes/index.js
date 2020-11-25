@@ -86,8 +86,15 @@ router.post(
   servicioController.crearServicio
 );
 
-router.get("/miperfil", usuarioController.miPerfil);
+//Rutas de perfil y direcciones de usuario
+router.get("/miperfil", 
+authController.verificarInicioSesion,
+usuarioController.miPerfil);
+router.post("/miperfil", 
+authController.verificarInicioSesion,
+usuarioController.miPerfilDireccion);
   
+
 router.get("/orden-servicio",authController.verificarInicioSesion, (req, res, next) => {
   res.render("ordenServicio");
 });
