@@ -64,5 +64,18 @@ exports.formularioIniciarSesion = (req, res, next) => {
 };
 
 exports.miPerfil = (req, res, next) => {
-    res.render("perfil");
+    const usuario = req.user.nombre;
+    res.render("perfil", {
+        usuario,
+        email: req.user.email,
+        direcciones: req.user.direcciones
+    });
+}
+exports.miPerfilDireccion = async (req, res, next) => {
+    const { direccion } = req.body;
+    const email = req.user.email;
+    const usuario = await Usuario.findOne({email});
+    usuario.direcciones.push(direccion); 
+    await usuario.save();
+    res.redirect("/miperfil");
 }
