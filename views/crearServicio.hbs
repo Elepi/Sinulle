@@ -1,26 +1,30 @@
 
-{{!-- Formulario de registro --}}
-<div class="errores " id="errores">
-   
-{{> showMessages messages}}
+
+<div class="main">
+  
+  <div class="section" style="background-color: #EEEE;">
+  
+    <div class="container" style="background-color:#393E46;;" >
+      <br>  <br>  <br>
+<div class="card border-warning mb-3 " style="max-width: 18rem;"></div>
+ <div class="card-header dark">
+ <h4 class="card-title text-white" >Ingrese un Servicio</h4>
 </div>
-
-<div class="container mt-10" id="container">
-  
-    <div class="form-container sign-up-container mt-2">
-      
-    </div>
-
-    <div class="form-container sign-in-container">
-      <form method="POST" class="form" action="/crear-servicio">
-        <h1 class="font-Times">Crear cuenta</h1>
-     
-        <input  type="text" placeholder="servicio" name="nombre">
-      
-        <button type="submit" class="btn  btn-rounded">Registrarse</button>
+  <div class="card-body warning">
+      <form method="POST" class="form" action="/crear-servicio"  style="background-color:white;" >
+          <div class="col-md-7 col-sm-7" style="margin-right: 40%; margin-top:20 px;">  
+                <input  type="text"  class="form-control border-input" placeholder="Nombre del Servicio" name="nombre">
+         </div>
+        <div class="row buttons-row"></div>
+        <div class="col-md-3 col-sm-3" style="margin-top:20 px; margin-right:72%;">
+              <button class="btn btn-outline-primary btn-block btn-round" type="submit">Guardar</button>
+            </div> 
       </form>
+     
+</div>
     </div>
-
-
-  </div>
+  </div>  
   
+  </div>
+   
+
