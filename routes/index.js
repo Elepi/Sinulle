@@ -3,6 +3,7 @@ const express = require("express");
 
 const usuarioController = require("../controllers/usuarioController");
 const authController = require("../controllers/authController");
+const servicioController = require("../controllers/servicioController");
 const { check } = require("express-validator");
 
 // Configura y mantiene todos los endpoints en el servidor
@@ -16,6 +17,8 @@ module.exports = () => {
 
   // Rutas para usuario
   router.get("/crear-cuenta", usuarioController.formularioCrearCuenta);
+
+  
 
  router.post("/crear-cuenta",
  [
@@ -34,6 +37,11 @@ module.exports = () => {
   // .custom((value, { req }) => value === req.body.password),
   ],
  usuarioController.crearCuenta);
+
+
+
+
+ 
 
 router.get("/iniciar-sesion", usuarioController.formularioIniciarSesion);
 
@@ -54,6 +62,29 @@ router.get("/salir",authController.cerrarSesion);
 router.get("/administrar", (req, res, next)=> {
   res.send("Administración del sitio");
 });
+
+
+// Rutas para servicioss
+router.get(
+  "/crear-servicio",
+  authController.verificarInicioSesion,
+  servicioController.formularioCrearServicio
+);
+
+
+router.post(
+  "/crear-servicio",
+  authController.verificarInicioSesion,
+  [
+    check("nombre", "Debes ingresar el nombre del producto")
+      .not()
+      .isEmpty()
+      .escape(),
+  
+  ],
+
+  servicioController.crearServicio
+);
 
 router.get("/miperfil", usuarioController.miPerfil);
   
