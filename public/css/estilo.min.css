@@ -259,6 +259,23 @@ input {
     background-color: #393E46;
     font-size: 25px;
     }
+
+    .tablef {
+        display: grid;
+        border-width: 10px;
+        border-style: outset;
+        border-color: #F88600;
+        background-color: #393E46;
+        font-size: 25px;
+        }
+        .Labels{
+            padding-top: 0%;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+
+
     .nombre{
         padding-top: 5%;
         padding-left: 5%;
@@ -327,3 +344,11 @@ input {
         }
 
 /* Fin del Footer */
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }

@@ -1,23 +1,29 @@
 <div class="contacto">
-        <h3 class="titulo">Enviar Correo</h3>
-        <form class="formulario" method="POST" action="/miperfil">
-          <p class="nombre">
-            
-            <label>Nombre</label>
-            <h2>{{usuario}}</h2>
-            <h3>{{email}}</h3>
-          </p>
-          <p class="fecha">
+        <h3 class="titulo">Direcciones</h3>
+        <form class="tablef" method="POST" action="/miperfil">
+          
+            <p class="Labels"> 
+            <label>Nombre:     {{usuario}} </label>
+          
+            </p>
+
+             <p class="Labels"> 
+            <label>Correo:      {{email}} </label>
+           
+            <br>     
+</p>
+
+          <p class="Labels">
             <label>Agregar nueva dirección</label>
             <textarea type="text" name="direccion" placeholder="Dirección"> </textarea>
-          </p>
-          <p class="correo">
             <br>
             <br>
             <button class="btn" type="submit">Agregar</button>
           </p>
-             
-  <table class="table table-striped table-dark">
+        
+              
+  <div class="table-wrapper-scroll-y my-custom-scrollbar">    
+  <table class="table  table-dark   textarea  table-striped mb-0 ">
   <thead>
     <tr>
       <th scope="col">No.</th>
@@ -36,7 +42,8 @@
     {{/each}}
   </tbody>
 </table>
-        </form>
+</div>  
+       </form>
       </div>
     </div>
   </div>
