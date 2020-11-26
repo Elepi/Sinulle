@@ -92,6 +92,16 @@ authController.verificarInicioSesion,
 usuarioController.miPerfil);
 router.post("/miperfil", 
 authController.verificarInicioSesion,
+[
+  check("direccion", "Debes ingresar una dirección.")
+  .not()
+  .isEmpty()
+  .escape(),
+  check("gravatar", "Debes seleccionar una imagen.")
+        .not()
+        .isEmpty(),
+],
+usuarioController.subirImagen,
 usuarioController.miPerfilDireccion);
   
 
