@@ -2,7 +2,7 @@
 body{
     font-family: 'Oswald', sans-serif;
     background-color: black;
- 
+    width: "auto"; 
 }
 
 .navbar{
@@ -129,13 +129,12 @@ input {
 }
 
 .errores {
-    background-color: black;
-    right: 50px;
-    position: sticky;
-  
-    width: 500px;
-    max-width: 100%;
-    min-height: 200px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left:33%;
+    max-width: 72%;
+    
 }
 
 .form-container{
@@ -272,6 +271,10 @@ input {
             padding-top: 0%;
             padding-left: 5%;
             padding-right: 5%;
+
+            font-size: 24px;
+        line-height: 35px;
+        font-weight: 600;
         }
 
 
@@ -352,3 +355,5 @@ input {
     .table-wrapper-scroll-y {
     display: block;
     }
+
+   
