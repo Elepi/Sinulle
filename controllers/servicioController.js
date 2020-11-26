@@ -39,15 +39,15 @@ exports.crearServicio = async (req, res, next) => {
         res.redirect("/crear-servicio");
     }
     else {
-         //Intentar almacenar los datos del usuario
+         //Intentar almacenar los datos del servicio
     try {
-        //Crear el usuario
+        //Crear el Servicio
         await Servicio.create({
             
             nombre
         });
          // Mostrar un mensaje luego de registrarse existosamente
-         messages.push({ message: "Usuario creado satisfactoriamente.", alertType: "success" });
+         messages.push({ message: "Servicio creado satisfactoriamente.", alertType: "success" });
          req.flash("messages", messages);
          res.redirect("/iniciar-sesion");
         } catch (error) {

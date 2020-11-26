@@ -76,7 +76,7 @@ router.post(
   "/crear-servicio",
   authController.verificarInicioSesion,
   [
-    check("nombre", "Debes ingresar el nombre del producto")
+    check("nombre", "Debes ingresar el nombre del servicio")
       .not()
       .isEmpty()
       .escape(),
