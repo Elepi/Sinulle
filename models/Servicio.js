@@ -8,7 +8,7 @@ const servicioSchema = new mongoose.Schema({
   nombre: {
     type: String,
     required: true,
-
+    imagen: String,
   }
 });
 //Hooks 

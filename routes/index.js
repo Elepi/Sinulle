@@ -109,5 +109,30 @@ router.get("/orden-servicio",authController.verificarInicioSesion, (req, res, ne
   res.render("ordenServicio");
 });
 
+
+router.get(
+  "/crear-servicio",
+  authController.verificarInicioSesion,
+  servicioController.formularioCrearServicio
+);
+
+
+router.post(
+  "/crear-servicio",
+  authController.verificarInicioSesion,
+
+  servicioController.subirImagen,
+  [
+    [
+      check("nombre", "Debes ingresar el servicio")
+        .not()
+        .isEmpty()
+        .escape(),
+  
+      
+    ],
+  ],
+  servicioController.crearServicio
+);
   return router;
 };
