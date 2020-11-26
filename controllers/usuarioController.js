@@ -83,6 +83,15 @@ exports.miPerfilDireccion = async (req, res, next) => {
     res.redirect("/miperfil");
 }
 
+exports.miPerfilImagen = async (req, res, next) => {
+  
+  const email = req.user.email;
+  const usuario = await Usuario.findOne({email});  
+  usuario.gravatar = req.file.filename;
+  await usuario.save();
+  res.redirect("/miperfil");
+}
+
 //MULTER
 exports.subirImagen = (req, res, next) => {
     // Verificar que no existen errores de validación
