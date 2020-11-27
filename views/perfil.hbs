@@ -1,0 +1,74 @@
+<div class="errores " id="errores">
+   
+{{> showMessages messages}}
+</div>
+
+<div class="contacto">
+        <h3 class="titulo">Direcciones</h3>
+        <form class="tablef" method="POST" action="/miperfil"  enctype="multipart/form-data" >
+        
+            
+
+           
+              
+          <p class="Labels"> 
+            <label>Nombre:     {{usuario}} </label>
+          </p>
+      
+          <p class="Labels"> 
+            <label>Correo:      {{email}} </label>
+            <br>     
+          </p>
+
+          <div class="row avatar ">
+            <div class="col-md-5 col-sm-5">
+              
+              <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                <div class="fileinput-new thumbnail img-no-padding" style="max-width: 370px; max-height: 250px;">
+                  
+                </div>
+                <div class="fileinput-preview fileinput-exists thumbnail img-no-padding"
+                  style="max-width: 370px; max-height: 250px;"></div>
+                <div>
+                  <span class="btn btn-outline-default btn-round btn-file">
+                    <span class="fileinput-new">Selecciona una imagen</span>
+                    <input type="file" name="gravatar"></span>
+                 
+                </div>
+              </div>
+ </div>
+              </div>
+          <p class="Labels">
+            <label>Agregar nueva dirección</label>
+            <textarea type="text" name="direccion" placeholder="Dirección"> </textarea>
+            <br>
+            <br>
+            <button class="btn" type="submit">Agregar</button>
+          </p>
+        
+              
+  <div class="table-wrapper-scroll-y my-custom-scrollbar">    
+  <table class="table  table-dark   textarea  table-striped mb-0 ">
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Dirección</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each direcciones as |item i| }}
+    <tr>
+      <th scope="row">{{i}}</th>
+      <th scope="row">{{this}}</th>
+       {{else}}
+     <th></th>  
+     <th>Aún no se han agregado direcciones.</th>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>  
+       </form>
+      </div>
+    </div>
+  </div>
