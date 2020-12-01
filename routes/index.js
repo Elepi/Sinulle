@@ -97,12 +97,25 @@ authController.verificarInicioSesion,
   .not()
   .isEmpty()
   .escape(),
-  check("gravatar", "Debes seleccionar una imagen.")
-        .not()
-        .isEmpty(),
+  
 ],
-usuarioController.subirImagen,
+
 usuarioController.miPerfilDireccion);
+
+///Imagen
+router.get("/miperfil-imagen", 
+authController.verificarInicioSesion,
+usuarioController.agregarImagenUsuario);
+router.post("/miperfil-imagen", 
+authController.verificarInicioSesion,
+// [
+ 
+//   check("gravatar", "Debes seleccionar una imagen.")
+//         // .not()
+//         // .isEmpty()
+// ],
+usuarioController.subirImagen,
+ usuarioController.miPerfilImagen);
   
 
 router.get("/orden-servicio",authController.verificarInicioSesion, (req, res, next) => {
