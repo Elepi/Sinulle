@@ -261,7 +261,7 @@ input {
 
     .tablef {
         display: grid;
-        border-width: 10px;
+        border-width: 5px;
         border-style: outset;
         border-color: #F88600;
         background-color: #393E46;
@@ -367,3 +367,70 @@ input {
 
 
     }
+
+    .imgtop{
+padding-top: 2%;
+padding-left: 2%;
+
+
+    }
+
+
+    .container2 {
+        padding-top: 5%;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-bottom: 10%;
+        color: #FFFFFF;
+
+
+}
+
+
+.list-group {
+
+    max-height: 200px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+
+
+}
+.tableform {
+    display: grid;
+    border-width: 2px;
+    border-style: outset;
+    border-color:  #F88600;
+    background-color: #393E46;
+   
+    }
+
+    
+.form2 {
+    background-color: #393E46;
+    
+    
+    
+}
+
+.img-thumbnail{
+    border-radius: 5px;
+    border: 1px solid;
+    display: grid;
+    border-width: 1px;
+    border-style: outset;
+    border-color:  #F88600;
+    background-color: #F88600;
+
+
+}
+  
+.actualizar{
+
+    padding-top: 1%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 1%;
+
+
+}
