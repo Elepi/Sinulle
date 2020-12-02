@@ -24,12 +24,13 @@
         <input name="nombre" type="text" placeholder="Nombre completo" /value="{{nombre}}">
         <input name="email" type="email" placeholder="Correo electrónico" /value="{{email}}">
         <input name="password" type="password" placeholder="Contraseña" /value="{{password}}">
-        <select name="servicio" id="">
+        <select class ="form-control"  name="servicio" id="">
            {{#each servicios as |servicio|}}
                     <option value="{{servicio._id}}">{{servicio.nombre}}</option>
                {{/each}}
         </select>
         <input type="text" name="tipoUsuario" value="colaborador" hidden>
+        <br>
         <button type="submit" class="btn  btn-rounded">Registrarse</button>
       </form>
     </div>

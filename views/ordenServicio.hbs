@@ -38,8 +38,8 @@
 		<div class="col-md-3">
 			<div class="contact-info">
 				<img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
-				<h2>Orden</h2>
-				<h4>haz tu solicitud de servicio aquí</h4>
+				<h2>Orden </h2>
+				<h4>{{usuario}} , haz tu solicitud de servicio aquí</h4>
 			</div>
 		</div>
 		
@@ -47,22 +47,24 @@
 			<form method="POST"  action="/crear-orden">
 			<div class="contact-form"  >
 				<div class="form-group">
-				  <label class="control-label col-sm-2" for="fechaSolicitud">Fecha</label>
-				  <div class="col-sm-10">          
-					<input type="date" class="form-control" id="fechaSolicitud" placeholder="Fecha que requiere el servicio" name="fechaSolicitud">
-				  </div>
-				</div>
+				  
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="servicio">Servicio:</label>
 				  <div class="col-sm-10">          
 					<input type="text" class="form-control" id="servicio" placeholder="Servicio" name="servicio">
 				  </div>
+				  <label class="control-label col-sm-2" for="fechaSolicitud">Fecha</label>
+				  <div class="col-sm-10">          
+					<input type="date" class="form-control" id="fechaSolicitud" placeholder="Fecha que requiere el servicio" name="fechaSolicitud">
+				  </div>
+				</div>
            </div>
           	
         	<div class="form-group">
-				  <label class="control-label col-sm-2" for="lname">Dirección:</label>
+				  <label class="control-label col-sm-2" for="direccion">Dirección:</label>
 				  <div class="col-sm-10">          
-					<select name="direccion" id="direccion">
+					<select class ="form-control" name="direccion" id="direccion">
+						<option > Selecciona una dirección </option>
 						{{#each direcciones }}
                                   <option value="{{this}}">{{this}}</option>
                          {{/each}}
@@ -75,7 +77,7 @@
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="comment">Descripción:</label>
 				  <div class="col-sm-10">
-					<textarea class="form-control" rows="5" id="descripcion" name="descripcion"></textarea>
+					<textarea class="form-control" rows="5"  id="descripcion" name="descripcion"></textarea>
 				  </div>
 				</div>
 				<div class="form-group">        
