@@ -5,6 +5,7 @@ const usuarioController = require("../controllers/usuarioController");
 const authController = require("../controllers/authController");
 const servicioController = require("../controllers/servicioController");
 const homeController = require("../controllers/homeController");
+const ordenController = require("../controllers/ordenController");
 const { check } = require("express-validator");
 
 // Configura y mantiene todos los endpoints en el servidor
@@ -104,9 +105,7 @@ usuarioController.subirImagen,
  usuarioController.miPerfilImagen);
   
 
-router.get("/orden-servicio",authController.verificarInicioSesion, (req, res, next) => {
-  res.render("ordenServicio");
-});
+
 
 
 // Rutas para servicio
@@ -133,6 +132,17 @@ router.post("/crear-servicio",
   ],
   
 );
+
+//Rutas para orden de servicio
+router.get("/crear-orden",
+authController.verificarInicioSesion, 
+ordenController.formularioCrearOrden,
+);
+
+router.post("/crear-orden",
+authController.verificarInicioSesion,
+
+ordenController.crearOrden);
 
 
   return router;
