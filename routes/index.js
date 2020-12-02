@@ -24,7 +24,7 @@ module.exports = () => {
   // Rutas para usuario
   router.get("/crear-cuenta", usuarioController.formularioCrearCuenta);
 
-  
+  router.get("/crear-cuentaColaborador", usuarioController.formularioCrearCuentaColaborador);
 
  router.post("/crear-cuenta",
  [
