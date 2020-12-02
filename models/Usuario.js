@@ -34,7 +34,13 @@ const usuarioSchema = new mongoose.Schema({
     expira: Date,
     gravatar: String,
     activo: Boolean,
-    fechaRegistro: Date
+    fechaRegistro: Date,
+
+    telefonoFijo: Number,
+    telefonoCelular: Number,
+    descripcionPersonal: String,
+
+
 });
 
 //Hooks hash para el password, combinación de hash y salt 
