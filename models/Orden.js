@@ -17,7 +17,7 @@ const ordenSchema = new mongoose.Schema({
     
       servicio: String,
    
-    //  direccion: String,
+    direccion: String,
       
       fechaSolicitud: Date,
 
