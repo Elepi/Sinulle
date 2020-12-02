@@ -28,6 +28,10 @@
       </div>
     </div>
   </div>--}}
+<div class="errores " id="errores">
+   
+{{> showMessages messages}}
+</div>
 
    <div class="formulario contact">
 	<div class="row">
@@ -38,42 +42,40 @@
 				<h4>haz tu solicitud de servicio aquí</h4>
 			</div>
 		</div>
+		
 		<div class="col-md-9">
-			<div class="contact-form">
+			<form method="POST"  action="/crear-orden">
+			<div class="contact-form"  >
 				<div class="form-group">
-				  <label class="control-label col-sm-2" for="fname">Nombre:</label>
+				  <label class="control-label col-sm-2" for="fechaSolicitud">Fecha</label>
 				  <div class="col-sm-10">          
-					<input type="text" class="form-control" id="fname" placeholder="Nombre" name="nombre">
+					<input type="date" class="form-control" id="fechaSolicitud" placeholder="Fecha que requiere el servicio" name="fechaSolicitud">
 				  </div>
 				</div>
 				<div class="form-group">
-				  <label class="control-label col-sm-2" for="lname">Apellido:</label>
+				  <label class="control-label col-sm-2" for="servicio">Servicio:</label>
 				  <div class="col-sm-10">          
-					<input type="text" class="form-control" id="lname" placeholder="Apellido" name="Apellido">
+					<input type="text" class="form-control" id="servicio" placeholder="Servicio" name="servicio">
 				  </div>
            </div>
-          	<div class="form-group">
-				  <label class="control-label col-sm-2" for="lname">Fecha:</label>
-				  <div class="col-sm-10">          
-					<input type="text" class="form-control" id="lname" placeholder="Feche" name="Fecha">
-				  </div>
-				</div>
+          	
         	<div class="form-group">
-				  <label class="control-label col-sm-2" for="lname">Teléfono:</label>
+				  <label class="control-label col-sm-2" for="lname">Dirección:</label>
 				  <div class="col-sm-10">          
-					<input type="text" class="form-control" id="lname" placeholder="Teléfono" name="telefono">
+					<select name="direccion" id="direccion">
+						{{#each direcciones }}
+                                  <option value="{{this}}">{{this}}</option>
+                         {{/each}}
+
+
+					</select>
 				  </div>
            </div>
+			
 				<div class="form-group">
-				  <label class="control-label col-sm-2" for="email">Email:</label>
+				  <label class="control-label col-sm-2" for="comment">Descripción:</label>
 				  <div class="col-sm-10">
-					<input type="email" class="form-control" id="email" placeholder="Email" name="email">
-				  </div>
-				</div>
-				<div class="form-group">
-				  <label class="control-label col-sm-2" for="comment">Comentario:</label>
-				  <div class="col-sm-10">
-					<textarea class="form-control" rows="5" id="comment"></textarea>
+					<textarea class="form-control" rows="5" id="descripcion" name="descripcion"></textarea>
 				  </div>
 				</div>
 				<div class="form-group">        
@@ -82,7 +84,9 @@
 							  </div>
 				</div>
 			</div>
+			</form>
 		</div>
+		
 	</div>
 </div>
       
