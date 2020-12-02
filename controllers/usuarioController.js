@@ -9,6 +9,10 @@ const multer = require("multer");
 exports.formularioCrearCuenta = (req, res, next) =>{
     res.render("registrarse", { layout: "auth" });
 }
+//mostrar formulario colaborador
+exports.formularioCrearCuentaColaborador = (req, res, next) =>{
+  res.render("registrarseColaborador", { layout: "auth" });
+}
 
 //Procesar el formulario de creación de cuenta 
 exports.crearCuenta = async (req, res, next) => {
@@ -17,7 +21,7 @@ exports.crearCuenta = async (req, res, next) => {
     const messages = [];
 
     //Obtener variables del body
-    const { nombre, email, password } = req.body;
+    const { nombre, email, password, tipoUsuario } = req.body;
 
     //Si hay errores
     if(!errores.isEmpty()) {
@@ -39,7 +43,8 @@ exports.crearCuenta = async (req, res, next) => {
         await Usuario.create({
             email,
             password,
-            nombre
+            nombre, 
+            tipoUsuario,
         });
          // Mostrar un mensaje luego de registrarse existosamente
          messages.push({ message: "Usuario creado satisfactoriamente.", alertType: "success" });
