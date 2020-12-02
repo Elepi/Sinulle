@@ -4,11 +4,11 @@ const { validationResult } = require("express-validator");
 
 exports.formularioCrearOrden =  (req, res, next) => {
     const usuario = req.user.nombre;
-  // const direcciones= req.user.direcciones;
+   const direcciones= req.user.direcciones;
     res.render("ordenServicio", {
       
         usuario,
-    // direcciones,
+   direcciones,
       
     });
 }
@@ -31,9 +31,10 @@ exports.crearOrden = async (req, res, next) => {
     } else {
       // Almacenar los valores del producto
       try {
-        const { servicio, descripcion, fechaSolicitud} = req.body;
+        const {direccion, servicio, descripcion, fechaSolicitud} = req.body;
   
         await Orden.create({
+            direccion,
          servicio, 
          descripcion,
          fechaSolicitud,
