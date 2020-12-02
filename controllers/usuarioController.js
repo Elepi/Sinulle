@@ -1,6 +1,7 @@
 //Importar los módulos requeridos
 const mongoose = require("mongoose");
 const Usuario = mongoose.model("Usuarios");
+const Servicio = mongoose.model("Servicio");
 const { validationResult } = require("express-validator");
 const shortid = require("shortid");
 const multer = require("multer");
@@ -10,8 +11,13 @@ exports.formularioCrearCuenta = (req, res, next) =>{
     res.render("registrarse", { layout: "auth" });
 }
 //mostrar formulario colaborador
-exports.formularioCrearCuentaColaborador = (req, res, next) =>{
-  res.render("registrarseColaborador", { layout: "auth" });
+exports.formularioCrearCuentaColaborador = async (req, res, next) =>{
+  const servicios = await Servicio.find().lean();
+ 
+  res.render("registrarseColaborador", 
+ {servicios ,
+   layout: "auth" });
+
 }
 
 //Procesar el formulario de creación de cuenta 
@@ -21,7 +27,7 @@ exports.crearCuenta = async (req, res, next) => {
     const messages = [];
 
     //Obtener variables del body
-    const { nombre, email, password, tipoUsuario } = req.body;
+    const { nombre, email, password, tipoUsuario,servicio } = req.body;
 
     //Si hay errores
     if(!errores.isEmpty()) {
@@ -45,6 +51,7 @@ exports.crearCuenta = async (req, res, next) => {
             password,
             nombre, 
             tipoUsuario,
+            servicio,
         });
          // Mostrar un mensaje luego de registrarse existosamente
          messages.push({ message: "Usuario creado satisfactoriamente.", alertType: "success" });
