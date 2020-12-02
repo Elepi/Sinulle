@@ -13,7 +13,7 @@ body{
     font-family: 'Caesar Dressing', cursive;
     background-color: #B55300;
     padding-top: 0.2%;
-    padding-left: 27%;
+    padding-left: 47%;
     padding-bottom: 0.2%;
 }
 .fondo{
@@ -25,6 +25,14 @@ body{
     background-image: url("/img/fondo2.png" ) ;
  
 }
+/* carrusel */
+.d-block{
+    padding-left: 10%; 
+    width:90%; 
+    height: 500px; 
+   
+}
+/* fin de carrusel */
 /* inicio de index */
 .card{
 background-color: #F88600;
@@ -46,6 +54,95 @@ background-color: #F88600;
     
     text-align: center;
 }
+/* nosotros */
+
+.subheading1{
+    padding-left: 490px;
+ width: 690px;
+ height: 32px;
+ }
+ .subheading2{
+     padding-left: 500px;
+  width: 835px;
+  height: 32px;
+  }
+ .nosotros{
+     padding-top: 100px;
+     padding-bottom: 100px;
+     width: auto;
+     height: 1300px;
+ }
+ .parrafo{
+     padding-left: 40%;
+    
+ }
+ .imagen{
+     width: 600px;
+     height: 300px;
+     padding-right: 15px;
+     
+ }
+ 
+ .somos{
+     display: flex;
+     padding-left: 5%;
+     width: 1200px;
+     height: 300px;
+     padding-bottom: 250px;
+     color: #FFFFFF;
+     font-size: 30px;
+     line-height: 40px;
+     position:absolute ;
+     bottom: center;
+     overflow: hidden;
+  
+ }
+ .p-estilo{
+     font-size: 50px;
+     font-style: italic;
+     color: #FFFFFF;
+     font-size: 30px;
+     line-height: 40px;
+ }
+ 
+  .ul-estilo{
+     list-style: none;
+     padding-left: 25px;
+     animation: cambiar 15s infinite;
+  }
+  .imagen.ul-estilo{
+      margin: 0;
+  }
+     
+ @keyframes cambiar{
+     0%{ margin-top: 0;  }
+     20%{ margin-top: 0;  }
+ 
+     25%{ margin-top: -40px;  }
+     50%{ margin-top: -40px;  }
+ 
+     55%{ margin-top: -80px;  }
+     80%{ margin-top: -88px;  }
+ 
+     85%{ margin-top: 0px;  }
+     95%{ margin-top: 0px;  }
+ 
+     100%{ margin-top: 0px;  }
+ }
+  .unirse{
+      padding-top: 450px;
+  }
+ /* fin de nostros */
+ /* paginas */
+ .pagination{
+     padding-top: 400px;
+ }
+ 
+ .pagination>li>a { border-radius: 50% !important;margin: 0 5px; color: #F88600;
+ border-color: #B55300;
+  }
+ 
+ /* fin de paginas */
 /* fin de index */
 /* Fin de la hoja de estilo principal */
 /* Inicio del estilo para Registrarse e iniciar sesión */
@@ -235,7 +332,7 @@ input {
 
 /*Inicio de Formulario*/
 
-.contacto {
+/* .contacto { 
     padding-top: 5%;
     padding-left: 15%;
     padding-right: 15%;
@@ -261,7 +358,7 @@ input {
 
     .tablef {
         display: grid;
-        border-width: 10px;
+        border-width: 5px;
         border-style: outset;
         border-color: #F88600;
         background-color: #393E46;
@@ -317,8 +414,65 @@ input {
     }
     textarea {
       resize: none;
+    }*/
+    .formulario{
+        background-color: #000000;
     }
-  
+    .contact{
+        padding-left:10%;
+        padding-right:10%;
+        padding-top: 5%;
+        height: 800px;
+    }
+    
+    .col-md-3{
+        background: #F88600;
+        padding: 4%;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+    }
+    .contact-info{
+        margin-top:10%;
+        color: #FFFFFF;
+       
+    }
+    .btn2{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #F88600;
+        border-color:#FFFFFF ;
+        color: #FFFFFF;
+    }
+    .contact-info img{
+        margin-bottom: 15%;
+    }
+    .contact-info h2{
+        margin-bottom: 10%;
+    }
+    .col-md-9{
+      /*width: 50px;
+      height: 700px;
+       padding-right: 300px;
+      background-size: 1008px;
+        background-image: url("/img/logo2.png" ) ;
+        background-image: url("/img/SINULLE.png" ) ;*/
+        padding: 2%;
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+    .contact-form label{
+        font-weight:600;
+        color: #FFFFFF;
+    }
+    .contact-form button{
+        background: #F88600;
+        color: #fff;
+        font-weight: 600;
+        width: 25%;
+    }
+    .contact-form button:focus{
+        box-shadow:none;
+    }
 
   
     /* Fin Formulario */
@@ -367,3 +521,70 @@ input {
 
 
     }
+
+    .imgtop{
+padding-top: 2%;
+padding-left: 2%;
+
+
+    }
+
+
+    .container2 {
+        padding-top: 5%;
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-bottom: 10%;
+        color: #FFFFFF;
+
+
+}
+
+
+.list-group {
+
+    max-height: 200px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+
+
+}
+.tableform {
+    display: grid;
+    border-width: 2px;
+    border-style: outset;
+    border-color:  #F88600;
+    background-color: #393E46;
+   
+    }
+
+    
+.form2 {
+    background-color: #393E46;
+    
+    
+    
+}
+
+.img-thumbnail{
+    border-radius: 5px;
+    border: 1px solid;
+    display: grid;
+    border-width: 1px;
+    border-style: outset;
+    border-color:  #F88600;
+    background-color: #F88600;
+
+
+}
+  
+.actualizar{
+
+    padding-top: 1%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 1%;
+
+
+}

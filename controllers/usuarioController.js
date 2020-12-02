@@ -70,7 +70,9 @@ exports.miPerfil = (req, res, next) => {
     res.render("perfil", {
         usuario,
         email: req.user.email,
+        gravatar: req.user.gravatar,
         direcciones: req.user.direcciones
+        
     });
 }
 exports.miPerfilDireccion = async (req, res, next) => {
@@ -78,10 +80,13 @@ exports.miPerfilDireccion = async (req, res, next) => {
     const email = req.user.email;
     const usuario = await Usuario.findOne({email});
     usuario.direcciones.push(direccion); 
-    usuario.gravatar = req.file.filename;
     await usuario.save();
     res.redirect("/miperfil");
 }
+exports.agregarImagenUsuario = (req, res, next) =>{
+  res.render("perfilImagen", { layout: "main" });
+}
+
 
 exports.miPerfilImagen = async (req, res, next) => {
   
