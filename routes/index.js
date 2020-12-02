@@ -4,6 +4,7 @@ const express = require("express");
 const usuarioController = require("../controllers/usuarioController");
 const authController = require("../controllers/authController");
 const servicioController = require("../controllers/servicioController");
+const homeController = require("../controllers/homeController");
 const { check } = require("express-validator");
 
 // Configura y mantiene todos los endpoints en el servidor
@@ -14,6 +15,10 @@ module.exports = () => {
   router.get("/", (req, res, next) => {
     res.render("index");
   });
+
+
+
+  router.get( "/galeria", homeController.mostrarServicios);
 
   // Rutas para usuario
   router.get("/crear-cuenta", usuarioController.formularioCrearCuenta);
@@ -65,26 +70,7 @@ router.get("/administrar", (req, res, next)=> {
 
 
 // Rutas para servicioss
-router.get(
-  "/crear-servicio",
-  authController.verificarInicioSesion,
-  servicioController.formularioCrearServicio
-);
 
-
-router.post(
-  "/crear-servicio",
-  authController.verificarInicioSesion,
-  [
-    check("nombre", "Debes ingresar el nombre del servicio")
-      .not()
-      .isEmpty()
-      .escape(),
-  
-  ],
-
-  servicioController.crearServicio
-);
 
 //Rutas de perfil y direcciones de usuario
 router.get("/miperfil", 
@@ -123,29 +109,31 @@ router.get("/orden-servicio",authController.verificarInicioSesion, (req, res, ne
 });
 
 
+// Rutas para servicio
 router.get(
   "/crear-servicio",
   authController.verificarInicioSesion,
   servicioController.formularioCrearServicio
 );
 
-
-router.post(
-  "/crear-servicio",
+router.post("/crear-servicio",
   authController.verificarInicioSesion,
-
-  servicioController.subirImagen,
+ 
+  servicioController.crearServicio,
   [
-    [
-      check("nombre", "Debes ingresar el servicio")
-        .not()
-        .isEmpty()
-        .escape(),
+    check("nombre", "Debes ingresar el nombre del servicio")
+      .not()
+      .isEmpty()
+      .escape(),
+      check("imagen", "Debes ingresar el url de la imagen")
+      .not()
+      .isEmpty()
+      .escape(),
   
-      
-    ],
   ],
-  servicioController.crearServicio
+  
 );
+
+
   return router;
 };

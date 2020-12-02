@@ -7,25 +7,28 @@
     <div class="container" style="background-color:#393E46;;" >
       <br>  <br>  <br>
 <div class="card border-warning mb-3 " style="max-width: 18rem;"></div>
+<div class="errores " id="errores">
+   
+{{> showMessages messages}}
+</div>
  <div class="card-header dark">
  <h4 class="card-title text-white" >Ingrese un Servicio</h4>
 </div>
   <div class="card-body warning">
       <form method="POST" class="form" action="/crear-servicio"  style="background-color:white;" >
 
-       <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                
-                <div>
-                  <span class="btn btn-outline-default btn-round btn-file">
-                    <span class="fileinput-new">Selecciona una imagen</span>
-                    <input type="file" name="imagen"></span>
-                 
-                </div>
-              </div>
+  <h6>SINULLE</h6>
+           
+        
+         <div class="col-md-7 col-sm-7" style="margin-right: 40%; margin-top:20 px;">  
+       
+                <input  type="text"  class="form-control border-input material-icons" placeholder="Url de la Imagen del Servicio" name="imagen" >
+         </div>
        
           <div class="col-md-7 col-sm-7" style="margin-right: 40%; margin-top:20 px;">  
                 <input  type="text"  class="form-control border-input" placeholder="Nombre del Servicio" name="nombre">
          </div>
+         
         <div class="row buttons-row"></div>
         <div class="col-md-3 col-sm-3" style="margin-top:20 px; margin-right:72%;">
               <button class="btn btn-outline-primary btn-block btn-round" type="submit">Guardar</button>
@@ -37,5 +40,4 @@
   </div>  
   
   </div>
-   
 

@@ -8,8 +8,14 @@ const servicioSchema = new mongoose.Schema({
   nombre: {
     type: String,
     required: true,
-    imagen: String,
-  }
+   
+  },
+
+  imagen: {
+    type: String,
+    required: true,
+    
+  },
 });
 //Hooks 
 
@@ -18,4 +24,4 @@ const servicioSchema = new mongoose.Schema({
 // Generar un índice para mejorar la búsqueda por el nombre del servicio
 //servicioSchema.index({ nombre: "text" });
 
-module.exports = mongoose.model("Servicios", servicioSchema);
+module.exports = mongoose.model("Servicio", servicioSchema);
