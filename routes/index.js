@@ -13,7 +13,7 @@ const router = express.Router();
 
 module.exports = () => {
   // Rutas disponibles y su tipo de peticion
-  router.get("/", (req, res, next) => {
+  router.get("/",homeController.mostrarServicios, (req, res, next) => {
     var login = false;
     if(req.isAuthenticated()){
       login = true;
@@ -21,12 +21,13 @@ module.exports = () => {
     else {
       login = false;
     }
-    res.render("index", { login });
+    res.render("index", { login }
+    );
   });
 
 
 
-  router.get( "/galeria", homeController.mostrarServicios);
+
 
   // Rutas para usuario
   router.get("/crear-cuenta", usuarioController.formularioCrearCuenta);
