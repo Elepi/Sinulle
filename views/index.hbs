@@ -1,4 +1,5 @@
 <!--cuarpo del body-->
+<link rel="stylesheet" href="estilos.css">
 <div class="contenedor">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -42,90 +43,38 @@
   
 </div> 
 {{!-- Inicio de categorias --}}
-<nav class="navbars navbar-expand-lg navbar-dark">
-<p>Servicios</p>
-</nav>
+<section class="grid ">
+  
+	  	<div class="contenedor-cards">     
+ {{#each servicios}}
+		    <div class="contenedor-card-item">
+		      	<div class="contenedor-card-item-wrapper">
+		        	<img src="{{imagen}}" alt="">
+		        	<div class="contenedor-info">
+		          		<div class="info">
+		            		<p class="titulo">{{nombre}}</p>
+		            
+		          		</div>
+
+		          		<div class="fondo"></div>
+		        	</div>
+		      	</div>
+            <footer class="blockquote-footer">
+        <small class="text-muted">
+         <a href="#" class="btn btn-dark">Ver más</a>
+        </small>
+      </footer>
+		    </div>
+        	 
+		    {{/each}}
+	   	</div>
+       
+     
+
 {{!-- Fin de categorias --}}
 {{!-- incio de grid --}}
-<section class="grid ">
-  <div class="card-columns">
-  <div class="card p-3 ">
-      <img class="card-img-top" src="/img/1.jpg" alt="Card image cap">
-    <blockquote class="blockquote mb-0 card-body">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-         <a href="#" class="btn btn-dark">Ver más</a>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
-  <div class="card p-3 ">
-      <img class="card-img-top" src="/img/2.jpg" alt="Card image cap" height="425px">
-    <blockquote class="blockquote mb-0 card-body">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          <a href="#" class="btn btn-dark">Ver más</a>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
-   <div class="card p-3 ">
-      <img class="card-img-top" src="/img/3.jpg" alt="Card image cap" height="425px">
-    <blockquote class="blockquote mb-0 card-body">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          <a href="#" class="btn btn-dark">Ver más</a>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
-  <div class="card bg-dark text-white text-center p-3">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-      <footer class="blockquote-footer">
-        <small>
-          <a href="#" class="btn btn-dark">Ver más</a>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
-   <div class="card p-3 ">
-      <img class="card-img-top" src="/img/4.jpg" alt="Card image cap" height="425px">
-    <blockquote class="blockquote mb-0 card-body">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-         <a href="#" class="btn btn-dark">Ver más</a>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
- <div class="card p-3 ">
-      <img class="card-img-top" src="/img/5.jpg" alt="Card image cap" height="425px">
-    <blockquote class="blockquote mb-0 card-body">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          <a href="#" class="btn btn-dark">Ver más</a>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
- <div class="card p-3 ">
-      <img class="card-img-top" src="/img/6.jpg" alt="Card image cap" height="425px">
-    <blockquote class="blockquote mb-0 card-body">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          <a href="#" class="btn btn-dark">Ver más</a>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
-</div>
+
+  
 
  
 </section>
