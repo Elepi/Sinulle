@@ -502,9 +502,12 @@ input {
     .contact-form button:focus{
         box-shadow:none;
     }
-
+    
+    .direccion{
+        padding-left: 2%;
+    }
   
-    /* Fin Formulario */
+    /* Fin Formulario Orden*/
 
 /* inicio del Footer */
 .footer{
