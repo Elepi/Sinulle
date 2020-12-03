@@ -43,13 +43,19 @@
   
 </div> 
 {{!-- Inicio de categorias --}}
-<section class="grid ">
+<nav class="navbars navbar-expand-lg navbar-dark">
+<p>Servicios</p>
+</nav>
+{{!-- Fin de categorias --}}
+{{!-- incio de grid --}}
+
+  <section class="grid ">
   
 	  	<div class="contenedor-cards">     
  {{#each servicios}}
 		    <div class="contenedor-card-item">
 		      	<div class="contenedor-card-item-wrapper">
-		        	<img src="{{imagen}}" alt="">
+		        	<img  class="card-img-top" src="{{imagen}}" alt="">
 		        	<div class="contenedor-info">
 		          		<div class="info">
 		            		<p class="titulo">{{nombre}}</p>
@@ -68,21 +74,14 @@
         	 
 		    {{/each}}
 	   	</div>
-       
-     
-
-{{!-- Fin de categorias --}}
-{{!-- incio de grid --}}
-
-  
-
- 
 </section>
+ 
 {{!-- fin del grid --}}
 {{!-- inicio de sobre nosotros --}}
 
 <section class="nosotros">
-  <img class="subheading1" src="/img/head.png"  alt=""/>
+  <nav class="heading navbar-expand-lg navbar-dark">
+</nav>
   <div class="parrafo"><p class="p-estilo">Nosotros somos</p><br></div>
   <div class="somos">
       <img class="imagen" src="/img/interface.png" alt=""> 
@@ -94,7 +93,8 @@
   </div>
 
 <div class="unirse">
-  <img class="subheading2" src="/img/head.png"  alt=""/>
+    <nav class="heading navbar-expand-lg navbar-dark">
+</nav>
    <div class="parrafo"><p class="p-estilo">¿Quiéres ser colaborador?</p><br></div>
   <div class="somos">
     <ul class="ul-estilo">
@@ -107,26 +107,7 @@
       <img class="imagen" src="/img/puzzle.jpg" alt=""> 
   </div>
   </div>
-  <div class="paginas">
-  <nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">«</span>
-        <span class="sr-only">Previous</span>
-      </a>
-    </li>
-    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">»</span>
-        <span class="sr-only">Next</span>
-      </a>
-    </li>
-  </ul>
-</nav></div>
+ 
 </section>
 
 
