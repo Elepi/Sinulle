@@ -1,16 +1,19 @@
 /* hoja de estilo principal */
 body{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald' ;
     background-color: black;
     width: "auto"; 
+    
 }
 
 .navbar{
-    font-family: 'Caesar Dressing', cursive;
+    font-family: 'Oswald' ;
     background-color: black;
+    font-size: 57px;
 }
 .navbars{
-    font-family: 'Caesar Dressing', cursive;
+    font-family: 'Oswald';
+    font-size: 57px;
     background-color: #B55300;
     padding-top: 0.2%;
     padding-left: 47%;
@@ -42,14 +45,16 @@ body{
 }
 /* fin de carrusel */
 /* inicio de index */
-.card{
-background-color: #F88600;
+.card-img-top{
+border-color: #F88600;
+width: 200px;
+height: 300px;
 
 }
 .grid {
 
     padding-top: 5%;
-    padding-left: 10%;
+    padding-left: 15%;
     padding-bottom: 5%;
     padding-right: 10%;
 }
@@ -63,7 +68,13 @@ background-color: #F88600;
     text-align: center;
 }
 /* nosotros */
+.heading{
+    background-color: #B55300;
+    padding-top: 0.2%;
+    padding-left: 47%;
+    padding-bottom: 0.2%;
 
+}
 .subheading1{
     padding-left: 490px;
  width: 690px;
@@ -498,8 +509,10 @@ input {
 /* inicio del Footer */
 .footer{
     padding-top: 5%;
+    padding-right: 5%;
     background-color: #393E46;
 }
+
         .tituloColumnaFooter {
             padding-top: 5%;
             font-family: "Roboto",sans-serif;
