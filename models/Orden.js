@@ -28,9 +28,15 @@ const ordenSchema = new mongoose.Schema({
         //required: true,
         trim: true,
       },
+      fechaCreacion: Date,
 
 });
 
+ordenSchema.pre("save", function (next){
+this.fechaCreacion = Date.now();
 
+next();
+
+});
 
 module.exports = mongoose.model("Ordenes", ordenSchema);
