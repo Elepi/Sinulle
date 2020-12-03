@@ -14,7 +14,14 @@ const router = express.Router();
 module.exports = () => {
   // Rutas disponibles y su tipo de peticion
   router.get("/", (req, res, next) => {
-    res.render("index");
+    var login = false;
+    if(req.isAuthenticated()){
+      login = true;
+    }
+    else {
+      login = false;
+    }
+    res.render("index", { login });
   });
 
 
