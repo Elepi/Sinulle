@@ -615,5 +615,15 @@ padding-left: 2%;
         color: #FFFFFF;
        
       }
+.alert-success{
+     background-color: #6dee045e;
+     color : #8aff8a ;
 
+
+}
+
+.alert-danger{
+ background-color: rgb(223, 41, 41);
+color : #FFFFFF;
+}
      
