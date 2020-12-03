@@ -17,3 +17,4 @@ mongoose.connection.on("error", error => {
 require("../models/Usuario");
 require("../models/Servicio");
 require("../models/Orden");
+require("../models/Trabajo");
