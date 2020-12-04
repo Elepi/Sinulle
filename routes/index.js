@@ -6,6 +6,7 @@ const authController = require("../controllers/authController");
 const servicioController = require("../controllers/servicioController");
 const homeController = require("../controllers/homeController");
 const ordenController = require("../controllers/ordenController");
+const trabajoController = require("../controllers/trabajoController");
 const { check } = require("express-validator");
 
 // Configura y mantiene todos los endpoints en el servidor
@@ -149,9 +150,16 @@ ordenController.formularioCrearOrden,
 
 router.post("/crear-orden",
 authController.verificarInicioSesion,
-
 ordenController.crearOrden);
 
+
+//rutas para trabajos de coloborador
+
+router.get("/subir-trabajos", 
+authController.verificarInicioSesion,
+
+trabajoController.formularioSubirTrabajo,
+);
 
   return router;
 };
