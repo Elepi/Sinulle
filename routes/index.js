@@ -150,6 +150,21 @@ ordenController.formularioCrearOrden,
 
 router.post("/crear-orden",
 authController.verificarInicioSesion,
+[
+  check("fechaSolicitud", "Debes ingresar la fecha que requieres el servicio")
+      .not()
+      .isEmpty()
+      .escape(),
+  check("direccion", "Debes seleccionar una direccion")
+      .not()
+      .isEmpty()
+      .escape(),
+      check("descripcion", "Debes describir que necesitas en tu servicio")
+      .not()
+      .isEmpty()
+      .escape(),
+
+],
 ordenController.crearOrden);
 
 
