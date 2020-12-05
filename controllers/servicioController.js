@@ -8,7 +8,43 @@ const multer = require("multer");
 
 // Mostrar el formulario de creación de Servicio
 exports.formularioCrearServicio = (req, res, next) => {
-  res.render("crearServicio", {  layout: "main" }
+    //Obtener el rol del usuario loggeado
+    var logincliente = false;
+    var logincolaborador = false;
+    var loginadmin = false;
+    var notlogin = false;
+    var rol, nombre; 
+    if(req.isAuthenticated()) {
+      rol = req.user.tipoUsuario;
+      nombre = req.user.nombre;
+      if(rol == "cliente") {
+        logincliente = true;
+      }
+    }
+    if(req.isAuthenticated()) {
+      rol = req.user.tipoUsuario;
+      nombre = req.user.nombre;
+      if(rol == "colaborador") {
+        logincolaborador = true;
+      }
+    }
+    if(req.isAuthenticated()) {
+      rol = req.user.tipoUsuario;
+      nombre = req.user.nombre;
+      if(rol == "admin") {
+        loginadmin = true;
+      }
+    }
+    // else {
+    //   logincliente = false;
+    //   logincolaborador = false;
+    // }
+    if(req.isAuthenticated() != true) {
+      notlogin = true;
+    }
+  res.render("crearServicio", {  
+    layout: "main",
+    logincliente, logincolaborador, loginadmin, notlogin, nombre }
   );
 };
 

@@ -78,13 +78,47 @@ exports.formularioIniciarSesion = (req, res, next) => {
 };
 
 exports.miPerfil = (req, res, next) => {
-    const usuario = req.user.nombre;
+  const usuario = req.user.nombre;
+  var logincliente = false;
+  var logincolaborador = false;
+  var loginadmin = false;
+  var notlogin = false;
+  var rol, nombre; 
+  if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "cliente") {
+      logincliente = true;
+    }
+  }
+  if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "colaborador") {
+      logincolaborador = true;
+    }
+  }
+  if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "admin") {
+      loginadmin = true;
+    }
+  }
+  // else {
+  //   logincliente = false;
+  //   logincolaborador = false;
+  // }
+  if(req.isAuthenticated() != true) {
+    notlogin = true;
+  } 
+  
     res.render("perfil", {
         usuario,
         email: req.user.email,
         gravatar: req.user.gravatar,
-        direcciones: req.user.direcciones
-        
+        direcciones: req.user.direcciones, 
+        logincliente, logincolaborador, loginadmin, notlogin, nombre
     });
 }
 exports.miPerfilDireccion = async (req, res, next) => {
@@ -96,7 +130,42 @@ exports.miPerfilDireccion = async (req, res, next) => {
     res.redirect("/miperfil");
 }
 exports.agregarImagenUsuario = (req, res, next) =>{
-  res.render("perfilImagen", { layout: "main" });
+  var logincliente = false;
+  var logincolaborador = false;
+  var loginadmin = false;
+  var notlogin = false;
+  var rol, nombre; 
+  if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "cliente") {
+      logincliente = true;
+    }
+  }
+  if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "colaborador") {
+      logincolaborador = true;
+    }
+  }
+  if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "admin") {
+      loginadmin = true;
+    }
+  }
+  // else {
+  //   logincliente = false;
+  //   logincolaborador = false;
+  // }
+  if(req.isAuthenticated() != true) {
+    notlogin = true;
+  } 
+  res.render("perfilImagen", { layout: "main",
+  logincliente, logincolaborador, loginadmin, notlogin, nombre
+ });
 }
 
 

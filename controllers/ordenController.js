@@ -4,12 +4,46 @@ const { validationResult } = require("express-validator");
 
 exports.formularioCrearOrden =  (req, res, next) => {
     const usuario = req.user.nombre;
-   const direcciones= req.user.direcciones;
+    const direcciones= req.user.direcciones;
+    //Obtener el rol del usuario loggeado
+    var logincliente = false;
+    var logincolaborador = false;
+    var loginadmin = false;
+    var notlogin = false;
+    var rol, nombre; 
+    if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "cliente") {
+      logincliente = true;
+      }
+    }
+    if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "colaborador") {
+      logincolaborador = true;
+      }
+    }
+    if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "admin") {
+      loginadmin = true;
+      }
+    }
+  // else {
+  //   logincliente = false;
+  //   logincolaborador = false;
+  // }
+    if(req.isAuthenticated() != true) {
+    notlogin = true;
+    }
+
     res.render("ordenServicio", {
-      
         usuario,
-   direcciones,
-      
+        direcciones,
+        logincliente, logincolaborador, loginadmin, notlogin, nombre
     });
 }
 
