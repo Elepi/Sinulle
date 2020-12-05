@@ -30,35 +30,108 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Home </a>
+        <a class="nav-link" href="/">Inicio </a>
       </li>
-       {{# if login }}
-      <li class="nav-item">
+       {{# if logincliente }}
+      {{!-- <li class="nav-item">
         <a class="nav-link" href="/crear-servicio">Servicio</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="/crear-orden">Solicitud</a>
-      </li>
+      </li> --}}
        <li class="dropdown nav-item">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
-              Mi perfil </a>
+              {{nombre}} </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-danger">
               <a href="/miperfil" class="dropdown-item">
-                Perfil
+               Mi Perfil
               </a>
               <a class="dropdown-item" href="/salir">
               Cerrar sesión
               </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/olvide-password">
+              Cambiar contraseña
+              </a>
             </div>
           </li>
-         {{ else }}
+      
+         {{!-- {{ else }}
+          <li class="nav-item">
+        <a class="nav-link" href="/iniciar-sesion">Iniciar Sesión</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/crear-cuenta">Registrarse</a>
+      </li> --}}
+       {{/if}}
+
+        {{# if logincolaborador }}
+      {{!-- <li class="nav-item">
+        <a class="nav-link" href="/crear-servicio">Servicio</a>
+      </li> --}}
+      <li class="nav-item">
+        <a class="nav-link " href="/subir-trabajos">Publicar trabajo</a>
+      </li>
+       <li class="dropdown nav-item">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+              {{nombre}} </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-danger">
+              <a href="/miperfil" class="dropdown-item">
+               Mi Perfil
+              </a>
+              <a class="dropdown-item" href="/salir">
+              Cerrar sesión
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/olvide-password">
+              Cambiar contraseña
+              </a>
+            </div>
+          </li>
+        {{/if}}
+
+          {{# if loginadmin }}
+        <li class="dropdown nav-item">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+              Administración </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-danger">
+              <a href="/crear-servicio" class="dropdown-item">
+                Servicios
+              </a>
+            </div>
+          </li>
+      
+      {{!-- <li class="nav-item">
+        <a class="nav-link " href="/crear-orden">Solicitud</a>
+      </li> --}}
+       <li class="dropdown nav-item">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+              {{nombre}} </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-danger">
+              <a href="/miperfil" class="dropdown-item">
+               Mi Perfil
+              </a>
+              <a class="dropdown-item" href="/salir">
+              Cerrar sesión
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/olvide-password">
+              Cambiar contraseña
+              </a>
+            </div>
+          </li>
+        {{/if}}
+
+         {{# if notlogin }}
           <li class="nav-item">
         <a class="nav-link" href="/iniciar-sesion">Iniciar Sesión</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="/crear-cuenta">Registrarse</a>
       </li>
-       {{/if}}
+      {{/if}}
+     
+
     </ul>
   </div>
 </nav>
