@@ -14,17 +14,7 @@ const router = express.Router();
 
 module.exports = () => {
   // Rutas disponibles y su tipo de peticion
-  router.get("/",homeController.mostrarServicios, (req, res, next) => {
-    var login = false;
-    if(req.isAuthenticated()){
-      login = true;
-    }
-    else {
-      login = false;
-    }
-    res.render("index", { login }
-    );
-  });
+  router.get("/",homeController.mostrarServicios);
 
 
 
@@ -79,7 +69,6 @@ router.get("/administrar", (req, res, next)=> {
 });
 
 
-// Rutas para servicioss
 
 
 //Rutas de perfil y direcciones de usuario
@@ -168,12 +157,15 @@ authController.verificarInicioSesion,
 ordenController.crearOrden);
 
 
-//rutas para trabajos de coloborador
+//rutas para trabajos de colaborador
 
 router.get("/subir-trabajos", 
 authController.verificarInicioSesion,
-
 trabajoController.formularioSubirTrabajo,
+);
+router.post("/subir-trabajos",
+trabajoController.subirImagen,
+trabajoController.crearTrabajo
 );
 
   return router;
