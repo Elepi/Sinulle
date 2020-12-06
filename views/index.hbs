@@ -49,27 +49,33 @@
 {{!-- Fin de categorias --}}
 {{!-- incio de grid --}}
 
-  <section class="grid ">
+ <section class="grid ">
   
 	  	<div class="contenedor-cards">     
  {{#each servicios}}
 		    <div class="contenedor-card-item">
 		      	<div class="contenedor-card-item-wrapper">
-		        	<img  class="card-img-top" src="{{imagen}}" alt="">
+		        	<a  href="#"> <img  class="card-img-top" src="{{imagen}}" alt=""></a>
+             
 		        	<div class="contenedor-info">
-		          		<div class="info">
-		            		<p class="titulo">{{nombre}}</p>
-		            
+		          		<div class="info col-md-12">
+                    <div class="row-10">
+                      <p class="titulo">{{nombre}}</p>
+                    </div>
+                     <div class="row-2">
+                         <a href="#" class=" icon-2x text-warning stretched-link ">Solicitar</a></span>
+
+                      </div>
+            
+		            	
+		             		            	
+                  
 		          		</div>
 
 		          		<div class="fondo"></div>
 		        	</div>
 		      	</div>
-            <footer class="blockquote-footer">
-        <small class="text-muted">
-         <a href="#" class="btn btn-dark">Ver más</a>
-        </small>
-      </footer>
+            
 		    </div>
         	 
 		    {{/each}}
