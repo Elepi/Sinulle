@@ -47,7 +47,7 @@ body{
 /* inicio de index */
 .card-img-top{
 border-color: #F88600;
-width: 200px;
+width: 250px;
 height: 300px;
 
 }
@@ -243,6 +243,15 @@ input {
     width: 768px;
     max-width: 100%;
     min-height: 480px;
+}
+.containerlist {
+    background-color: white;
+    border-radius: 3px;
+
+    width: 768px;
+    max-width: 100%;
+    min-height: 500px;
+    
 }
 
 .errores {
@@ -665,12 +674,14 @@ color : #FFFFFF;
     padding-right: 25px;
     padding-left: 25px;
     display: block;
+  
 }
 
 .contenedor-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    
 }
 
 .contenedor-cards .contenedor-card-item {
@@ -687,18 +698,22 @@ color : #FFFFFF;
 }
 
 .contenedor-cards .contenedor-card-item:hover {
-    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 30px rgba(31, 30, 34, 0.884);
     -webkit-transform: translateY(-10px);
     -ms-transform: translateY(-10px);
     -o-transform: translateY(-10px);
     transform: translateY(-10px);
+    
 }
 
 .contenedor-card-item-wrapper {
     overflow: hidden;
     position: relative !important;
     background: #070707;
-    border-radius: 7px;
+    border-radius: 5px;
+    border: 5px;
+    
+    
 }
 
 .contenedor-card-item img {
@@ -707,14 +722,15 @@ color : #FFFFFF;
     top: 0;
     -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    border-radius: 5px;
+    border-radius: 1px;
+    
 }
 
 .contenedor-card-item .contenedor-info {
     position: absolute;
     width: 100%;
-    height: 70px;
-    bottom: -70px;
+    height: 90px;
+    bottom: -90px;
     -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -735,17 +751,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     color: #fff;
     position: relative;
     z-index: 500;
-    padding: 20px 15px;
+    padding: 20px 30px;
 }
+
 
 .contenedor-card-item .contenedor-info .info .titulo {
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
 }
 
-.contenedor-card-item .contenedor-info .info .categoria {
+.contenedor-card-item .contenedor-info .info .solicitar {
     display: block;
     font-size: 10px;
+    
 }
 
 .contenedor-card-item:hover .contenedor-info {
@@ -808,4 +826,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
         width: 100%;
     }
 }
+
 
