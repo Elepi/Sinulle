@@ -97,6 +97,16 @@ exports.crearServicio = async (req, res, next) => {
 };
 
 
+exports.listarServicios = async (req, res, next) => {
+  // Obtener todos los servicios disponibles
+  const servicios = await Servicio.find().lean();
+
+  res.render("listar_servicios", { servicios });
+};
+
+
+
+
 
 
 
