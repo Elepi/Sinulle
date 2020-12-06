@@ -13,6 +13,8 @@ const trabajoSchema = new mongoose.Schema({
     fechaCreación: Date,
     imagenes: [{ type: String}],
 
+    descripcion: String,
+
 
     });
 

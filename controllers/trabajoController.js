@@ -39,8 +39,12 @@ exports.formularioSubirTrabajo =  async (req, res, next) => {
   if(req.isAuthenticated() != true) {
     notlogin = true;
   }
+
+  const usuario = req.user.nombre;
+
     res.render("subirTrabajo", {
         layout: "main",
+        usuario,
         logincliente, logincolaborador, loginadmin, notlogin, nombre
     });
 };
@@ -71,6 +75,7 @@ exports.crearTrabajo = async (req, res, next) => {
     try {
         //Agregar imagenes
         const imagen = [];
+        const {descripcion} = req.body;
 
       for(let x=0; x< req.files.length; x++){
         if(req.files.length > 0){
@@ -80,7 +85,9 @@ exports.crearTrabajo = async (req, res, next) => {
 
         //Crear el usuario
         await Trabajo.create({
-           imagenes: imagen
+          colaborador: req.user._id,
+           imagenes: imagen,
+           descripcion
         });
          // Mostrar un mensaje luego de registrarse existosamente
          messages.push({ message: "Publicación creada satisfactoriamente.", alertType: "success" });
