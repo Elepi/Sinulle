@@ -3,37 +3,68 @@
 {{> showMessages messages}}
 </div>
 
-<div class="contacto1">
-        <h3 class="titulo">Agrega imágenes de tus trabajos</h3>
-        <form class="tablef" method="POST" action="/subir-trabajos"  enctype="multipart/form-data" >
-        
-  
-          <div class="row avatar ">
-            <div class="col-md-5 col-sm-5">
+
+     
+{{!--------------------------------------------------------------------------}}
+   <div class="formulario contact">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="contact-info">
+				<img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
+				<h2>{{usuario}} </h2>
+				<h4> ¡Sube las imágenes de tu servicio! </h4>
+			</div>
+		</div>
+		
+		<div class="col-md-9">
+		 <form method="POST" action="/subir-trabajos"  enctype="multipart/form-data" >
+			<div class="contact-form"  >
+				<div class="form-group">
+				
+				 
+              <div class="form-group subirtrabajo ">
+            <div class="col-sm-9 ">
               
-              <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+              <div class="fileinput fileinput-new text-center " data-provides="fileinput">
                 <div class="fileinput-new thumbnail img-no-padding" style="max-width: 370px; max-height: 250px;">
                   
                 </div>
-                <div class="fileinput-preview fileinput-exists thumbnail img-no-padding"
+                <div class="fileinput-preview fileinput-exists thumbnail img-no-padding "
                   style="max-width: 370px; max-height: 250px;"></div>
                 <div>
                   <span class="btn btn-outline-default btn-round btn-file">
-                    <span class="fileinput-new">Seleccionar imágenes</span>
+                    <span class="fileinput-new">Selecciona las imagenes </span>
                     <input type="file" name="imagen" multiple></span>
                  
                 </div>
               </div>
- </div>
+ 
               </div>
-              
-             <p class="Labels">
-            
-            <br>
-            <br>
-            <button class="btn" type="submit">Agregar</button>
-          </p>
-  
-       </form>
-      </div>
-     
+              <br>
+				 
+				</div>
+
+
+           </div>
+          	
+        
+					
+				  
+		
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="comment">Descripción:</label>
+				  <div class="col-sm-10">
+					<textarea class="form-control" rows="5" placeholder="Escribe una descripcion de las imagenes que añadiras" id="descripcion" name="descripcion"></textarea>
+				  </div>
+				</div>
+				<div class="form-group">        
+				  <div class="col-sm-offset-2 col-sm-10"><br>
+					<button type="submit" class="btn2 btn-default">Enviar</button>
+							  </div>
+				</div>
+			</div>
+			</form>
+		</div>
+		
+	</div>
+</div>
