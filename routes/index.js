@@ -131,6 +131,14 @@ router.post("/crear-servicio",
   
 );
 
+router.get(
+  "/listar_servicios",
+  servicioController.listarServicios,
+
+  authController.verificarInicioSesion,
+  
+);
+
 //Rutas para orden de servicio
 router.get("/crear-orden",
 authController.verificarInicioSesion, 
