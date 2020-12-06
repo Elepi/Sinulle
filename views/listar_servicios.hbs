@@ -1,0 +1,48 @@
+<div class="container">
+    <br>
+    <div class="errores " id="errores">
+   
+{{> showMessages messages}}
+</div>
+<div id="scroll">
+ <div class="containerlist">
+
+  <h3><a class="btn btn-secondary" href="/crear-servicio"><i class="fa fa-plus"></i> Crear Nuevo</a> Lista Servicios</h3>
+<table class="table table-striped">
+    
+
+ 
+    <thead>
+        <tr>
+            <th>Servicio</th>
+            <th>Url de Imagen</th>
+           
+            <th></th>
+        </tr>
+    </thead>
+   
+    <tbody>
+        
+        {{#each servicios}}
+       
+        <tr>
+            <td>{{this.nombre}}</td>
+            <td>{{this.imagen}}</td>
+            <td>	<a> <img style="width: 120px;"  src="{{imagen}}" alt=""></a></td>
+            <td>
+                <a href="{{this._id}}"><i class="fa fa-pencil fa-lg" style="color: #F88600;" aria-hidden="true">
+
+                </i></a>
+                <a href="{{this._id}}" onclick="return confirm('Estas seguro de eliminar ?');">
+                <i class="fa fa-trash fa-lg" style="color: gray;" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        
+        {{/each}}
+       
+    </tbody>
+      
+</table>
+</div>
+ </div>
+</div>
