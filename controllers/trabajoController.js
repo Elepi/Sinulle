@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Trabajo = mongoose.model("Trabajos");
+const Usuario = mongoose.model("Usuarios");
 const { validationResult } = require("express-validator");
 const shortid = require("shortid");
 const multer = require("multer");
@@ -92,7 +93,7 @@ exports.crearTrabajo = async (req, res, next) => {
          // Mostrar un mensaje luego de registrarse existosamente
          messages.push({ message: "Publicación creada satisfactoriamente.", alertType: "success" });
          req.flash("messages", messages);
-         res.redirect("/subir-trabajos");
+         res.redirect("/mostrar-trabajos");
         } catch (error) {
             messages.push({
                 message: error,
@@ -191,3 +192,23 @@ exports.subirImagen = (req, res, next) => {
   
   // Función que sube el archivo
   const upload = multer(configuracionMulter).array("imagen");
+
+
+  //
+  exports.mostrarTrabajos = async (req, res, next) => {
+    const trabajos = await Trabajo.find().lean();
+    const email = req.user.email;
+    
+    const usuario = await Usuario.findOne({email}).lean();
+   // const nombre = usuario.nombre;
+
+    res.render("mostrarTrabajos", { 
+        layout: "main",
+      
+       trabajos,
+       usuario
+
+        
+        });
+};
+
