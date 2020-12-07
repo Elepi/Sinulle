@@ -540,7 +540,38 @@ input {
     .bs-example{
         margin: 20px;        
     }
-
+    
+    .descarga-aqui{
+      font-family: 'Oswald';
+      font-size: 45px;
+    
+    }
+    .separar{
+      background-color: #B55300;
+      padding-top: 1%;
+      padding-right: 47%;
+      padding-bottom: 0.2%;
+    }
+    .descarga {
+      min-height: 100vh;
+      font-family: Roboto, Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #242836;
+      padding: 20px;
+    }
+    .descarga .dribbble {
+      position: fixed;
+      display: block;
+      right: 20px;
+      bottom: 20px;
+    }
+    .descarga .dribbble img {
+      display: block;
+      height: 28px;
+    }
+    
 /* fin del manual */
 /* inicio del Footer */
 .footer{
