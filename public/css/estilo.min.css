@@ -21,12 +21,17 @@ body{
     background-color: black;
     font-size: 57px;
 }
+.servicios{
+  font-family: 'Oswald';
+  font-size: 57px;
+
+}
 .navbars{
-    font-family: 'Oswald';
-    font-size: 57px;
+
     background-color: #B55300;
     padding-top: 0.2%;
-    padding-left: 47%;
+    padding-left: 43%;
+  
     padding-bottom: 0.2%;
 }
 .fondo{
