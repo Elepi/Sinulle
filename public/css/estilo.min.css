@@ -536,7 +536,12 @@ input {
     }
 
     /* Fin Formulario Orden*/
+/* inicio del manual */
+    .bs-example{
+        margin: 20px;        
+    }
 
+/* fin del manual */
 /* inicio del Footer */
 .footer{
     padding-top: 1%;
