@@ -176,5 +176,12 @@ trabajoController.subirImagen,
 trabajoController.crearTrabajo
 );
 
+router.get("/mostrar-trabajos", 
+authController.verificarInicioSesion,
+trabajoController.mostrarTrabajos,
+);
+
   return router;
 };
+
+//
