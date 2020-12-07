@@ -539,11 +539,17 @@ input {
 
 /* inicio del Footer */
 .footer{
-    padding-top: 5%;
+    padding-top: 1%;
     padding-right: 5%;
     background-color: #393E46;
 }
 
+.img-footer{
+
+  padding-left: 8%;
+width: 293px;
+height: 260px;
+}
         .tituloColumnaFooter {
             padding-top: 5%;
             font-family: "Roboto",sans-serif;
@@ -563,6 +569,7 @@ input {
         }
 
 /* Fin del Footer */
+
 .my-custom-scrollbar {
     position: relative;
     height: 200px;
