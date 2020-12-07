@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+ 
+  <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+
+<body>
+<!-- partial:index.partial.html -->
+<div class="todo">
+<br>
+     {{#each trabajos as |item i|}}
+     <br>
+
+<div class="blog-slider">
+  <div class="blog-slider__wrp swiper-wrapper">
+
+    <div class="blog-slider__item swiper-slide">
+      
+      <div class="blog-slider__img">
+        
+        <img src="../uploads/trabajos/{{item.imagenes.[0]}}" alt="">
+        
+      </div>
+      
+      <div class="blog-slider__content">
+        
+        <div class="blog-slider__title">{{usuario.nombre}}</div>
+        
+        <div class="blog-slider__text">{{descripcion}} </div>
+        <span class="blog-slider__code">{{fechaCreación}}</span>
+        <a href="#" class="blog-slider__button">Solicitar</a>
+      </div>
+    </div>
+
+    <div class="blog-slider__item swiper-slide">
+      
+      <div class="blog-slider__img">
+        
+        <img src="../uploads/trabajos/{{item.imagenes.[1]}}" alt="">
+        
+      </div>
+      
+      <div class="blog-slider__content">
+        
+        <div class="blog-slider__title">{{usuario.nombre}}</div>
+        
+        <div class="blog-slider__text">{{descripcion}} </div>
+        <span class="blog-slider__code">{{fechaCreación}}</span>
+        <a href="#" class="blog-slider__button">Solicitar</a>
+      </div>
+    </div>
+    
+    
+  </div>
+  <div class="blog-slider__pagination"></div>
+</div>
+{{/each}}
+</div>
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
+
+<script>
+var swiper = new Swiper('.blog-slider', {
+      spaceBetween: 30,
+      effect: 'fade',
+      loop: true,
+      mousewheel: {
+        invert: false,
+      },
+      // autoHeight: true,
+      pagination: {
+        el: '.blog-slider__pagination',
+        clickable: true,
+      }
+    });
+
+
+
+</script>
