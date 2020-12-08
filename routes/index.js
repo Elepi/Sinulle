@@ -140,9 +140,10 @@ router.get(
 );
 
 //Rutas para orden de servicio
-router.get("/crear-orden",
+router.get("/crear-orden/:url",
 authController.verificarInicioSesion, 
 ordenController.formularioCrearOrden,
+
 );
 
 router.post("/crear-orden",
