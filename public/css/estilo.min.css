@@ -918,13 +918,13 @@ padding-left: 4%;
 .blog-slider {
   width: 95%;
   position: relative;
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
   background: #393E46;
   box-shadow: 7px 7px 7px #F88600;
   padding-left: 4px;
   border-radius: 25px;
-  height: 400px;
+  height: 320px;
   transition: all .3s;
 }
 @media screen and (max-width: 992px) {
@@ -1272,4 +1272,9 @@ padding-left: 4%;
     -webkit-transform: none;
             transform: none;
   }
+}
+.textoC{
+  color:white;
+  padding-left: 10%;
+  
 }
