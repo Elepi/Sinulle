@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 const Orden = mongoose.model("Ordenes");
+const Servicio = mongoose.model("Servicio");
 const { validationResult } = require("express-validator");
 
-exports.formularioCrearOrden =  (req, res, next) => {
+exports.formularioCrearOrden =  async(req, res, next) => {
     const usuario = req.user.nombre;
     const direcciones= req.user.direcciones;
     //Obtener el rol del usuario loggeado
@@ -40,7 +41,10 @@ exports.formularioCrearOrden =  (req, res, next) => {
     notlogin = true;
     }
 
+ const servicio = await Servicio.findOne({ url: req.params.url }).lean();
+
     res.render("ordenServicio", {
+      servicio,
         usuario,
         direcciones,
         logincliente, logincolaborador, loginadmin, notlogin, nombre
