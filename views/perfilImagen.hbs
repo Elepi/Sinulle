@@ -1,3 +1,7 @@
+<head>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/css/jasny-bootstrap.min.css">
+</head>
+
 <div class="errores " id="errores">
    
 {{> showMessages messages}}
@@ -6,9 +10,7 @@
 <div class="contacto1">
         <h3 class="titulo">Imagen</h3>
         <form class="tablef" method="POST" action="/miperfil-imagen"  enctype="multipart/form-data" >
-        
-  
-          <div class="row avatar ">
+        <div class="row avatar ">
             <div class="col-md-5 col-sm-5">
               
               <div class="fileinput fileinput-new text-center" data-provides="fileinput">
@@ -18,14 +20,21 @@
                 <div class="fileinput-preview fileinput-exists thumbnail img-no-padding"
                   style="max-width: 370px; max-height: 250px;"></div>
                 <div>
-                  <span class="btn btn-outline-default btn-round btn-file">
-                    <span class="fileinput-new">Selecciona una imagen</span>
-                    <input type="file" name="gravatar"></span>
+                  <span class="btn btn-default btn-file">
+                  <span class="fileinput-new">Seleccione la imagen</span>
+                  <span class="fileinput-exists">Cambiar</span>
+                     <input type="file" name="gravatar" >
+                  </span>
+                  <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remover</a>
+ 
                  
                 </div>
               </div>
  </div>
               </div>
+
+
+              
              <p class="Labels">
             
             <br>
@@ -35,4 +44,11 @@
   
        </form>
       </div>
-     
+   
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/css/jasny-bootstrap.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/js/jasny-bootstrap.min.js"></script>
+
+ <script src="/js/jasny-bootstrap.min.js"></script>
