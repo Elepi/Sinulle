@@ -196,17 +196,54 @@ exports.subirImagen = (req, res, next) => {
 
   //
   exports.mostrarTrabajos = async (req, res, next) => {
-    const trabajos = await Trabajo.find().lean();
-    const email = req.user.email;
-    
-    const usuario = await Usuario.findOne({email}).lean();
-   // const nombre = usuario.nombre;
+   //obtener roles
+   var logincliente = false;
+   var logincolaborador = false;
+   var loginadmin = false;
+   var notlogin = false;
+   var rol, nombre; 
+   if(req.isAuthenticated()) {
+     rol = req.user.tipoUsuario;
+     nombre = req.user.nombre;
+     if(rol == "cliente") {
+       logincliente = true;
+     }
+   }
+   if(req.isAuthenticated()) {
+     rol = req.user.tipoUsuario;
+     nombre = req.user.nombre;
+     if(rol == "colaborador") {
+       logincolaborador = true;
+     }
+   }
+   if(req.isAuthenticated()) {
+     rol = req.user.tipoUsuario;
+     nombre = req.user.nombre;
+     if(rol == "admin") {
+       loginadmin = true;
+     }
+   }
+   // else {
+   //   logincliente = false;
+   //   logincolaborador = false;
+   // }
+   if(req.isAuthenticated() != true) {
+     notlogin = true;
+   }
+ 
 
+
+
+
+    const trabajos = await Trabajo.find().populate("colaborador").lean();
+ 
+//console.log(trabajos);
     res.render("mostrarTrabajos", { 
         layout: "main",
       
-       trabajos,
-       usuario
+       trabajos, 
+        logincliente, logincolaborador, loginadmin, notlogin, nombre
+    
 
         
         });
