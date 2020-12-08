@@ -12,10 +12,14 @@
 
 
 <body>
+  <div class="textoC">
+ <h4 > Descubre los trabajos de nuestros colaboradores </h4>
+</div>
 <!-- partial:index.partial.html -->
 <div class="todo">
+   
 <br>
-     {{#each trabajos as |item i|}}
+   {{#each trabajos}}
      <br>
 
 <div class="blog-slider">
@@ -25,16 +29,16 @@
       
       <div class="blog-slider__img">
         
-        <img src="../uploads/trabajos/{{item.imagenes.[0]}}" alt="">
+        <img src="../uploads/trabajos/{{imagenes.[0]}}" alt="">
         
       </div>
       
       <div class="blog-slider__content">
         
-        <div class="blog-slider__title">{{usuario.nombre}}</div>
+        <div class="blog-slider__title">Autor: {{colaborador.nombre}}</div>
         
-        <div class="blog-slider__text">{{descripcion}} </div>
-        <span class="blog-slider__code">{{fechaCreación}}</span>
+        <div class="blog-slider__text">Descripción: <br>{{descripcion}} </div>
+       
         <a href="#" class="blog-slider__button">Solicitar</a>
       </div>
     </div>
@@ -43,16 +47,16 @@
       
       <div class="blog-slider__img">
         
-        <img src="../uploads/trabajos/{{item.imagenes.[1]}}" alt="">
+        <img src="../uploads/trabajos/{{imagenes.[1]}}" alt="">
         
       </div>
       
       <div class="blog-slider__content">
         
-        <div class="blog-slider__title">{{usuario.nombre}}</div>
+        <div class="blog-slider__title">Autor: {{colaborador.nombre}}</div>
         
-        <div class="blog-slider__text">{{descripcion}} </div>
-        <span class="blog-slider__code">{{fechaCreación}}</span>
+        <div class="blog-slider__text">Descripción <br>{{descripcion}} </div>
+        
         <a href="#" class="blog-slider__button">Solicitar</a>
       </div>
     </div>
