@@ -257,32 +257,105 @@
 </div><!--/col-9-->
 
     </div><!--/row-->
-
-<br>
-
-
-<div class="row">
+    <div class="row" >
    {{#each direcciones as |item i| }}
-   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
           <div class="thumbnail ">
+<div class="cards">
 
-
-<div class=" tablef" >
-  <img class="card-img-top img-thumbnail" src="https://i0.wp.com/mundowin.com/wp-content/uploads/2019/06/Your-Location-has-Recently-Been-Accessed-windows-10.png?w=832&ssl=1" alt="Card image cap">
- 
-  <div class="card-body">
-    <h5 class="card-title">{{this}}</h5>
-    {{!-- <p class="card-text">{{this}}.</p> --}}
-    <a href="#" class="btn btn-primary">Eliminar</a>
-</div>
-
+  <div class="card">
+    <div class="card__image-holder">
+      <img class="card__image" src="https://i0.wp.com/mundowin.com/wp-content/uploads/2019/06/Your-Location-has-Recently-Been-Accessed-windows-10.png?w=832&ssl=1" alt="wave" />
+    </div>
+    <div class="card-title">
+      <a href="#" class="toggle-info btn">
+        <span class="left"></span>
+        <span class="right"></span>
+      </a>
+      <h2>
+          Direccion
+          {{!-- <small>Image from unsplash.com</small> --}}
+      </h2>
+    </div>
+    <div class="card-flap flap1">
+      <div class="card-description">
+        {{this}}
+      </div>
+      <div class="card-flap flap2">
+        <div class="card-actions">
+          <a href="#" class="btn">Eliminar</a>
+        </div>
+      </div>
+    </div>
   </div>
-  <br>
-
+  
 </div>
 </div>
-
+</div>
   {{/each}}
 
+
+
+
 </div>
+
 </div>
+
+
+<!-- partial:index.partial.html -->
+
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script><script  src="./script.js"></script>
+
+
+
+<script>
+
+
+  $(document).ready(function(){
+  var zindex = 10;
+  
+  $("div.card").click(function(e){
+    e.preventDefault();
+
+    var isShowing = false;
+
+    if ($(this).hasClass("show")) {
+      isShowing = true
+    }
+
+    if ($("div.cards").hasClass("showing")) {
+      // a card is already in view
+      $("div.card.show")
+        .removeClass("show");
+
+      if (isShowing) {
+        // this card was showing - reset the grid
+        $("div.cards")
+          .removeClass("showing");
+      } else {
+        // this card isn't showing - get in with it
+        $(this)
+          .css({zIndex: zindex})
+          .addClass("show");
+
+      }
+
+      zindex++;
+
+    } else {
+      // no cards in view
+      $("div.cards")
+        .addClass("showing");
+      $(this)
+        .css({zIndex:zindex})
+        .addClass("show");
+
+      zindex++;
+    }
+    
+  });
+});
+</script>
