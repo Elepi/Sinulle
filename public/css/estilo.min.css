@@ -21,12 +21,17 @@ body{
     background-color: black;
     font-size: 57px;
 }
+.servicios{
+  font-family: 'Oswald';
+  font-size: 57px;
+
+}
 .navbars{
-    font-family: 'Oswald';
-    font-size: 57px;
+
     background-color: #B55300;
     padding-top: 0.2%;
-    padding-left: 47%;
+    padding-left: 43%;
+  
     padding-bottom: 0.2%;
 }
 .fondo{
@@ -531,14 +536,56 @@ input {
     }
 
     /* Fin Formulario Orden*/
-
+/* inicio del manual */
+    .bs-example{
+        margin: 20px;        
+    }
+    
+    .descarga-aqui{
+      font-family: 'Oswald';
+      font-size: 45px;
+    
+    }
+    .separar{
+      background-color: #B55300;
+      padding-top: 1%;
+      padding-right: 47%;
+      padding-bottom: 0.2%;
+    }
+    .descarga {
+      min-height: 100vh;
+      font-family: Roboto, Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #242836;
+      padding: 20px;
+    }
+    .descarga .dribbble {
+      position: fixed;
+      display: block;
+      right: 20px;
+      bottom: 20px;
+    }
+    .descarga .dribbble img {
+      display: block;
+      height: 28px;
+    }
+    
+/* fin del manual */
 /* inicio del Footer */
 .footer{
-    padding-top: 5%;
+    padding-top: 1%;
     padding-right: 5%;
     background-color: #393E46;
 }
 
+.img-footer{
+
+  padding-left: 8%;
+width: 293px;
+height: 260px;
+}
         .tituloColumnaFooter {
             padding-top: 5%;
             font-family: "Roboto",sans-serif;
@@ -558,6 +605,7 @@ input {
         }
 
 /* Fin del Footer */
+
 .my-custom-scrollbar {
     position: relative;
     height: 200px;
