@@ -1,4 +1,3 @@
-
 <div class="errores " id="errores">
 {{> showMessages messages}}
 </div>
@@ -10,38 +9,40 @@
 			<div class="contact-info" >
 				<img src="https://img.icons8.com/bubbles/100/000000/image.png"/ style="padding-left: 15%;">
 
-				<h2>{{usuario}} </h2>
-				<br>
-				<h4> &nbsp; Ingresa un servicio </h4>
+				
+				
+				<h4> Modifica un servicio </h4>
 			</div>
 		</div>
 		
 		<div class="col-md-9">
-		 <form method="POST" action="/crear-servicio">
+		 <form method="POST" action="/modificar-servicio">
 			<div class="contact-form"  >
 
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="comment">Imagen:</label>
 				  <div class="col-sm-10">
-					<input  type="text"  class="form-control border-input material-icons" placeholder="Url de la imagen del servicio" name="imagen" >
+					<input  type="text"  class="form-control border-input material-icons" placeholder="Url de la imagen del servicio" name="imagen" value="{{servicio.imagen}}" >
 				  </div>
 				</div>
           	
+        
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="comment">Descripción:</label>
 				  <div class="col-sm-10">
-					<input  type="text"  class="form-control border-input" placeholder="Nombre del servicio" name="nombre">
+					<input  type="text"  class="form-control border-input" placeholder="Nombre del servicio" name="nombre" value="{{servicio.nombre}}">
+					<input  type="text"  class="form-control border-input" name="id" value="{{servicio._id}}" hidden>
 				  </div>
 				</div>
 
-        	<div class="form-group">
+                <div class="form-group">
 				  <label class="control-label col-sm-2" for="comment">Precio:</label>
 				  <div class="col-sm-10">
-					<input  type="text"  class="form-control border-input" placeholder="Precio del servicio" name="precio">
+					<input  type="text"  class="form-control border-input" placeholder="Precio del servicio" name="precio" value="{{servicio.precio}}">
 				  </div>
 				</div>
 
-				 <div>
+				 <div   >
               <button class="btn " type="submit">Guardar</button>
               <a class="btn btn-primary" href="/listar_servicios"><i class="fa fa-list-alt"></i> Ver Todos</a>
             </div> 

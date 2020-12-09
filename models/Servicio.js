@@ -21,6 +21,7 @@ const servicioSchema = new mongoose.Schema({
     type: String,
     lowercase: true,
   },
+  precio: Number,
 });
 // Hooks para generar la URL del servicio
 servicioSchema.pre("save", function (next) {

@@ -53,7 +53,12 @@
 				  <label class="control-label col-sm-2" for="servicio">Servicio:</label>
 				  <div class="col-sm-10">          
 				<input type="text" class="form-control" readonly="readonly" 
-        style="color: rgb(42, 42, 42); background-color:rgb(236, 163, 45);"  id="servicio" value="{{servicio.nombre}}" name="servicio" ">
+        style="color: rgb(42, 42, 42); background-color:rgb(236, 163, 45);"  id="servicio" value="{{servicio.nombre}}" name="servicio">
+				  </div>
+           <label class="control-label col-sm-2" for="servicio">Precio base:</label>
+          <div class="col-sm-10">          
+				<input type="text" class="form-control" readonly="readonly" 
+        style="color: rgb(42, 42, 42); background-color:rgb(236, 163, 45);"  id="servicio" value="L {{servicio.precio}}" name="precio">
 				  </div>
 				  <label class="control-label col-sm-2" for="fechaSolicitud">Fecha</label>
 				  <div class="col-sm-10">          
@@ -67,7 +72,7 @@
 				   <div class="direccion">
 				  <div class="row"> 
 					
-				  <div class="col-sm-8">          
+				  <div class="col-sm-10 input-group">          
 					<select class ="form-control" name="direccion" id="direccion">
 						
 						<option > Selecciona una dirección </option>
@@ -75,11 +80,14 @@
                                   <option value="{{this}}">{{this}}</option>
                          {{/each}}
 					</select>
+          <div class="input-group-append">
+    <a href="/miperfil" class="btn btn-outline-primary" type="button">+</a>
+  </div>
 				
 				  </div>
-				<div class="col-sm-4" >
-					 <a href="/miperfil"  class="btn2 btn-default">Más direcciones</a>
-					 </div>
+				{{!-- <div class="col-sm-4" >
+					 <a href="/miperfil"  class="btn btn-primary">Más direcciones</a>
+					 </div> --}}
 				 
 					 </div>
 					 </div> 
@@ -94,7 +102,7 @@
 				<div class="form-group">        
 				  <div class="col-sm-offset-2 col-sm-10"><br>
 					
-	<button type="submit" class="btn2 btn-default">Enviar</button>
+	<button type="submit" class="btn btn-primary">Solicitar</button>
 
 							  </div>
 				</div>

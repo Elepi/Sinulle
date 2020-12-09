@@ -65,14 +65,20 @@
                       <div class="form-group">
                           <div class="col-xs-6">
                               <label for="phone"><h4> <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHBhdGggZD0ibTQwNiAzMWgtNjAtNjBjLTU3Ljg5MSAwLTEwNiA0Ny4xMDktMTA2IDEwNSAwIDUyLjgwOCA0MC4xODUgOTYuNjM2IDkxIDEwMy45MzF2NDYuMDY5YzAgNi4wNjQgMy42NDcgMTEuNTQzIDkuMjU4IDEzLjg1NyA1LjUzMyAyLjMwOSAxMi4wMjMgMS4wNzEgMTYuMzQ4LTMuMjUybDQ5LjM5NC00OS4zOTQgNi4yMTEtNi4yMTFoNTMuNzg5YzU3Ljg5MSAwIDEwNi00Ny4xMDkgMTA2LTEwNXMtNDguMTA5LTEwNS0xMDYtMTA1eiIgZmlsbD0iI2ZlZDg0MyIvPjxwYXRoIGQ9Im00MDYgMjQxYzU3Ljg5MSAwIDEwNi00Ny4xMDkgMTA2LTEwNXMtNDguMTA5LTEwNS0xMDYtMTA1aC02MHYyMTYuMjExbDYuMjExLTYuMjExeiIgZmlsbD0iI2ZhYmUyYyIvPjxwYXRoIGQ9Im0zODIgMzc2djYwYzAgMjYuMS0yMS4zMSA0NS00NC43OSA0NS04Ni40MSAwLTE3MC43MS00MC44NS0yMzMuNDEtMTAzLjNzLTEwMy44LTE0Ni41LTEwMy44LTIzMi45MWMwLTI0LjgyIDIwLjE5LTQ0Ljc5IDQ1LTQ0Ljc5aDYwYzYuNDYgMCAxMi4xOSA0LjEzIDE0LjIyIDEwLjI1bDMwIDg5Ljc5YzEuNDcgNC40LjgyIDkuMjItMS43NCAxMy4wN2wtMjUuNDQgMzguMTdjOS42NCAyMC4yMiAyNi43IDQyLjMyIDQ2LjQgNjEuNzggMTkuNzEgMTkuNDUgNDIuMDYgMzYuMjYgNjIuMjggNDUuOWwzOC4xNy0yNS40NGMzLjg3LTIuNTUgOC42Ny0zLjIyIDEzLjA3LTEuNzRsOTAgMzBjNi4xMiAyLjAzIDEwLjA0IDcuNzYgMTAuMDQgMTQuMjJ6IiBmaWxsPSIjZmY2NDFhIi8+PHBhdGggZD0ibTM4MiAzNzZ2NjBjMCAyNi4xLTIxLjMxIDQ1LTQ0Ljc5IDQ1LTg2LjQxIDAtMTcwLjcxLTQwLjg1LTIzMy40MS0xMDMuM2w2NC42NC02NC42NGMxOS43MSAxOS40NSA0Mi4wNiAzNi4yNiA2Mi4yOCA0NS45bDM4LjE3LTI1LjQ0YzMuODctMi41NSA4LjY3LTMuMjIgMTMuMDctMS43NGw5MCAzMGM2LjEyIDIuMDMgMTAuMDQgNy43NiAxMC4wNCAxNC4yMnoiIGZpbGw9IiNmMDM4MDAiLz48Y2lyY2xlIGN4PSIyODUuOTk5IiBjeT0iMTM1Ljk5OSIgZmlsbD0iIzYxM2Q1YyIgcj0iMTUiLz48Y2lyY2xlIGN4PSIzNDYiIGN5PSIxMzUuOTk4IiBmaWxsPSIjNjEzZDVjIiByPSIxNSIvPjxnIGZpbGw9IiM0YjI3NDYiPjxwYXRoIGQ9Im0zNjEgMTM1Ljk5OGMwLTguMjg0LTYuNzE2LTE1LTE1LTE1djMwYzguMjg0IDAgMTUtNi43MTYgMTUtMTV6Ii8+PGNpcmNsZSBjeD0iNDA1Ljk5OSIgY3k9IjEzNS45OTkiIHI9IjE1Ii8+PC9nPjwvZz48L3N2Zz4=" 
-                              height="25" width="25"/> Teléfono: 5555-5555</h4></label>
+                              height="25" width="25"/> Teléfono: {{telefonoFijo}}</h4></label>
                           </div>
                       </div>
           
                       <div class="form-group">
                           <div class="col-xs-6">
                              <label for="mobile"><h4><img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDEyOCAxMjgiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PGc+PHJlY3QgZmlsbD0iI2Q4NTEzNCIgaGVpZ2h0PSIxMTUiIHJ4PSI2IiB3aWR0aD0iNzAuNDc0IiB4PSIyOC43NjMiIHk9IjYuNSIvPjxwYXRoIGQ9Im0yMS41OTYgMjYuMTY3aDg0LjgwOHY3MC40NzRoLTg0LjgwOHoiIGZpbGw9IiNmMGYwZmIiIHRyYW5zZm9ybT0ibWF0cml4KDAgMSAtMSAwIDEyNS40MDQgLTIuNTk2KSIvPjxjaXJjbGUgY3g9IjY0IiBjeT0iMTEyLjY1NCIgZmlsbD0iI2I3NDUyYyIgcj0iMyIvPjwvZz48ZyBmaWxsPSIjMGYxMzM2Ij48cGF0aCBkPSJtOTMuMjM3IDQuNzVoLTU4LjQ3NGE3Ljc1OSA3Ljc1OSAwIDAgMCAtNy43NSA3Ljc1djEwM2E3Ljc1OSA3Ljc1OSAwIDAgMCA3Ljc1IDcuNzVoNTguNDc0YTcuNzU5IDcuNzU5IDAgMCAwIDcuNzUtNy43NXYtNjkuNzM0YTEuNzUgMS43NSAwIDEgMCAtMy41IDB2NTYuMjkyaC01OS4zMmExLjc1IDEuNzUgMCAwIDAgMCAzLjVoNTkuMzJ2OS45NDJhNC4yNTUgNC4yNTUgMCAwIDEgLTQuMjUgNC4yNWgtNTguNDc0YTQuMjU1IDQuMjU1IDAgMCAxIC00LjI1LTQuMjV2LTk0Ljc1aDY2Ljk3NHY0Ljg3NWExLjc1IDEuNzUgMCAwIDAgMy41IDB2LTEzLjEyNWE3Ljc1OSA3Ljc1OSAwIDAgMCAtNy43NS03Ljc1em0tNjIuNzI0IDEyLjV2LTQuNzVhNC4yNTUgNC4yNTUgMCAwIDEgNC4yNS00LjI1aDU4LjQ3NGE0LjI1NSA0LjI1NSAwIDAgMSA0LjI1IDQuMjV2NC43NXoiLz48cGF0aCBkPSJtOTkuMjM3IDMxLjUxNWExLjc1IDEuNzUgMCAwIDAgLTEuNzUgMS43NXY0LjY3M2ExLjc1IDEuNzUgMCAxIDAgMy41IDB2LTQuNjczYTEuNzQ5IDEuNzQ5IDAgMCAwIC0xLjc1LTEuNzV6Ii8+PHBhdGggZD0ibTMzLjAxMyAzNHY5Ljg3NWExLjc1IDEuNzUgMCAwIDAgMy41IDB2LTkuODc1YTEuNzUgMS43NSAwIDAgMCAtMy41IDB6Ii8+PHBhdGggZD0ibTU5LjkwNiA0Ni4yNTVhMS43NTEgMS43NTEgMCAwIDAgLTIuMzYuNzQ4bC0xNC4xIDI3LjE5YTEuNzUxIDEuNzUxIDAgMSAwIDMuMTA4IDEuNjEybDE0LjEtMjcuMTlhMS43NTEgMS43NTEgMCAwIDAgLS43NDgtMi4zNnoiLz48cGF0aCBkPSJtNTMuOTQ0IDgwLjc5MWExLjc0OCAxLjc0OCAwIDAgMCAyLjM1OS0uNzQ4bDE4LjQ5Ny0zNS42NjdhMS43NDkgMS43NDkgMCAxIDAgLTMuMS0xLjYxMWwtMTguNSAzNS42NjdhMS43NDkgMS43NDkgMCAwIDAgLjc0NCAyLjM1OXoiLz48cGF0aCBkPSJtNjguMDk0IDc2LjU1M2ExLjc0OSAxLjc0OSAwIDAgMCAyLjM2LS43NDhsMTQuMS0yNy4xOWExLjc1MSAxLjc1MSAwIDEgMCAtMy4xMDgtMS42MTVsLTE0LjEgMjcuMTlhMS43NTEgMS43NTEgMCAwIDAgLjc0OCAyLjM2M3oiLz48cGF0aCBkPSJtNjguNzUgMTEyLjY1NGE0Ljc1IDQuNzUgMCAxIDAgLTQuNzUgNC43NDYgNC43NTYgNC43NTYgMCAwIDAgNC43NS00Ljc0NnptLTYgMGExLjI1IDEuMjUgMCAxIDEgMS4yNSAxLjI0NiAxLjI1MSAxLjI1MSAwIDAgMSAtMS4yNS0xLjI0NnoiLz48cGF0aCBkPSJtNjggMTFoLTEyYTEuNzUgMS43NSAwIDAgMCAwIDMuNWgxMmExLjc1IDEuNzUgMCAwIDAgMC0zLjV6Ii8+PC9nPjwvZz48L3N2Zz4=" 
-                            height="25" width="25" /> Celular: 5555-55555</h4></label>
+                            height="25" width="25" /> Celular: {{telefonoCelular}}</h4></label>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMjEuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CjxnPgoJPHBhdGggc3R5bGU9ImZpbGw6I0Q4RDVFRDsiIGQ9Ik00ODUuNSw1MTJoLTQwMGMtMi4yMDksMC00LTEuNzkxLTQtNFY0YzAtMi4yMDksMS43OTEtNCw0LTRoNDAwYzIuMjA5LDAsNCwxLjc5MSw0LDR2NTA0ICAgQzQ4OS41LDUxMC4yMDksNDg3LjcwOSw1MTIsNDg1LjUsNTEyeiIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0JFQkFERTsiIGQ9Ik00NTguNTkxLDB2NTEySDQ4NS41YzIuMjA5LDAsNC0xLjc5MSw0LTRWNGMwLTIuMjA5LTEuNzkxLTQtNC00SDQ1OC41OTF6Ii8+Cgk8Zz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojNDg0QjYzOyIgZD0iTTE2Ny41NzYsMzA4LjUxN2gyMjYuNjRjNC4xNDMsMCw3LjUtMy4zNTcsNy41LTcuNXMtMy4zNTctNy41LTcuNS03LjVoLTIyNi42NCAgICBjLTQuMTQzLDAtNy41LDMuMzU3LTcuNSw3LjVTMTYzLjQzNCwzMDguNTE3LDE2Ny41NzYsMzA4LjUxN3oiLz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojNDg0QjYzOyIgZD0iTTM5NC4yMTYsNDQ3LjA2M2gtMjI2LjY0Yy00LjE0MywwLTcuNSwzLjM1Ny03LjUsNy41czMuMzU3LDcuNSw3LjUsNy41aDIyNi42NCAgICBjNC4xNDMsMCw3LjUtMy4zNTcsNy41LTcuNVMzOTguMzU4LDQ0Ny4wNjMsMzk0LjIxNiw0NDcuMDYzeiIvPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiM0ODRCNjM7IiBkPSJNMzk0LjIxNiwzMjcuODU1aC0yMjYuNjRjLTQuMTQzLDAtNy41LDMuMzU3LTcuNSw3LjVzMy4zNTcsNy41LDcuNSw3LjVoMjI2LjY0ICAgIGM0LjE0MywwLDcuNS0zLjM1Nyw3LjUtNy41UzM5OC4zNTgsMzI3Ljg1NSwzOTQuMjE2LDMyNy44NTV6Ii8+CgkJPHBhdGggc3R5bGU9ImZpbGw6IzQ4NEI2MzsiIGQ9Ik0zOTQuMjE2LDM2Mi4xOTVoLTIyNi42NGMtNC4xNDMsMC03LjUsMy4zNTctNy41LDcuNXMzLjM1Nyw3LjUsNy41LDcuNWgyMjYuNjQgICAgYzQuMTQzLDAsNy41LTMuMzU3LDcuNS03LjVTMzk4LjM1OCwzNjIuMTk1LDM5NC4yMTYsMzYyLjE5NXoiLz4KCQk8cGF0aCBzdHlsZT0iZmlsbDojNDg0QjYzOyIgZD0iTTE2Ny41NzYsNDExLjUzNGg1Ny43NzJjNC4xNDMsMCw3LjUtMy4zNTcsNy41LTcuNXMtMy4zNTctNy41LTcuNS03LjVoLTU3Ljc3MiAgICBjLTQuMTQzLDAtNy41LDMuMzU3LTcuNSw3LjVTMTYzLjQzNCw0MTEuNTM0LDE2Ny41NzYsNDExLjUzNHoiLz4KCTwvZz4KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRjJDNUM7IiBkPSJNMTExLjM0NSw5Mi4wNDl2ODAuNTEzYzAsMS40NzgtMS43MTcsMi4zODgtMy4wNiwxLjYyMWwtMjQuNzQtMTQuMTA5ICAgYy0wLjY0Mi0wLjM2Ni0xLjQ0Ny0wLjM2Ni0yLjA4OSwwbC0yNC43NCwxNC4xMDljLTEuMzQzLDAuNzY2LTMuMDYtMC4xNDQtMy4wNi0xLjYyMVY5Mi4wNDlIMTExLjM0NXoiLz4KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRkQ2NTk7IiBkPSJNMTQyLjUsNjBjMCw1LjE1Ny01LjM5Niw5LjUzNi02LjY2OCwxNC4yOTJjLTEuMzE1LDQuOTIxLDEuMTMsMTEuNDA1LTEuMzYzLDE1LjcxMyAgIGMtMi41MjksNC4zNzEtOS4zOSw1LjQ3OS0xMi45MzcsOS4wMjdjLTMuNTQ3LDMuNTQ3LTQuNjU2LDEwLjQwOC05LjAyNywxMi45MzdjLTQuMzA5LDIuNDkzLTEwLjc5MiwwLjA0OC0xNS43MTMsMS4zNjMgICBDOTIuMDM2LDExNC42MDQsODcuNjU3LDEyMCw4Mi41LDEyMGMtNS4xNTcsMC05LjUzNi01LjM5Ni0xNC4yOTItNi42NjhjLTQuOTIxLTEuMzE1LTExLjQwNSwxLjEzLTE1LjcxMy0xLjM2MyAgIGMtNC4zNzEtMi41MjktNS40NzktOS4zOS05LjAyNy0xMi45MzdjLTMuNTQ3LTMuNTQ3LTEwLjQwOC00LjY1Ni0xMi45MzctOS4wMjdjLTIuNDkzLTQuMzA5LTAuMDQ4LTEwLjc5Mi0xLjM2My0xNS43MTMgICBDMjcuODk2LDY5LjUzNiwyMi41LDY1LjE1NywyMi41LDYwYzAtNS4xNTcsNS4zOTYtOS41MzYsNi42NjgtMTQuMjkyYzEuMzE1LTQuOTIxLTEuMTMtMTEuNDA1LDEuMzYzLTE1LjcxMyAgIGMyLjUyOS00LjM3MSw5LjM5LTUuNDc5LDEyLjkzNy05LjAyN2MzLjU0Ny0zLjU0Nyw0LjY1Ni0xMC40MDgsOS4wMjctMTIuOTM3YzQuMzA5LTIuNDkzLDEwLjc5Mi0wLjA0OCwxNS43MTMtMS4zNjMgICBDNzIuOTY0LDUuMzk2LDc3LjM0MywwLDgyLjUsMGM1LjE1NywwLDkuNTM2LDUuMzk2LDE0LjI5Miw2LjY2OGM0LjkyMSwxLjMxNSwxMS40MDUtMS4xMywxNS43MTMsMS4zNjMgICBjNC4zNzEsMi41MjksNS40NzksOS4zOSw5LjAyNywxMi45MzdjMy41NDcsMy41NDcsMTAuNDA4LDQuNjU2LDEyLjkzNyw5LjAyN2MyLjQ5Myw0LjMwOSwwLjA0OCwxMC43OTIsMS4zNjMsMTUuNzEzICAgQzEzNy4xMDQsNTAuNDY0LDE0Mi41LDU0Ljg0MywxNDIuNSw2MHoiLz4KCTxnPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiM0ODRCNjM7IiBkPSJNNDEyLjA5NiwyNDUuNjk4SDE2MC42NTVjLTEwLjIyLDAtMTguNTA1LTguMjg1LTE4LjUwNS0xOC41MDV2LTUuNDA1ICAgIGMwLTIuNzI1LDIuMjA5LTQuOTM1LDQuOTM1LTQuOTM1aDI3OC41ODFjMi43MjUsMCw0LjkzNSwyLjIwOSw0LjkzNSw0LjkzNXY1LjQwNSAgICBDNDMwLjYwMSwyMzcuNDEzLDQyMi4zMTYsMjQ1LjY5OCw0MTIuMDk2LDI0NS42OTh6Ii8+CgkJPHBhdGggc3R5bGU9ImZpbGw6IzQyNDM1OTsiIGQ9Ik00MjUuNjY2LDIxNi44NTNoLTMwLjkwNWMyLjcyNSwwLDQuOTM1LDIuMjA5LDQuOTM1LDQuOTM1djUuNDA1ICAgIGMwLDEwLjIyLTguMjg1LDE4LjUwNS0xOC41MDUsMTguNTA1aDMwLjkwNWMxMC4yMiwwLDE4LjUwNS04LjI4NSwxOC41MDUtMTguNTA1di01LjQwNSAgICBDNDMwLjYwMSwyMTkuMDYyLDQyOC4zOTEsMjE2Ljg1Myw0MjUuNjY2LDIxNi44NTN6Ii8+CgkJPHBhdGggc3R5bGU9ImZpbGw6IzRGQzZGNTsiIGQ9Ik0zOTguNjY1LDIxNi44NTNIMTc0LjA4NmMtNS42OSwwLTEwLjMwMi00LjYxMi0xMC4zMDItMTAuMzAyVjc5LjgzOSAgICBjMC01LjY5LDQuNjEyLTEwLjMwMiwxMC4zMDItMTAuMzAyaDIyNC41NzljNS42OSwwLDEwLjMwMiw0LjYxMiwxMC4zMDIsMTAuMzAydjEyNi43MTIgICAgQzQwOC45NjcsMjEyLjI0MSw0MDQuMzU1LDIxNi44NTMsMzk4LjY2NSwyMTYuODUzeiIvPgoJCTxwYXRoIHN0eWxlPSJmaWxsOiMzQkIzRTM7IiBkPSJNMzk4LjY2NSw2OS41MzdIMzY3Ljc2YzUuNjksMCwxMC4zMDIsNC42MTIsMTAuMzAyLDEwLjMwMnYxMjYuNzEyICAgIGMwLDUuNjktNC42MTIsMTAuMzAyLTEwLjMwMiwxMC4zMDJoMzAuOTA1YzUuNjksMCwxMC4zMDItNC42MTIsMTAuMzAyLTEwLjMwMlY3OS44MzkgICAgQzQwOC45NjcsNzQuMTQ5LDQwNC4zNTUsNjkuNTM3LDM5OC42NjUsNjkuNTM3eiIvPgoJPC9nPgo8L2c+CgoKCgoKCgoKCgoKCgoKCjwvc3ZnPgo=" 
+                             height="25" width="25" /> Descripción: {{descripcionPersonal}}</h4></label>
                           </div>
                       </div>
                      
@@ -98,13 +104,13 @@
                <hr>
                 
 
-   <form class="form2 tablef" action="##" method="post" id="registrationForm">
+   <form class="form2 tablef" action="#" method="post" id="registrationForm">
                  
   <div class="form-row actualizar">
 
     <div class="col-md-4 mb-3">
-      <label for="validationCustom01">Nombre:</label>
-      <input type="text" class="form-control" name="nombre" id="validationCustom01" placeholder="Nombre" value="{{usuario}}" required>
+      <label for="validationCustom01">Nombre</label>
+      <input readonly="readonly" type="text" class="form-control" name="nombre" id="validationCustom01" placeholder="Nombre" value="{{usuario}}" required>
       <div class="valid-feedback">
         Looks good!
       </div>
@@ -112,18 +118,18 @@
 
     <div class="col-md-4 mb-3">
       <label for="validationCustom02">Correo</label>
-      <input type="text" class="form-control" name="correo" id="validationCustom02" placeholder="Correo" value="{{email}}" required>
+      <input readonly="readonly" type="text" class="form-control" name="email" id="validationCustom02" placeholder="Correo" value="{{email}}" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationCustomUsername">Telefono</label>
+      <label for="validationCustomUsername">Teléfono</label>
       <div class="input-group">
         <div class="input-group-prepend">
           
         </div>
-        <input type="text" class="form-control" name="telefonoFijo" id="validationCustomUsername" placeholder="{{telefonoFijo}}" aria-describedby="inputGroupPrepend" required>
+        <input type="text" class="form-control" name="telefonoFijo" id="validationCustomUsername" value="{{telefonoFijo}}" placeholder="26620000" aria-describedby="inputGroupPrepend" required>
         <div class="invalid-feedback">
           Please choose a username.
         </div>
@@ -133,15 +139,15 @@
   <div class="form-row actualizar">
     <div class="col-md-6 mb-3">
       <label for="validationCustom03">Celular</label>
-      <input type="text" class="form-control" name="telefonoCelular" id="validationCustom03" placeholder="{{telefonoCelular}}" required>
+      <input type="text" class="form-control" name="telefonoCelular" id="validationCustom03" value="{{telefonoCelular}}" placeholder="99550000" required>
       <div class="invalid-feedback">
         Please provide a valid city.
       </div>
     </div>
    
     <div class="col-md-6 mb-3">
-      <label for="validationCustom05">Descripcion</label>
-      <input type="text" class="form-control" name="descripcionPersonal" id="validationCustom05" placeholder="{{descripcionPersonal}}" required>
+      <label for="validationCustom05">Descripción</label>
+      <input type="text" class="form-control" name="descripcionPersonal" id="validationCustom05" value="{{descripcionPersonal}}" placeholder="Breve descripción personal" required>
       <div class="invalid-feedback">
         Please provide a valid zip.
       </div>
@@ -188,7 +194,7 @@
             		
                	
                   <hr>
-                  <form class="form tablef" action="##" method="post" id="registrationForm">
+                  <form class="form tablef" action="#" method="post" id="registrationForm">
                      <div class="form-group">
                           
                           <div class="col-xs-6">
@@ -232,7 +238,7 @@
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
-                              	<button class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Agregar</button>
+                              	<button class="btn btn-lg btn-primary pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Agregar</button>
                                	<!--<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>-->
                             </div>
                       </div>
