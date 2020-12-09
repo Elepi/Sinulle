@@ -1,44 +1,53 @@
 
-
-<div class="main">
-  
-  <div class="section" style="background-color: #000000;">
-  
-    <div class="container" style="background-color:#393E46;;" >
-      <br>  <br>  <br>
-<div class="card border-warning mb-3 " style="max-width: 18rem;"></div>
 <div class="errores " id="errores">
-   
 {{> showMessages messages}}
 </div>
- <div class="card-header dark">
- <h4 class="card-title text-white" >Ingrese un Servicio</h4>
-</div>
-  <div class="card-body warning">
-      <form method="POST" class="form" action="/crear-servicio"  style="background-color:black;" >
 
-  <h6>SINULLE</h6>
-           
-        
-         <div class="col-md-7 col-sm-7" style="margin-right: 40%; margin-top:20 px;">  
-       
-                <input  type="text"  class="form-control border-input material-icons" placeholder="Url de la Imagen del Servicio" name="imagen" >
-         </div>
-       
-          <div class="col-md-7 col-sm-7" style="margin-right: 40%; margin-top:20 px;">  
-                <input  type="text"  class="form-control border-input" placeholder="Nombre del Servicio" name="nombre">
-         </div>
-         
-        
-        <div   >
+
+<div class="formulario contact">
+	<div class="row">
+		<div class="col-md-3" >
+			<div class="contact-info" >
+				<img src="https://img.icons8.com/bubbles/100/000000/image.png"/ style="padding-left: 15%;">
+
+				<h2>{{usuario}} </h2>
+				<br>
+				<h4> &nbsp; Ingresa un servicio </h4>
+			</div>
+		</div>
+		
+		<div class="col-md-9">
+		 <form method="POST" action="/crear-servicio">
+			<div class="contact-form"  >
+
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="comment">Imagen:</label>
+				  <div class="col-sm-10">
+					<input  type="text"  class="form-control border-input material-icons" placeholder="Url de la imagen del servicio" name="imagen" >
+				  </div>
+				</div>
+          	
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="comment">Descripción:</label>
+				  <div class="col-sm-10">
+					<input  type="text"  class="form-control border-input" placeholder="Nombre del servicio" name="nombre">
+				  </div>
+				</div>
+
+        	<div class="form-group">
+				  <label class="control-label col-sm-2" for="comment">Precio:</label>
+				  <div class="col-sm-10">
+					<input  type="text"  class="form-control border-input" placeholder="Precio del servicio" name="precio">
+				  </div>
+				</div>
+
+				 <div>
               <button class="btn " type="submit">Guardar</button>
-              <a class="btn btn-secondary" href="/listar_servicios"><i class="fa fa-list-alt"></i> Ver Todos</a>
+              <a class="btn btn-primary" href="/listar_servicios"><i class="fa fa-list-alt"></i> Ver Todos</a>
             </div> 
-      </form>
-     
+			</div>
+			</form>
+		</div>
+		
+	</div>
 </div>
-    </div>
-  </div>  
-  
-  </div>
-
