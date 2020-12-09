@@ -63,7 +63,7 @@ body{
 /* fin de carrusel */
 /* inicio de index */
 .card-img-top{
-border-color: #F88600;
+
 width: 250px;
 height: 300px;
 
@@ -85,89 +85,60 @@ height: 300px;
     text-align: center;
 }
 /* nosotros */
-.heading{
-    background-color: #B55300;
-    padding-top: 0.2%;
-    padding-left: 47%;
-    padding-bottom: 0.2%;
+
+.cards{
+  display: flex;
+  justify-content: space-evenly;
+ 
+}
+.cards.card{
+  background: #fd3838;
+  display: flex;
+  width: 46%;
+  height: 200px;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.6);
+}
+
+.cards .card img{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 3px solid #FFFFFF ;
+  border-radius: 50%;
+  display: block;
+}
+
+.cards .card > .contenido-texto-card{
+  width: 60%;
+  color: #FFFFFF;
+}
+.cards .card > .contenido-texto-card p{
+font-weight: 300px;
+padding-top: 5px;
 
 }
-.subheading1{
-    padding-left: 490px;
- width: 690px;
- height: 32px;
- }
- .subheading2{
-     padding-left: 500px;
-  width: 835px;
-  height: 32px;
+.btn3{
+  background-color: #393E46;
+    border-color:#FFFFFF ;
+    color: #FFFFFF;
+    border-radius: 5%;
+}
+
+@media screen and (max-width:980px){
+  .cards{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
- .nosotros{
-     padding-top: 100px;
-     padding-bottom: 100px;
-     width: auto;
-     height: 1300px;
- }
- .parrafo{
-     padding-left: 40%;
-
- }
- .imagen{
-     width: 600px;
-     height: 300px;
-     padding-right: 15px;
-
- }
-
- .somos{
-     display: flex;
-     padding-left: 5%;
-     width: 1200px;
-     height: 300px;
-     padding-bottom: 250px;
-     color: #FFFFFF;
-     font-size: 30px;
-     line-height: 40px;
-     position:absolute ;
-     bottom: center;
-     overflow: hidden;
-
- }
- .p-estilo{
-     font-size: 50px;
-     font-style: italic;
-     color: #FFFFFF;
-     font-size: 30px;
-     line-height: 40px;
- }
-
-  .ul-estilo{
-     list-style: none;
-     padding-left: 25px;
-     animation: cambiar 15s infinite;
+  img{
+    width: 84%;
   }
-  .imagen.ul-estilo{
-      margin: 0;
-  }
+}
 
- @keyframes cambiar{
-     0%{ margin-top: 0;  }
-     20%{ margin-top: 0;  }
-
-     25%{ margin-top: -40px;  }
-     50%{ margin-top: -40px;  }
-
-     55%{ margin-top: -80px;  }
-     80%{ margin-top: -88px;  }
-
-     85%{ margin-top: 0px;  }
-     95%{ margin-top: 0px;  }
-
-     100%{ margin-top: 0px;  }
- }
-  .unirse{
-      padding-top: 450px;
-  }
+@keyframes mover{}
  /* fin de nostros */
  /* paginas */
  .pagination{
@@ -379,90 +350,6 @@ input {
 /* Fin del estilo para Registrarse e iniciar seción*/
 
 /*Inicio de Formulario*/
-
-/* .contacto {
-    padding-top: 5%;
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-bottom: 10%;
-    color: #FFFFFF;
-
-  }
-  .titulo{
-      color: #FFFFFF;
-
-  }
-
-  .formulario {
-    display: grid;
-    border-width: 10px;
-    border-style: outset;
-    border-color: #F88600;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
-    background-color: #393E46;
-    font-size: 25px;
-    }
-
-    .tablef {
-        display: grid;
-        border-width: 5px;
-        border-style: outset;
-        border-color: #F88600;
-        background-color: #393E46;
-        font-size: 25px;
-        }
-        .Labels{
-            padding-top: 0%;
-            padding-left: 5%;
-            padding-right: 5%;
-
-            font-size: 24px;
-        line-height: 35px;
-        font-weight: 600;
-        }
-
-
-
-    .nombre{
-        padding-top: 5%;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-    .fecha{
-        padding-top: 5%;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-    .correo{
-        padding-top: 5%;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-    .telefono{
-        padding-top: 5%;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-    .full{
-        padding-left: 5%;
-        padding-right: 5%;
-        grid-column: 1 / 3;
-    }
-    .boton{
-        padding-left: 10%;
-       width: 100px;
-       height: 50px;
-    }
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid lighten;
-    }
-    textarea {
-      resize: none;
-    }*/
     textarea {
         width: 100%;
         padding: 0.5rem;
@@ -507,12 +394,7 @@ input {
     }
     .col-md-9{
         background-color:#393E46 ;
-      /*width: 50px;
-      height: 700px;
-       padding-right: 300px;
-      background-size: 1008px;
-        background-image: url("/img/logo2.png" ) ;
-        background-image: url("/img/SINULLE.png" ) ;*/
+      
         padding: 2%;
         border-top-right-radius: 0.5rem;
         border-bottom-right-radius: 0.5rem;
