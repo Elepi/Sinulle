@@ -85,7 +85,8 @@ authController.verificarInicioSesion,
   
 ],
 
-usuarioController.miPerfilDireccion);
+usuarioController.miPerfilDireccion,
+usuarioController.modificarUsuario);
 
 ///Imagen
 router.get("/miperfil-imagen", 
@@ -138,6 +139,11 @@ router.get(
   authController.verificarInicioSesion,
   
 );
+
+router.get("/modificar-servicio/:url",
+servicioController.formularioModificarServicio);
+router.post("/modificar-servicio",
+servicioController.modificarServicio);
 
 //Rutas para orden de servicio
 router.get("/crear-orden/:url",
