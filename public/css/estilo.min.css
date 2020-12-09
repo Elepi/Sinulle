@@ -85,7 +85,9 @@ height: 300px;
     text-align: center;
 }
 /* nosotros */
-
+.somos{
+  color: #FFFFFF;
+}
 .cards{
   display: flex;
   justify-content: space-evenly;
