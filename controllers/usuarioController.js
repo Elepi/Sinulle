@@ -117,18 +117,46 @@ exports.miPerfil = (req, res, next) => {
         usuario,
         email: req.user.email,
         gravatar: req.user.gravatar,
-        direcciones: req.user.direcciones, 
+        direcciones: req.user.direcciones,
+        telefonoFijo: req.user.telefonoFijo,
+        telefonoCelular: req.user.telefonoCelular,
+        descripcionPersonal: req.user.descripcionPersonal, 
         logincliente, logincolaborador, loginadmin, notlogin, nombre
     });
 }
 exports.miPerfilDireccion = async (req, res, next) => {
     const { direccion } = req.body;
+    if(direccion) {
+      const email = req.user.email;
+      const usuario = await Usuario.findOne({email});
+      usuario.direcciones.push(direccion); 
+      await usuario.save();
+      res.redirect("/miperfil");
+    } 
+    next();
+ 
+}
+
+exports.modificarUsuario = async (req, res, next) => {
+  const { telefonoFijo, telefonoCelular, descripcionPersonal } = req.body;
+  try {
     const email = req.user.email;
     const usuario = await Usuario.findOne({email});
-    usuario.direcciones.push(direccion); 
+    //usuario.nombre = nombre;
+    //usuario.email = email;
+    //console.log(usuario);
+    usuario.telefonoFijo = telefonoFijo;
+    usuario.telefonoCelular = telefonoCelular;
+    usuario.descripcionPersonal = descripcionPersonal;
+    console.log(usuario);
     await usuario.save();
     res.redirect("/miperfil");
+  } catch (error) {
+    res.redirect("/miperfil");
+  }
+ 
 }
+
 exports.agregarImagenUsuario = (req, res, next) =>{
   var logincliente = false;
   var logincolaborador = false;
