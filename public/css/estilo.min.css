@@ -30,10 +30,11 @@ body{
 
     background-color: #F88600;
     padding-top: 0.2%;
-    padding-left: 33%;
-  
+    
     padding-bottom: 0.2%;
+
 }
+
 .fondo{
 
     padding-left: 0%;
@@ -135,6 +136,12 @@ padding-top: 5px;
   }
   img{
     width: 84%;
+  }
+
+  .servicios{
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
 }
 .cards:hover{
