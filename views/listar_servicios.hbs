@@ -5,7 +5,7 @@
 {{> showMessages messages}}
 </div>
 <div id="scroll">
- <div class="containerlist">
+ <div class="containerlist" style="overflow-x:auto;">
 
   <h3><a class="btn btn-secondary" href="/crear-servicio"><i class="fa fa-plus"></i> Crear Nuevo</a> Lista Servicios</h3>
 <table class="table table-striped">
@@ -15,7 +15,7 @@
     <thead>
         <tr>
             <th>Servicio</th>
-            <th>Url de Imagen</th>
+            <th>Precio</th>
            
             <th></th>
         </tr>
@@ -27,10 +27,10 @@
        
         <tr>
             <td>{{this.nombre}}</td>
-            <td>{{this.imagen}}</td>
-            <td>	<a> <img style="width: 120px;"  src="{{imagen}}" alt=""></a></td>
+            <td>L {{this.precio}}</td>
+            <td>	<a> <img width="120" height="120"  src="{{imagen}}" alt=""></a></td>
             <td>
-                <a href="{{this._id}}"><i class="fa fa-pencil fa-lg" style="color: #F88600;" aria-hidden="true">
+                <a href="/modificar-servicio/{{this.url}}"><i class="fa fa-pencil fa-lg" style="color: #F88600;" aria-hidden="true">
 
                 </i></a>
                 <a href="{{this._id}}" onclick="return confirm('Estas seguro de eliminar ?');">
