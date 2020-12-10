@@ -106,11 +106,10 @@ height: 300px;
 }
 
 .cards .card img{
-  width:400px;
-  height: 400px;
-  object-fit: cover;
-  border: 3px solid #FFFFFF ;
-  border-radius: 50%;
+  width:270px;
+  height: 200px;
+ 
+  
   display: block;
 }
 .imagen-cards{
