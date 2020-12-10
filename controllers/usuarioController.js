@@ -124,17 +124,59 @@ exports.miPerfil = (req, res, next) => {
         logincliente, logincolaborador, loginadmin, notlogin, nombre
     });
 }
+
+exports.formularioPerfilDireccion = (req, res, next) => {
+  var logincliente = false;
+  var logincolaborador = false;
+  var loginadmin = false;
+  var notlogin = false;
+  var rol, nombre; 
+  if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "cliente") {
+      logincliente = true;
+    }
+  }
+  if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "colaborador") {
+      logincolaborador = true;
+    }
+  }
+  if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "admin") {
+      loginadmin = true;
+    }
+  }
+  // else {
+  //   logincliente = false;
+  //   logincolaborador = false;
+  // }
+  if(req.isAuthenticated() != true) {
+    notlogin = true;
+  } 
+  res.render("perfilDireccion", { 
+    direcciones: req.user.direcciones,
+    logincliente, logincolaborador, loginadmin, notlogin, nombre
+  });
+}
+
 exports.miPerfilDireccion = async (req, res, next) => {
     const { direccion } = req.body;
-    if(direccion) {
+      try {
       const email = req.user.email;
       const usuario = await Usuario.findOne({email});
       usuario.direcciones.push(direccion); 
       await usuario.save();
       res.redirect("/miperfil");
-    } 
-    next();
- 
+        
+      } catch (error) {
+        console.log(error);
+      }
 }
 
 exports.modificarUsuario = async (req, res, next) => {
