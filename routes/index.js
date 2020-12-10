@@ -84,9 +84,17 @@ authController.verificarInicioSesion,
   .escape(),
   
 ],
-
-usuarioController.miPerfilDireccion,
 usuarioController.modificarUsuario);
+
+//Direcciones
+router.get("/miperfil-direccion",
+authController.verificarInicioSesion,
+usuarioController.formularioPerfilDireccion);
+
+router.post("/miperfil-direccion",
+authController.verificarInicioSesion,
+usuarioController.miPerfilDireccion
+);
 
 ///Imagen
 router.get("/miperfil-imagen", 
