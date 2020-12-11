@@ -4,8 +4,10 @@
   "description": "proyecto de clase",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./index.js"
+    "dev": "nodemon ./index.js",
+    "watch": "webpack --mode development",
+    "start": "concurrently \"npm run dev\" \"npm run watch\"",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
