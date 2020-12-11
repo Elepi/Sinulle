@@ -196,6 +196,11 @@ authController.verificarInicioSesion,
 trabajoController.mostrarTrabajos,
 );
 
+//Ruta para eliminar dirección de usuario
+router.delete("/direccion/:i",
+authController.verificarInicioSesion,
+usuarioController.eliminarDireccion);
+
   return router;
 };
 
