@@ -199,6 +199,36 @@ exports.modificarUsuario = async (req, res, next) => {
  
 }
 
+//Eliminar dirección de usuario 
+exports.eliminarDireccion = async (req, res, next) => {
+  //Obtener el id del usuario 
+  // const { id } = req.params;
+  const { i } = req.params;
+  const { id } = req.user._id;
+  
+  try {
+    const usuario = await Usuario.findById(id);
+    if(usuario) {
+      //Eliminar dirección
+      //usuario.remove();
+      if(i !== -1) {
+      // Posibles soluciones
+      //usuario.direcciones.splice(i,1);
+      //usuario.save();
+      usuario.update({}, { $pull: { direcciones: { $in: [i] } }});
+      res.status(200).send("La dirección ha sido eliminada correctamente");
+      }
+    }
+  } catch (error) {
+    console.log(error);
+    //Dirección no encontrada o no se puede eliminar
+    res.status(403).send("Error al momento de eliminar la dirección");
+    
+  }
+    
+  
+};
+
 exports.agregarImagenUsuario = (req, res, next) =>{
   var logincliente = false;
   var logincolaborador = false;
