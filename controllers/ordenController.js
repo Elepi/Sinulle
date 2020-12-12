@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Orden = mongoose.model("Ordenes");
 const Servicio = mongoose.model("Servicio");
+const Usuario = mongoose.model("Usuarios");
 const { validationResult } = require("express-validator");
 
 exports.formularioCrearOrden =  async(req, res, next) => {
@@ -42,13 +43,23 @@ exports.formularioCrearOrden =  async(req, res, next) => {
     }
 
  const servicio = await Servicio.findOne({ url: req.params.url }).lean();
+ 
+//Mostrar colaborador segun el servicio
+ const usuariocolaborador = await Usuario.find( {servicio:servicio}).populate("servicio").lean();
+ 
+ //console.log(usuariocolaborador);
+ 
+ 
 
     res.render("ordenServicio", {
       servicio,
         usuario,
         direcciones,
-        logincliente, logincolaborador, loginadmin, notlogin, nombre
+        logincliente, logincolaborador, loginadmin, notlogin, nombre,
+        usuariocolaborador,
+        
     });
+  
 }
 
 exports.crearOrden = async (req, res, next) => {
@@ -69,15 +80,16 @@ exports.crearOrden = async (req, res, next) => {
     } else {
       // Almacenar los valores del producto
       try {
-        const {direccion, servicio, descripcion, fechaSolicitud} = req.body;
+        const {direccion, servicio, descripcion, fechaSolicitud,total, colaborador} = req.body;
   
         await Orden.create({
             direccion,
          servicio, 
          descripcion,
+         total,
          fechaSolicitud,
           cliente: req.user._id,
-          colaborador: req.user._id,
+          colaborador,
         });
   
         messages.push({
@@ -86,7 +98,7 @@ exports.crearOrden = async (req, res, next) => {
         });
         req.flash("messages", messages);
   
-        res.redirect("/crear-orden");
+        res.redirect("/");
       } catch (error) {
         console.log(error);
         messages.push({
