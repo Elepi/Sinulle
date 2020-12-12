@@ -205,3 +205,7 @@ usuarioController.eliminarDireccion);
 };
 
 //
+// Manual de usuario
+router.get("/manual", (req, res, next)=> {
+  res.render("manual");
+});
