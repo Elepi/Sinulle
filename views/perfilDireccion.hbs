@@ -1,0 +1,57 @@
+<div class="container2 bootstrap snippet">
+
+  <div class="tab-pane" id="settings">
+            		
+               	
+                  <hr>
+                  <form class="form tablef" action="/miperfil-direccion" method="post" id="registrationForm">
+                     <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Agrega una nueva dirección:</h4></label>
+                              <textarea type="text" name="direccion" placeholder="Dirección"> </textarea>
+                          </div>
+                      </div>
+                      {{!-- <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>DIRECCIONES</h4></label>
+                          </div>
+                      </div> --}}
+                  
+              
+  <div class="table-wrapper-scroll-y my-custom-scrollbar">    
+  <table class="table  table-dark   textarea  table-striped mb-0 ">
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Dirección</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each direcciones as |item i| }}
+    <tr>
+      <th scope="row">{{i}}</th>
+      <th scope="row">{{this}}</th>
+      <th>
+       <a href="#" class="btn btn-primary text-right">Eliminar</a>
+</th>
+       {{else}}
+     <th></th>  
+     <th>Aún no se han agregado direcciones.</th>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
+                      
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                              	<button class="btn btn-lg btn-primary pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Agregar</button>
+                               	<!--<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>-->
+                            </div>
+                      </div>
+              	</form>
+              </div>
+               </div>

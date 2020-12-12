@@ -128,14 +128,14 @@ padding-top: 5px;
 
 
 @media screen and (max-width:980px){
-  .cards{
+  /* .cards{
   flex-direction: column;
   justify-content: center;
   align-items: center;
   }
   img{
     width: 84%;
-  }
+  } */
 
   .servicios{
     flex-direction: column;
@@ -143,9 +143,9 @@ padding-top: 5px;
   align-items: center;
   }
 }
-.cards:hover{
+/* .cards:hover{
   transform: scale(1.2);
-}
+} */
  /* fin de nostros */
  /* paginas */
  .pagination{
