@@ -9,10 +9,9 @@ const ordenSchema = new mongoose.Schema({
     //required: true,
       },
     
-      colaborador: {
-        type: mongoose.Schema.ObjectId,
-        ref: "Usuarios",  
-    //required: true,
+      colaborador: { type: String,
+       /* type: mongoose.Schema.ObjectId,
+        ref: "Usuarios", */
       },
     
       servicio: String,
@@ -29,6 +28,7 @@ const ordenSchema = new mongoose.Schema({
         trim: true,
       },
       fechaCreacion: Date,
+       total: Number,
 
 });
 
