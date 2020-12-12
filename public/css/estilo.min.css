@@ -128,14 +128,14 @@ padding-top: 5px;
 
 
 @media screen and (max-width:980px){
-  /* .cards{
+   .cards{
   flex-direction: column;
   justify-content: center;
   align-items: center;
   }
   img{
     width: 84%;
-  } */
+  } 
 
   .servicios{
     flex-direction: column;
@@ -143,9 +143,7 @@ padding-top: 5px;
   align-items: center;
   }
 }
-/* .cards:hover{
-  transform: scale(1.2);
-} */
+
  /* fin de nostros */
  /* paginas */
  .pagination{
@@ -369,10 +367,12 @@ input {
         background-color: #000000;
     }
     .contact{
-        padding-left:10%;
-        padding-right:10%;
-        padding-top: 5%;
-        height: 800px;
+       
+
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1em;
     }
 
     .col-md-3{
@@ -384,7 +384,8 @@ input {
     .contact-info{
         margin-top:10%;
         color: #FFFFFF;
-
+        height: auto;
+        width: auto;
     }
     .btn2{
         padding-top: 10px;
@@ -425,43 +426,66 @@ input {
     }
 
     /* Fin Formulario Orden*/
-/* inicio del manual */
-    .bs-example{
-        margin: 20px;        
-    }
-    
-    .descarga-aqui{
-      font-family: 'Oswald';
-      font-size: 45px;
-    
-    }
-    .separar{
-      background-color: #B55300;
-      padding-top: 1%;
-      padding-right: 47%;
-      padding-bottom: 0.2%;
-    }
-    .descarga {
-      min-height: 100vh;
-      font-family: Roboto, Arial;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #242836;
-      padding: 20px;
-    }
-    .descarga .dribbble {
-      position: fixed;
-      display: block;
-      right: 20px;
-      bottom: 20px;
-    }
-    .descarga .dribbble img {
-      display: block;
-      height: 28px;
-    }
-    
-/* fin del manual */
+/* Inicio manual */
+.bs-example{
+  background-color: #000000;
+  color: #FFFFFF;
+}
+.descarga-aqui{
+  font-family: 'Oswald';
+  font-size: 50px;
+  color: #FFFFFF;
+
+}
+.embed-responsive{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.video{
+  width:560px; 
+  height:315px ;
+
+}
+
+.separar{
+  background-color: #B55300;
+  padding-top: 1%;
+ 
+  padding-bottom: 0.2%;
+}
+.descarga {
+    width: 100%;
+    height: 100%;
+  min-height: 80px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: #000000;
+  padding: 20px;
+}
+
+.btn-descarga{
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: #B55300;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 30px;
+    color:#FFFFFF;
+    transition: all 400ms ease-out;
+}
+.btn-descarga:hover{
+  transform: scale(1.2);
+}
+@media screen and (max-width:900px){
+  .video{
+      width: 84%;
+  }
+}
+
+/* Fin manual */
 /* inicio del Footer */
 .footer{
     padding-top: 1%;
