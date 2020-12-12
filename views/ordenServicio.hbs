@@ -1,4 +1,4 @@
-{{!-- <div class="contacto"> 
+{{!-- <div class="contacto">
         <h3 class="titulo">Enviar Correo</h3>
         <form class="formulario">
           <p class="nombre">
@@ -28,9 +28,10 @@
       </div>
     </div>
   </div>--}}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <div class="errores " id="errores">
-   
+
 {{> showMessages messages}}
 </div>
 
@@ -38,94 +39,299 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="contact-info">
-				<img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
-				<h2>Orden </h2>
-				<h4>{{usuario}} , haz tu solicitud de servicio aquí</h4>
+
+<img width="150px" height="150px" style="padding-left: 22% ;"
+src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDMwNS42MTYgMzA1LjYxNiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8cGF0aCBzdHlsZT0iIiBkPSJNMjQuODE4LDI2MC4zMzNjLTI0LjQ1OSwwLTAuMzk3LTI0LjgxOC0wLjM5Ny0yNC44MThsNjIuMzU5LTY4LjUzMiAgIGM2LjA2NS02LjY2MywxNy43NjktMTYuNzgsMjQuNjEyLTExLjE5OWM2Ljg0Miw1LjU4LDE1Ljk4LDE2Ljg4OCwyMi4zNDQsMjMuMjY4bDEyLjg5NiwxMi45MDdjNi45MTMsNi4xMTksMTIuMjMyLDAsMTIuMjMyLDAgICBsMTMuMTk1LTEyLjk5OWM2LjQxOC02LjMyNiwxNS42MS0xNy4zNjIsMjIuNDYzLTIyLjQ5NmM2Ljg1My01LjEzNCwxOC41MDksNC42MjksMjQuNTU3LDExLjMwOGw2MS45OTQsNjguNSAgIGMyNC40NywyNC4wNjIsMC4zOTcsMjQuMDYyLDAuMzk3LDI0LjA2MkgyNC44MTh6IE0zNS40MDMsMjAzLjk1MWMtNi4wNjUsNi42NjgtMTQuOTI1LDE4LjI2NC0yMC45MTMsMjQuOTk4ICAgQzcuNzI5LDIzNi41NDgsMCwyNDIuMzE4LDAsMjI5LjAwOUwwLjI5NCw5NS4zMTFjMC4wMjItOS4wMTMtMC4yMjgtMjYuMiw1LjkyOS0yMy4xMTZjMi4yOSwxLjE0OCw1LjQyMywzLjUzNSw5LjY3Niw3Ljc5NCAgIGw1MC40NjQsNDEuMjg4YzYuOTczLDUuNzA2LDE2LjgwMSwxMi42ODksMjAuMDE2LDE3LjM0YzIuMDI5LDIuOTMyLDIuOTU5LDYuMzQyLDAuMDIyLDkuMjlMMzUuNDAzLDIwMy45NTF6IE0xNzEuNDIzLDE1Ni40NTIgICBjLTYuOTY3LDUuNzE2LTE0LjUzOSwxMy44MjYtMTguNDA2LDEzLjgzN2MtMy44NjcsMC4wMDUtMTEuNTgtNy45MTktMTguNTgtMTMuNTk4TDI0LjYzNCw2Ny42MjEgICBjLTctNS42NzMtMTkuMDU4LTE3LjEtMTMuMDY1LTIwLjE2M2M0LjMyOS0yLjIxNCwxMS44OTUtMi4xNzYsMTEuODk1LTIuMTc2aDI1OC4wMjljMjMuMjMsMCwxMS40MTcsMTEuNDcxLDExLjQxNywxMS40NzEgICBMMTcxLjQyMywxNTYuNDUyeiBNMjkxLjExLDIyOC45NDljLTUuOTk5LTYuNzI4LTE0Ljg2NS0xOC4zMy0yMC45MjQtMjQuOTk4bC01MC45NjktNTYuMDVjLTIuOTUzLTIuOTQ4LTIuMDI5LTYuMzU4LDAtOS4yOSAgIGMzLjIxNC00LjY1LDEzLjA0OC0xMS42MjksMjAuMDI3LTE3LjMzNGwzNy44NDUtMzAuOTU5YzYuOTczLTUuNzA2LDE2LjE0My0xNS4wMzksMjIuMjk1LTE4LjEyMyAgIGM2LjE1Mi0zLjA4NCw1Ljg4NSwxNC4xMDksNS45MDcsMjMuMTE2bDAuMzI2LDEzMy42OThDMzA1LjYyMSwyNDIuMzE4LDI5Ny44ODEsMjM2LjU0OCwyOTEuMTEsMjI4Ljk0OXoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMTAwMDIiPjwvcGF0aD4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+" />
+
+    		<h2>{{usuario}} </h2>
+				<h4>Haz tu solicitud de servicio aquí</h4>
 			</div>
 		</div>
-		
+
 		<div class="col-md-9">
-			<form method="POST"  action="/crear-orden">
+			<form method="POST"  action="/crear-orden" name="enviarsolicitud">{{!--agregar name al formulario para poder enviarlo desde una funcion js--}}
 			<div class="contact-form"  >
 				<div class="form-group">
-				  
+
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="servicio">Servicio:</label>
-				  <div class="col-sm-10">          
-				<input type="text" class="form-control" readonly="readonly" 
+				  <div class="col-sm-10">
+				<input type="text" class="form-control" readonly="readonly"
         style="color: rgb(42, 42, 42); background-color:rgb(236, 163, 45);"  id="servicio" value="{{servicio.nombre}}" name="servicio">
 				  </div>
+          <br>
+          <div class="form-group" style="padding-left: 2%;">
+
            <label class="control-label col-sm-2" for="servicio">Precio base:</label>
-          <div class="col-sm-10">          
-				<input type="text" class="form-control" readonly="readonly" 
-        style="color: rgb(42, 42, 42); background-color:rgb(236, 163, 45);"  id="servicio" value="L {{servicio.precio}}" name="precio">
-				  </div>
-				  <label class="control-label col-sm-2" for="fechaSolicitud">Fecha</label>
-				  <div class="col-sm-10">          
-					<input type="date" class="form-control" id="fechaSolicitud" placeholder="Fecha que requiere el servicio" name="fechaSolicitud">
+         <div class="row">
+           <div class="col-sm-10 input-group">
+              <div class="input-group-append" >
+
+
+    <a href="" class="btn btn-outline-light "  type="button" style="top: -22%; disable">L</a>
+  </div>
+				<input type="text" class="form-control" readonly="readonly"
+        style="color: rgb(42, 42, 42); background-color:rgb(236, 163, 45);"  id="servicioprecio" value="{{servicio.precio}}" name="total">
+
+          </div>
+          </div>
+            </div>
+
+
+	<div class="form-group" style="padding-left: 2%;">
+           <label class="control-label col-sm-2" for="servicio">Colaborador:</label>
+          <div class="row">
+
+				  <div class="col-sm-10 input-group">
+				<input type="text" class="form-control" readonly="readonly"
+        style="color: rgb(42, 42, 42); background-color:rgb(236, 163, 45);" id="txtcolaborador"   name="colaborador" required>
+				  <div class="input-group-append" >
+
+{{!--Boton llamar a la ventana modal--}}
+    <a href="" class="btn btn-outline-light " data-toggle="modal" data-target="#exampleModal" type="button" style="top: -22%">Seleccione Colaborador</a>
+  </div>
+          </div>
+          </div>
+          </div>
+
+          <label class="control-label col-sm-2" for="fechaSolicitud">Fecha</label>
+				  <div class="col-sm-10">
+					<input type="date" class="form-control" id="fechaSolicitud" placeholder="Fecha que requiere el servicio" name="fechaSolicitud" required>
 				  </div>
 				</div>
            </div>
-          	
-        	<div class="form-group ">
+
+    	<div class="form-group ">
 				  <label class="control-label col-sm-2" for="direccion">Dirección: </label>
 				   <div class="direccion">
-				  <div class="row"> 
-					
-				  <div class="col-sm-10 input-group">          
-					<select class ="form-control" name="direccion" id="direccion">
-						
+				  <div class="row">
+
+				  <div class="col-sm-10 input-group">
+					<select class ="form-control" name="direccion" id="direccion" required>
+
 						<option > Selecciona una dirección </option>
 						{{#each direcciones }}
                                   <option value="{{this}}">{{this}}</option>
                          {{/each}}
 					</select>
-          <div class="input-group-append">
-    <a href="/miperfil" class="btn btn-outline-primary" type="button">+</a>
-  </div>
-				
+          <div class="input-group-append" >
+            <a href="/miperfil" class="btn btn-outline-light" type="button" style="top: -22%">+</a>
+        </div>
+
 				  </div>
 				{{!-- <div class="col-sm-4" >
 					 <a href="/miperfil"  class="btn btn-primary">Más direcciones</a>
 					 </div> --}}
-				 
+
 					 </div>
-					 </div> 
-           </div>
-		
+					 </div>
+     </div>
+
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="comment">Descripción:</label>
 				  <div class="col-sm-10">
-					<textarea class="form-control" rows="5" placeholder="Descríbenos que trabajo necesitas para brindarte una mejor atención" id="descripcion" name="descripcion"></textarea>
+					<textarea class="form-control" rows="5" placeholder="Descríbenos que trabajo necesitas para brindarte una mejor atención"
+          id="descripcion" name="descripcion" required></textarea>
 				  </div>
 				</div>
-				<div class="form-group">        
-				  <div class="col-sm-offset-2 col-sm-10"><br>
-					
-	<button type="submit" class="btn btn-primary">Solicitar</button>
+				<div class="form-group" >
+				  <div class="col-sm-offset-2 col-sm-12" ><br>
+
+	<button id="btnpagar" type="button"  class="btn btn-light " onclick="mostrar()" > 
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDM4Ni4xIDM4Ni4xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwYXRoIGQ9Ik0zMDguOSw1NS4wNUgyMi40QzkuOSw1NS4wNSwwLDY1LjU1LDAsNzcuOTV2MTc1LjljMCwwLjEsMCwwLjIsMCwwLjNjMC4xLDEyLjIsMTAuMiwyMiwyMi40LDIxLjlIMzR2LTE0My43ICAgIGMwLTIzLjUsMTkuMi00Mi4zLDQyLjctNDIuM2gyNTQuNHYtMTIuMUMzMzEuMSw2NS41NSwzMjEuNCw1NS4wNSwzMDguOSw1NS4wNXoiIGZpbGw9IiNiNTUzMDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTM0MC4xLDI2Mi4wNWMtNi44LTUuNy0xNi45LTQuOC0yMi42LDJjLTAuNSwwLjYtMSwxLjEtMS41LDEuNWMtNC4zLDMuNS0xMC42LDIuOC0xNC4xLTEuNWMtMy0zLjctNy42LTUuOS0xMi40LTUuOSAgICBjLTksMC0xNi4yLDcuMi0xNi4xLDE2LjJjMCw4LjksNy4zLDE2LjEsMTYuMiwxNi4xYzQuOCwwLjEsOS40LTIuMSwxMi40LTUuOGMxLjktMi4zLDQuNy0zLjYsNy43LTMuNmMyLjktMC4xLDUuOCwxLjIsNy43LDMuNSAgICBjMC43LDAuOCwxLjMsMS41LDIuMSwyLjFjNi44LDUuNywxNi45LDQuOCwyMi42LTJDMzQ3LjgsMjc3Ljg1LDM0Ni45LDI2Ny43NSwzNDAuMSwyNjIuMDV6IiBmaWxsPSIjYjU1MzAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwYXRoIGQ9Ik0zNjMuMywxMTAuMDVINzYuOGgtMC4xYy0xMi41LTAuMS0yMi42LDkuOS0yMi43LDIyLjN2MTQuN2gzMzJoMC4xdi0xNC43QzM4Ni4xLDExOS44NSwzNzUuOCwxMTAuMDUsMzYzLjMsMTEwLjA1eiIgZmlsbD0iI2I1NTMwMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPgoJPC9nPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+Cgk8Zz4KCQk8cmVjdCB4PSI1NCIgeT0iMTY3LjA1IiB3aWR0aD0iMzMyIiBoZWlnaHQ9IjI2IiBmaWxsPSIjYjU1MzAwIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3JlY3Q+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwYXRoIGQ9Ik01NCwyMTMuMDV2OTUuMWMwLDEyLjYsMTAuMSwyMi44LDIyLjcsMjIuOWgyODYuNWMxMi42LTAuMSwyMi43LTEwLjMsMjIuOC0yMi45di05NS4xSDU0eiBNMzU5LjksMjk0LjQ1ICAgIGMtMTEuMiwxNi41LTMzLjcsMjAuOS01MC4yLDkuN2MtNiw0LjEtMTMsNi4yLTIwLjIsNi4yYy0yMCwwLTM2LjEtMTYuMy0zNi4xLTM2LjJjMC0xOS45LDE2LjEtMzYuMSwzNi4xLTM2LjEgICAgYzcuMiwwLDE0LjIsMi4xLDIwLjIsNi4yYzEyLjMtOC4zLDI4LjMtOC4zLDQwLjUsMEMzNjYuNywyNTUuNDUsMzcxLjEsMjc3Ljk1LDM1OS45LDI5NC40NXoiIGZpbGw9IiNiNTUzMDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+" / width="35px" height="35px">   
+      Pagar Orden</button>
+  {{!-- <button id="enviar" type="submit" class="btn btn-light" style="display:none;">Volver a servicios</button> --}}
 
 							  </div>
 				</div>
-			</div>
-			
-			</form>
-			<div class="treat-wrapper">
+        {{!-- PAYPAL--}}
+         {{!--añadir clientID---}}
+          <script src="https://www.paypal.com/sdk/js?client-id=AZOAu12SrGUuCW7223yfgeJORPlCdqfi3i7uKAf-zYGhg7k7dSpHtnO1-b4zFwDOilqw-TFnKBiA-vcl">
+          </script>
 
-  <button class="treat-button" hidden>Solicitar</button>
+{{!--Mostrar botones paypal--}}
+<div id="paypal-button-container" style="display:none;" ></div>
+
+ 
+{{!--Script de paypal--}}
+
+  <script>
+    //PASAR EL VALUE DEL INPUT PRECIO SERVICIO
+const valor = document.getElementById('servicioprecio').value;
+
+console.log(valor);
+    paypal.Buttons({
+    createOrder: function(data, actions) {
+      // This function sets up the details of the transaction, including the amount and line item details.
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: valor
+      
+            
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      // This function captures the funds from the transaction.
+      return actions.order.capture().then(function(details) {
+        // This function shows a transaction success message to your buyer.
+        alert('Pago realizado exitosamente. ¡Gracias por solicitar tu servicio con Sinulle!' + details.payer.name.given_name);
+        //Enviar el formulario al mostrar el pago hecho
+        document.enviarsolicitud.submit();
+
+      });
+    }
+  }).render('#paypal-button-container');
+</script>
+
+{{!--Mostrar el el div de los botones de paypal y ocultar el otro--}}
+<script>
+    function mostrar(){
+        document.getElementById('paypal-button-container').style.display = 'block';
+        document.getElementById('btnpagar').style.display='none';
+          }
+
+</script>
+
+
+
+			</div>
+
+			</form>
+			<div   class="treat-wrapper">
+
+  <button class="treat-button" hidden >Solicitar</button>
 </div>
 		</div>
-		
+
 	</div>
 
 </div>
-   
+ 
+
+<!-- Button trigger modal -->
+{{!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Seleccione colaborador
+</button> --}}
+
+<!-- formulario/ventana  Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Colaboradores</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <table id="myTable" class="table table-hover table-dark">
+  <thead>
+    <tr>
+
+      <th scope="col">Nombre</th>
+      <th scope="col">Servicio</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+    {{#each usuariocolaborador as |colaboradores| }}
+
+    <tr >
+       <td class="idusuario" hidden>{{_id}}</td>
+      <td class="nombre">{{nombre}}</td>
+       <td >{{colaboradores.servicio.nombre}}</td>
+
+        <td> <button  type="button" class="boton btn  btn-secondary text-right">Seleccionar</button></td>
+
+       {{else}}
+     <th></th>
+     <th>Aún no hay colaboradores del area seleccionada.</th>
+    </tr>
+    {{/each}}
+
+  </tbody>
+</table>
+<label for="">Colaborador seleccionado: </label>
+<label id="pasarDato" for=""></label><br>
+
+
+      </div>
+      <div class="modal-footer">
+
+      {{!-- <button type="button" class="btn btn btn-secondary boton" >Cerrar</button>  --}}
+        <button type="button"  class="btn btn-secondary" data-dismiss="modal">Guardar Selecciòn</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Fin de Modal  --->
+
+{{!-Script para tomar valores de tabla de colaborares y pasarlo al input de colaborador}}
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+      <script>
+
+
+
+     $(document).ready(function() {
+
+
+     $(".boton").click(function() {
+
+        var valores = "";
+        //var idvalores = "";
+
+        // Obtenemos todos los valores contenidos en los <td> de la fila
+        // seleccionada
+        $(this).parents("tr").find(".nombre").each(function() {
+          valores += $(this).html() + "\n";
+        });
+
+        /* $(this).parents("tr").find(".idusuario").each(function() {
+          idvalores += $(this).html() + "\n";
+        });*/
+
+       // console.log(valores);
+      //  alert(valores);
+
+      //muestra dato seleccionado en el label
+        var objetivo = document.getElementById('pasarDato');
+
+        // document.getElementById("txtTabla").value = valores;
+    //  objetivo.innerHTML = valores;
+
+    //Pasar al textbox  de colaborador
+          document.getElementById("txtcolaborador").value = valores;
+           objetivo.innerHTML = valores;
+
+          //  document.getElementById("txtidcolaborador").value = idvalores;
+        //   objetivo.innerHTML = idvalores;
+
+
+      });
+
+    });
+
+
+  </script>
+
+
+
+
+
 
 
 
 	  <script>
 		  src="https://codepen.io/shshaw/pen/QmZYMG.js"
-		  src="./script.js"
-		 
+	
+
 console.clear();
 
 let width = window.innerWidth;
