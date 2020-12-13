@@ -209,3 +209,9 @@ usuarioController.eliminarDireccion);
 router.get("/manual", (req, res, next)=> {
   res.render("manual");
 });
+
+
+//Ordenes de usuario
+router.get("/ordenes-usuario", 
+authController.verificarInicioSesion,
+ordenController.ordenUsuario);
