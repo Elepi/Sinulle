@@ -112,7 +112,7 @@
       <label for="validationCustom01">Nombre</label>
       <input readonly="readonly" type="text" class="form-control" name="nombre" id="validationCustom01" placeholder="Nombre" value="{{usuario}}" required>
       <div class="valid-feedback">
-        Looks good!
+        
       </div>
     </div>
 
@@ -120,7 +120,7 @@
       <label for="validationCustom02">Correo</label>
       <input readonly="readonly" type="text" class="form-control" name="email" id="validationCustom02" placeholder="Correo" value="{{email}}" required>
       <div class="valid-feedback">
-        Looks good!
+        
       </div>
     </div>
     <div class="col-md-4 mb-3">
@@ -131,7 +131,7 @@
         </div>
         <input type="text" class="form-control" name="telefonoFijo" id="validationCustomUsername" value="{{telefonoFijo}}" placeholder="26620000" aria-describedby="inputGroupPrepend" required>
         <div class="invalid-feedback">
-          Please choose a username.
+          
         </div>
       </div>
     </div>
@@ -141,7 +141,7 @@
       <label for="validationCustom03">Celular</label>
       <input type="text" class="form-control" name="telefonoCelular" id="validationCustom03" value="{{telefonoCelular}}" placeholder="99550000" required>
       <div class="invalid-feedback">
-        Please provide a valid city.
+        
       </div>
     </div>
    
@@ -149,7 +149,7 @@
       <label for="validationCustom05">Descripción</label>
       <input type="text" class="form-control" name="descripcionPersonal" id="validationCustom05" value="{{descripcionPersonal}}" placeholder="Breve descripción personal" required>
       <div class="invalid-feedback">
-        Please provide a valid zip.
+        
       </div>
     </div>
   </div>
@@ -167,26 +167,7 @@
   <button class="btn btn-primary" type="submit">Actualizar</button>
 </div>
 
-<script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-</script>
+
               	</form>
                
              </div><!--/tab-pane-->
