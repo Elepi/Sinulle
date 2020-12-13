@@ -153,6 +153,12 @@ servicioController.formularioModificarServicio);
 router.post("/modificar-servicio",
 servicioController.modificarServicio);
 
+router.delete(
+"/servicio/:id",
+authController.verificarInicioSesion,
+servicioController.eliminarServicio
+);
+
 //Rutas para orden de servicio
 router.get("/crear-orden/:url",
 authController.verificarInicioSesion, 
@@ -205,3 +211,13 @@ usuarioController.eliminarDireccion);
 };
 
 //
+// Manual de usuario
+router.get("/manual", (req, res, next)=> {
+  res.render("manual");
+});
+
+
+//Ordenes de usuario
+router.get("/ordenes-usuario", 
+authController.verificarInicioSesion,
+ordenController.ordenUsuario);

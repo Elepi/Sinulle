@@ -111,3 +111,50 @@ exports.crearOrden = async (req, res, next) => {
     }
   };
 
+  exports.ordenUsuario = async (req, res, next) => {
+    //Obtener el rol del usuario loggeado
+    var logincliente = false;
+    var logincolaborador = false;
+    var loginadmin = false;
+    var notlogin = false;
+    var rol, nombre; 
+    if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "cliente") {
+      logincliente = true;
+      }
+    }
+    if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "colaborador") {
+      logincolaborador = true;
+      }
+    }
+    if(req.isAuthenticated()) {
+    rol = req.user.tipoUsuario;
+    nombre = req.user.nombre;
+    if(rol == "admin") {
+      loginadmin = true;
+      }
+    }
+  // else {
+  //   logincliente = false;
+  //   logincolaborador = false;
+  // }
+    if(req.isAuthenticated() != true) {
+    notlogin = true;
+    }
+    try {
+      const ordenes = await Orden.find({ cliente: req.user._id }).lean();
+      res.render("ordenesUsuario", { 
+        ordenes,
+        logincliente, logincolaborador, loginadmin, notlogin, nombre
+        });
+    } catch (error) {
+      console.log(error);
+      next();
+      res.redirect("/");
+    }
+  };
