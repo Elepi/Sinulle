@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+ 
+  <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+
+<body>
+  <div class="textoC">
+ <h4 > Historial de servicios contratados  </h4>
+</div>
+<!-- partial:index.partial.html -->
+<div class="todo">
+   
+<br>
+
+
+   {{#each ordenes}}
+     <br>
+
+<div class="blog-slider">
+  <div class="blog-slider__wrp swiper-wrapper">
+
+    <div class="blog-slider__item swiper-slide">
+    
+         <div class="blog-slider__img">
+        
+        <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIuMDg5IDUxMi4wODkiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyLjA4OSA1MTIuMDg5IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnPjxnPjxwYXRoIGQ9Im0zNzEuMzE3IDQwLjU0N2MwLTIyLjM0NSAxOC4xMTQtNDAuNDU4IDQwLjQ1OC00MC40NThoLTMxNC45MTJjLTE3Ljc2OSAwLTMyLjE3NCAxNC40MDUtMzIuMTc0IDMyLjE3NHYzNjYuMzgxaDMwNi42Mjd2LTI5Ny4wMy0yMC42MDgtNDAuNDU5eiIgZmlsbD0iI2ZmZTA3ZCIvPjwvZz48cGF0aCBkPSJtMzg3LjM0OS4wODljLTIyLjM0NSAwLTQwLjQ1OCAxOC4xMTQtNDAuNDU4IDQwLjQ1OHYxNjAuNDQzYzAgOS40NC02LjIgMTcuODM4LTE1LjI4NiAyMC40LTY2Ljk5OSAxOC44OTItMTE2LjEwNyA4MC40NTctMTE2LjEwNyAxNTMuNSAwIDE5LjIwMyAzLjM5NiAzNy42MTMgOS42MTcgNTQuNjYzaDEyMS43NzYgMjQuNDI2di0yMTQuMDk3LTExMy44NDMtNjEuMDY2YzAtMjIuMzQ1IDE4LjExNC00MC40NTggNDAuNDU4LTQwLjQ1OGgtMjQuNDI2eiIgZmlsbD0iI2ZmZDA2NCIvPjxnPjxnPjxwYXRoIGQ9Im0zMjIuNDE4IDY5Ljg2OGgtMjAyLjY5OWMtNC4yNjggMC03LjcyOC0zLjQ1OS03LjcyOC03LjcyOHMzLjQ1OS03LjcyOCA3LjcyOC03LjcyOGgyMDIuNjk5YzQuMjY4IDAgNy43MjggMy40NTkgNy43MjggNy43MjhzLTMuNDYgNy43MjgtNy43MjggNy43Mjh6IiBmaWxsPSIjMmI0ZDY2Ii8+PC9nPjxnPjxwYXRoIGQ9Im0zMjIuNDE4IDE0Ni45MjZoLTIwMi42OTljLTQuMjY4IDAtNy43MjgtMy40NTktNy43MjgtNy43MjhzMy40NTktNy43MjggNy43MjgtNy43MjhoMjAyLjY5OWM0LjI2OCAwIDcuNzI4IDMuNDU5IDcuNzI4IDcuNzI4cy0zLjQ2IDcuNzI4LTcuNzI4IDcuNzI4eiIgZmlsbD0iIzJiNGQ2NiIvPjwvZz48Zz48cGF0aCBkPSJtMzIyLjQxOCAyMjMuOTg2aC0yMDIuNjk5Yy00LjI2OCAwLTcuNzI4LTMuNDU5LTcuNzI4LTcuNzI4IDAtNC4yNjggMy40NTktNy43MjggNy43MjgtNy43MjhoMjAyLjY5OWM0LjI2OCAwIDcuNzI4IDMuNDU5IDcuNzI4IDcuNzI4cy0zLjQ2IDcuNzI4LTcuNzI4IDcuNzI4eiIgZmlsbD0iIzJiNGQ2NiIvPjwvZz48Zz48cGF0aCBkPSJtMzIyLjQxOCAzMDEuMDQ1aC0yMDIuNjk5Yy00LjI2OCAwLTcuNzI4LTMuNDU5LTcuNzI4LTcuNzI4czMuNDU5LTcuNzI4IDcuNzI4LTcuNzI4aDIwMi42OTljNC4yNjggMCA3LjcyOCAzLjQ1OSA3LjcyOCA3LjcyOHMtMy40NiA3LjcyOC03LjcyOCA3LjcyOHoiIGZpbGw9IiMyYjRkNjYiLz48L2c+PC9nPjxwYXRoIGQ9Im0zMzQuMzUyIDQyOS41NTVoLTI3Ny4xNTFjLTMxLjU5MSAwLTU3LjIwMS0yNS42MS01Ny4yMDEtNTcuMjAydi0xMC4xM2MwLTIuNjc3IDIuMTcxLTQuODQ4IDQuODQ4LTQuODQ4aDMyOS41MDR6IiBmaWxsPSIjZWFiMTRkIi8+PHBhdGggZD0ibTIxNS40OTggMzc0Ljg5MWMwIDE5LjIwMyAzLjM5NiAzNy42MTMgOS42MTcgNTQuNjYzaDEwOS4yMzd2LTcyLjE4aC0xMTcuODkyYy0uNjI5IDUuNzU0LS45NjIgMTEuNTk3LS45NjIgMTcuNTE3eiIgZmlsbD0iI2U0OTU0MiIvPjxjaXJjbGUgY3g9IjM3NC45OCIgY3k9IjM3NC44OTEiIGZpbGw9IiNkZDYzNmUiIHI9IjEzNy4xMDkiLz48cGF0aCBkPSJtMzc0Ljk4IDIzNy43ODJjLTMuNjM1IDAtNy4yMzYuMTQ0LTEwLjguNDIyIDcwLjY3NSA1LjUwNyAxMjYuMzA5IDY0LjU5OSAxMjYuMzA5IDEzNi42ODdzLTU1LjYzNSAxMzEuMTgtMTI2LjMwOSAxMzYuNjg3YzMuNTY0LjI3OCA3LjE2NS40MjIgMTAuOC40MjIgNzUuNzIzIDAgMTM3LjEwOS02MS4zODYgMTM3LjEwOS0xMzcuMTA5cy02MS4zODYtMTM3LjEwOS0xMzcuMTA5LTEzNy4xMDl6IiBmaWxsPSIjZGE0YTU0Ii8+PGNpcmNsZSBjeD0iMzc0Ljk4IiBjeT0iMzc0Ljg5MSIgZmlsbD0iI2Y0ZmJmZiIgcj0iMTAyLjI2OCIvPjxwYXRoIGQ9Im0zNzQuOTggMjcyLjYyM2MtNC43MzkgMC05LjQuMzMtMTMuOTY3Ljk1MyA0OS44NzMgNi44MTIgODguMzAxIDQ5LjU3MiA4OC4zMDEgMTAxLjMxNXMtMzguNDI5IDk0LjUwMy04OC4zMDEgMTAxLjMxNWM0LjU2Ny42MjQgOS4yMjguOTUzIDEzLjk2Ny45NTMgNTYuNDgxIDAgMTAyLjI2OC00NS43ODcgMTAyLjI2OC0xMDIuMjY5IDAtNTYuNDgtNDUuNzg3LTEwMi4yNjctMTAyLjI2OC0xMDIuMjY3eiIgZmlsbD0iI2RhZjFmNCIvPjxnPjxnPjxwYXRoIGQ9Im0zNzQuOTggMzExLjgyNGMtNC4yNjggMC03LjcyOC0zLjQ1OS03LjcyOC03LjcyOHYtMy41NGMwLTQuMjY4IDMuNDU5LTcuNzI4IDcuNzI4LTcuNzI4IDQuMjY4IDAgNy43MjggMy40NTkgNy43MjggNy43Mjh2My41NGMwIDQuMjY5LTMuNDU5IDcuNzI4LTcuNzI4IDcuNzI4eiIgZmlsbD0iIzM2NWU3ZCIvPjwvZz48Zz48cGF0aCBkPSJtNDI1LjAzOSAzMzIuNTU5Yy0xLjk3OCAwLTMuOTU2LS43NTUtNS40NjYtMi4yNjUtMy4wMTctMy4wMTgtMy4wMTYtNy45MTEuMDAzLTEwLjkyOGwyLjUwMy0yLjUwMmMzLjAxOC0zLjAxNiA3LjkxMS0zLjAxNyAxMC45MjguMDAzIDMuMDE3IDMuMDE4IDMuMDE2IDcuOTExLS4wMDMgMTAuOTI4bC0yLjUwMyAyLjUwMmMtMS41MDcgMS41MDgtMy40ODQgMi4yNjItNS40NjIgMi4yNjJ6IiBmaWxsPSIjMzY1ZTdkIi8+PC9nPjxnPjxwYXRoIGQ9Im00NDkuMzE0IDM4Mi42MThoLTMuNTRjLTQuMjY4IDAtNy43MjgtMy40NTktNy43MjgtNy43MjhzMy40NTktNy43MjggNy43MjgtNy43MjhoMy41NGM0LjI2OCAwIDcuNzI4IDMuNDU5IDcuNzI4IDcuNzI4cy0zLjQ2IDcuNzI4LTcuNzI4IDcuNzI4eiIgZmlsbD0iIzM2NWU3ZCIvPjwvZz48Zz48cGF0aCBkPSJtMzA0LjE4NSAzODIuNjE4aC0zLjU0Yy00LjI2OCAwLTcuNzI4LTMuNDU5LTcuNzI4LTcuNzI4czMuNDU5LTcuNzI4IDcuNzI4LTcuNzI4aDMuNTRjNC4yNjggMCA3LjcyOCAzLjQ1OSA3LjcyOCA3LjcyOHMtMy40NTkgNy43MjgtNy43MjggNy43Mjh6IiBmaWxsPSIjMzY1ZTdkIi8+PC9nPjxnPjxwYXRoIGQ9Im00MjcuNTQzIDQzNS4xODFjLTEuOTc3IDAtMy45NTQtLjc1NC01LjQ2My0yLjI2MmwtMi41MDMtMi41MDJjLTMuMDE5LTMuMDE4LTMuMDItNy45MTEtLjAwMy0xMC45MjggMy4wMTctMy4wMjEgNy45MS0zLjAyMiAxMC45MjgtLjAwM2wyLjUwMyAyLjUwMmMzLjAxOSAzLjAxOCAzLjAyIDcuOTExLjAwMyAxMC45MjgtMS41MDkgMS41MS0zLjQ4NyAyLjI2NS01LjQ2NSAyLjI2NXoiIGZpbGw9IiMzNjVlN2QiLz48L2c+PGc+PHBhdGggZD0ibTM3NC45OCA0NTYuOTUzYy00LjI2OCAwLTcuNzI4LTMuNDU5LTcuNzI4LTcuNzI4di0zLjU0YzAtNC4yNjggMy40NTktNy43MjggNy43MjgtNy43MjggNC4yNjggMCA3LjcyOCAzLjQ1OSA3LjcyOCA3LjcyOHYzLjU0YzAgNC4yNjktMy40NTkgNy43MjgtNy43MjggNy43Mjh6IiBmaWxsPSIjMzY1ZTdkIi8+PC9nPjxnPjxwYXRoIGQ9Im0zMjIuNDE4IDQzNS4xODFjLTEuOTc3IDAtMy45NTUtLjc1NS01LjQ2NS0yLjI2My0zLjAxOC0zLjAxOS0zLjAxOC03LjkxMSAwLTEwLjkyOWwyLjUwMi0yLjUwMmMzLjAxOS0zLjAxNyA3LjkxMS0zLjAxNyAxMC45MjkgMCAzLjAxOCAzLjAxOSAzLjAxOCA3LjkxMSAwIDEwLjkyOWwtMi41MDIgMi41MDJjLTEuNTA5IDEuNTA4LTMuNDg3IDIuMjYzLTUuNDY0IDIuMjYzeiIgZmlsbD0iIzM2NWU3ZCIvPjwvZz48Zz48cGF0aCBkPSJtMzI0LjkyIDMzMi41NTljLTEuOTc3IDAtMy45NTUtLjc1NS01LjQ2NS0yLjI2M2wtMi41MDItMi41MDJjLTMuMDE4LTMuMDE5LTMuMDE4LTcuOTExIDAtMTAuOTI5IDMuMDE5LTMuMDE3IDcuOTExLTMuMDE3IDEwLjkyOSAwbDIuNTAyIDIuNTAyYzMuMDE4IDMuMDE5IDMuMDE4IDcuOTExIDAgMTAuOTI5LTEuNTA4IDEuNTA5LTMuNDg3IDIuMjYzLTUuNDY0IDIuMjYzeiIgZmlsbD0iIzM2NWU3ZCIvPjwvZz48L2c+PGc+PHBhdGggZD0ibTM5Ni4wNDMgMzgyLjYxOGgtMjEuMDYzYy00LjI2OCAwLTcuNzI4LTMuNDU5LTcuNzI4LTcuNzI4di00MC43ODZjMC00LjI2OCAzLjQ1OS03LjcyOCA3LjcyOC03LjcyOCA0LjI2OCAwIDcuNzI4IDMuNDU5IDcuNzI4IDcuNzI4djMzLjA1OGgxMy4zMzVjNC4yNjggMCA3LjcyOCAzLjQ1OSA3LjcyOCA3LjcyOHMtMy40NTkgNy43MjgtNy43MjggNy43Mjh6IiBmaWxsPSIjMmI0ZDY2Ii8+PC9nPjxwYXRoIGQ9Im00NDUuMDMxIDEwMS42MTNoLTczLjcxNXYtNjEuMDY2YzAtMjIuMzQ1IDE4LjExNC00MC40NTggNDAuNDU4LTQwLjQ1OCAyMi4zNDUgMCA0MC40NTggMTguMTE0IDQwLjQ1OCA0MC40NTh2NTMuODY0Yy4wMDIgMy45NzgtMy4yMjMgNy4yMDItNy4yMDEgNy4yMDJ6IiBmaWxsPSIjZWFiMTRkIi8+PHBhdGggZD0ibTQyNC45NTUgMi4yOTdjLTQuMTMzLTEuNDI0LTguNTYzLTIuMjA4LTEzLjE4LTIuMjA4LTIyLjM0NCAwLTQwLjQ1OCAxOC4xMTQtNDAuNDU4IDQwLjQ1OHY2MS4wNjZoMjYuMzZ2LTYxLjA2NmMtLjAwMS0xNy43MjggMTEuNDA3LTMyLjc4MiAyNy4yNzgtMzguMjV6IiBmaWxsPSIjZTQ5NTQyIi8+PC9nPjwvc3ZnPg==" />
+        
+      </div>
+      <div class="blog-slider__content">
+        
+        <div class="blog-slider__title">Servicio contratado</div>
+       
+        <div class="blog-slider__text">Colaborador: {{colaborador}} </div>
+        <div class="blog-slider__text">Dirección: {{direccion}} </div>
+        <div class="blog-slider__text">Tipo de servicio: {{servicio}} </div>  
+        <div class="blog-slider__text">Total: L . {{total}} </div>
+        <div class="blog-slider__text">Fecha solicitado: {{fechaSolicitud}} </div>
+     
+
+      </div>
+    </div>
+
+    
+  </div>
+  
+  {{!-- <div class="blog-slider__pagination"></div> --}}
+</div>
+{{else}}
+<div class="blog-slider">
+  <div class="blog-slider__wrp swiper-wrapper">
+
+    <div class="blog-slider__item swiper-slide">
+    
+         <div class="blog-slider__img">
+        
+        <img src="https://edsurge.imgix.net/uploads/post/image/10801/shutterstock_493677196-1519849569.jpg?auto=compress%2Cformat&w=640&h=259&fit=crop" alt="">
+        
+      </div>
+      <div class="blog-slider__content">
+        
+        <div class="blog-slider__title">Aún no cuentas con ningún servicio solicitado.</div>
+        
+        <a href="/" class="btn btn-primary">Solicitar servicio </a>
+
+      </div>
+    </div>
+
+    
+  </div>
+  
+  {{!-- <div class="blog-slider__pagination"></div> --}}
+</div>
+ 
+ 
+{{/each}}
+
+</div>
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
+
+<script>
+var swiper = new Swiper('.blog-slider', {
+      spaceBetween: 30,
+      effect: 'fade',
+      loop: true,
+      mousewheel: {
+        invert: false,
+      },
+      // autoHeight: true,
+      
+    });
+
+
+
+</script>
