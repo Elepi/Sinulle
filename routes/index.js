@@ -153,6 +153,12 @@ servicioController.formularioModificarServicio);
 router.post("/modificar-servicio",
 servicioController.modificarServicio);
 
+router.delete(
+"/servicio/:id",
+authController.verificarInicioSesion,
+servicioController.eliminarServicio
+);
+
 //Rutas para orden de servicio
 router.get("/crear-orden/:url",
 authController.verificarInicioSesion, 

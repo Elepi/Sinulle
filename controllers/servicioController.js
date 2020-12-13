@@ -176,4 +176,20 @@ exports.modificarServicio = async (req, res, next) => {
   }
 }
 
+exports.eliminarServicio = async (req, res, next) => {
+  // Obtener el id del servicio
+  const { id } = req.params;
+
+  const servicio = await Servicio.findById(id);
+
+  if (servicio) {
+    // Eliminar el servicio
+    servicio.remove();
+    res.status(200).send("El servicio ha sido eliminado correctamente");
+  } else {
+    // Servicio no encontrado o no se puede eliminar
+    console.log(error);
+    res.status(403).send("Error al momento de eliminar el servicio");
+  }
+};
 
