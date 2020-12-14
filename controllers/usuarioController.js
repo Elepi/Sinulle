@@ -223,7 +223,7 @@ exports.modificarUsuario = async (req, res, next) => {
 //Eliminar dirección de usuario 
 exports.eliminarDireccion = async (req, res, next) => {
   //Obtener el id del usuario 
-  // const { id } = req.params;
+  
   const { i } = req.params;
   const  id  = req.user._id;
   
@@ -231,15 +231,15 @@ exports.eliminarDireccion = async (req, res, next) => {
     const usuario = await Usuario.findById(id);
     if(usuario) {
       //Eliminar dirección
-      //usuario.remove();
-      console.log(usuario);
+     
+     
       if(i !== -1) {
-      // Posibles soluciones
+ 
       usuario.direcciones.splice(i,1);
       usuario.save();
-      //usuario.update({}, { $pull: { direcciones: { $in: [i] } }});
+      
       res.status(200).send("La dirección ha sido eliminada correctamente");
-      //res.redirect("/miperfil");
+     
       }
     }
   } catch (error) {
