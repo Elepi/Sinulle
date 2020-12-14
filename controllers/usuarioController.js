@@ -39,8 +39,17 @@ exports.crearCuenta = async (req, res, next) => {
 
         //Agregar los errores a nuestros mensajes flash 
         req.flash("messages", messages);
+        if(servicio){
 
-        res.redirect("/crear-cuenta");
+          res.redirect("/crear-cuentaColaborador");
+
+        }else{
+
+          res.redirect("/crear-cuenta");
+          
+        }
+
+        
     }
     else {
          //Intentar almacenar los datos del usuario
@@ -58,12 +67,24 @@ exports.crearCuenta = async (req, res, next) => {
          req.flash("messages", messages);
          res.redirect("/iniciar-sesion");
         } catch (error) {
+          if(servicio){
             messages.push({
-                message: error,
-                alertType: "danger",
-              });
-              req.flash("messages", messages);
-              res.redirect("/crear-cuenta");
+              message: error,
+              alertType: "danger",
+            });
+            req.flash("messages", messages);
+            res.redirect("/crear-cuenta");
+          } else{
+            messages.push({
+              message: error,
+              alertType: "danger",
+            });
+            req.flash("messages", messages);
+            res.redirect("/crear-cuentaColaborador");
+
+
+          }
+            
         }
     } 
 };
