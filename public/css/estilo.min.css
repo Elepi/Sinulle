@@ -2048,7 +2048,7 @@ div.card.show div.flap2 {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
             flex-direction: row;
-    max-width: 700px;
+    max-width: 1000px;
   }
   .blog-card .meta {
     flex-basis: 40%;
