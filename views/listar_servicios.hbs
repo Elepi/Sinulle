@@ -6,61 +6,65 @@
     <div id="scroll">
         <div class="containerlist" style="overflow-x:auto;">
             <div class="row">
-                <br>
+                <div class="col-sm-11">
+                    <div class="row">
+                        <br>
 
-                <div class="col-md-11" id="panel-servicios">
+                        <div class="col-10 col-sm-11" id="panel-servicios">
 
-                    <h3><a class="btn btn-secondary" href="/crear-servicio"><i class="fa fa-plus"></i> Crear Nuevo</a>
-                        Lista Servicios</h3>
+                            <h3><a class="btn btn-secondary" href="/crear-servicio"><i class="fa fa-plus"></i> Crear
+                                    Nuevo</a>
+                                Lista Servicios</h3>
 
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Servicio</th>
-                                <th>Precio</th>
-                            </tr>
-                        </thead>
-                        {{#each servicios as |servicio|}}
-                        <tr>
-                            <td>{{this.nombre}}</td>
-                            <td>L {{this.precio}}</td>
-                            <td> <a> <img width="120" height="120" src="{{imagen}}" alt=""></a></td>
-                            <td>
-                                <href href="" data-eliminar="{{servicio._id}}" class="fa fa-trash fa-lg"
-                                    style="color: gray;"> </href>
-                            </td>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Servicio</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                {{#each servicios as |servicio|}}
+                                <tr>
+                                    <td>{{this.nombre}}</td>
+                                    <td>L {{this.precio}}</td>
+                                    <td> <a> <img width="120" height="120" src="{{imagen}}" alt=""></a></td>
+                                    <td>
+                                        <href href="" data-eliminar="{{servicio._id}}" class="fa fa-trash fa-lg"
+                                            style="color: gray;"> </href>
+                                    </td>
 
-                        </tr>
-                        {{/each}}
-                    </table>
+                                </tr>
+                                {{/each}}
+                            </table>
+                        </div>
+
+                        <div class="col-2 col-sm-1">
+                            <h3> <br><br> </h3>
+                            <br><br>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+
+                                    </tr>
+                                </thead>
+                                {{#each servicios}}
+                                <tr>
+
+                                    <td style="border-color: #FFFFFF; height: 145px;">
+
+                                        <a href="/modificar-servicio/{{this.url}}"><i class="fa fa-pencil fa-lg"
+                                                style="color: #F88600;  " aria-hidden="true">
+
+                                            </i></a>
+
+                                    </td>
+                                </tr>
+                                {{/each}}
+
+                            </table>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="col-md-1">
-                    <h3 > <br><br> </h3>
-                    <table class="table">
-                        <thead >
-                            <tr >
-                                <th style="color: #FFFFFF;">Servicio</th>
-                            </tr>
-                        </thead>
-                        {{#each servicios}}
-                        <tr>
-
-                            <td style="border-color: #FFFFFF; height: 145px;">
-
-                                <a href="/modificar-servicio/{{this.url}}"><i class="fa fa-pencil fa-lg"
-                                        style="color: #F88600;  " aria-hidden="true">
-
-                                    </i></a>
-
-                            </td>
-                        </tr>
-                        {{/each}}
-
-                    </table>
-                </div>
-
-
 
             </div>
 
