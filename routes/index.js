@@ -220,4 +220,9 @@ router.get("/manual", (req, res, next)=> {
 //Ordenes de usuario
 router.get("/ordenes-usuario", 
 authController.verificarInicioSesion,
-ordenController.ordenUsuario);
+  ordenController.ordenUsuario);
+
+  // Manual de usuario
+router.get("/terminos", (req, res, next)=> {
+  res.render("terminos");
+});

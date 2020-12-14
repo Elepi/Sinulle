@@ -1,43 +1,5 @@
-{{!-- Formulario de registro --}}
-<div class="errores " id="errores">
-   
-{{> showMessages messages}}
-</div>
-
-<div class="container mt-10" id="container">
-  
-  
-
-    <div class="form-container sign-in-container">
-      <form method="POST" class="form" action="/crear-cuenta">
-        <h1 class="font-weight-bold">Crear cuenta Colaborador</h1>
-                <input name="nombre" type="text" placeholder="Nombre completo" /value="{{nombre}}">
-        <input name="email" type="email" placeholder="Correo electrónico" /value="{{email}}">
-        <input name="password" type="password" placeholder="Contraseña" /value="{{password}}">
-        <select class ="form-control"  name="servicio" id="">
-           {{#each servicios as |servicio|}}
-                    <option value="{{servicio._id}}">{{servicio.nombre}}</option>
-               {{/each}}
-        </select>
-        <input type="text" name="tipoUsuario" value="colaborador" hidden>
-        <br>
-       <!--Boton desplegable -->
-<button type="button" class="btn-modal " data-toggle="modal" data-target="#exampleModalLong" align="center">
-  Leer términos y condiciones
-</button>
-
-<!-- Ventana modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Términos y Condiciones de Uso</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <h3> 1. ACEPTACIÓN</h3> 
+<div class="terminos">
+  <h3> 1. ACEPTACIÓN</h3> 
 <p> En el presente documento se establecen los términos y condiciones, al acceder, consultar o utilizar el Sitio Web, los aceptan cumplir los términos y condiciones establecidos en este Contrato. En caso de que usted no acepte quedar vinculado por los presentes términos y condiciones, no podrá acceder a, ni utilizar, el Sitio Web. 
 La empresa Sinulle de servicios para el hogar, se reservan el derecho de actualizar el presente Contrato siempre que lo consideren oportuno. En consecuencia, recomendamos al Usuario revisar periódicamente las modificaciones efectuadas al Contrato.</p>
 <h3> 2. REQUISITOS RELATIVOS AL USUARIO</h3> 
@@ -115,27 +77,7 @@ Si el Usuario consultara, accediera, enviará información o descargará materia
 La invalidez o inaplicabilidad de cualquiera de los presentes términos y condiciones -en todo o en parte- o de los derechos derivados de este Contrato, no afectará la validez o la aplicabilidad de los demás derechos, términos y condiciones, o al resto de la disposición en cuestión, que continuarán en pleno vigor y efectos, quedando excluida solamente la cláusula viciada (o la parte que se invalida en dicha cláusula).
 Los Artículos 4, 6, 10, 12, 13, 14 y 15 del presente Contrato sobrevivirán a la terminación del mismo por cualquier razón.</p>
 
-        <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required> 
-      <label class="form-check-label" for="invalidCheck">
-        Aceptar términos y condiciones.
-      </label>
-      <div class="invalid-feedback">
-        You must agree before submitting.
-      </div>
-    </div> 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="but" data-dismiss="modal"> Cerrar</button>
-        <button type="button" class="btn-modal " data-dismiss="modal">Aceptar</button>
-      </div>
-    </div>
-  </div>
-</div>
-     <div class="form-check"> 
-       {{!-- <a href="/terminos">
-  Leer términos y condiciones
-</a>  
+{{!--  <div class="form-check">
       <br><input class="form-check-input" type="checkbox" value="" id="invalidCheck" required> 
       <label class="form-check-label" for="invalidCheck">
     
@@ -143,26 +85,7 @@ Aceptar términos y condiciones.
       </label>
       <div class="invalid-feedback">
         You must agree before submitting.
-      </div>--}}
-    </div> 
- <br>
-      {{!--Fin de ventana modal --}}
-        <button type="submit" class="btn  btn-rounded">Registrarse</button>
-      </form>
-    </div>
-
-    <div class="container-inicio">
-      <div class="inicio">
-        <div class="inicio-panel inicio-right">
-          <h1 class="font-weight-bold">¡Hola amigo!</h1>
-          <p>¿Ya tienes una cuenta? ¡Inicia sesión aquí! </p>
-          <button class="but" id="signUp"><a href="/iniciar-sesion">Inicia sesión</a></button>
-       
-        </div>
       </div>
-    </div>
-    
-  </div>
-<div class="contenedor">
-  
-      </div>
+    </div>  --}}
+    <button class="btn"><a href="/crear-cuentaColaborador">regresar a registro</a></button>
+</div>
