@@ -212,9 +212,9 @@ usuarioController.eliminarDireccion);
 
 //
 // Manual de usuario
-router.get("/manual", (req, res, next)=> {
-  res.render("manual");
-});
+router.get("/manual",
+homeController.manual
+);
 
 
 //Ordenes de usuario
@@ -223,6 +223,5 @@ authController.verificarInicioSesion,
   ordenController.ordenUsuario);
 
   // Términos y condiciones 
-router.get("/terminos", (req, res, next)=> {
-  res.render("terminos");
-});
+router.get("/terminos",
+  usuarioController.terminosCondiciones);

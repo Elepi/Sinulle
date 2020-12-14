@@ -211,7 +211,7 @@ exports.modificarUsuario = async (req, res, next) => {
     usuario.telefonoFijo = telefonoFijo;
     usuario.telefonoCelular = telefonoCelular;
     usuario.descripcionPersonal = descripcionPersonal;
-    console.log(usuario);
+    
     await usuario.save();
     res.redirect("/miperfil");
   } catch (error) {
@@ -388,3 +388,10 @@ exports.subirImagen = (req, res, next) => {
   
   // Función que sube el archivo
   const upload = multer(configuracionMulter).single("gravatar");
+
+
+  exports.terminosCondiciones =  (req, res, next) =>{
+    res.render("terminos", 
+   { 
+     layout: "auth" });
+  };
