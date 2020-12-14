@@ -426,6 +426,44 @@ input {
     }
 
     /* Fin Formulario Orden*/
+    /*termino y condicion*/
+.btn-modal{
+  background-color: #F88600;
+  border-color:#FFFFFF ;
+  color: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 14px 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.modal-header{
+  padding: 10px;
+background: #F88600;
+color: #FFFFFF;
+}
+.modal-body{
+  padding: 10px;
+background: #393E46;
+color: #FFFFFF;
+justify-content: center;
+}
+.modal-footer{
+  padding: 10px;
+background: #393E46;
+color: #FFFFFF;
+}
+.modal-content{
+  background: #393E46;
+}
+.form-check-input{
+  padding-left: 200px;
+  left: 100px;
+}
+/*fin del termino y condicion*/
 /* Inicio manual */
 .bs-example{
   background-color: #000000;
