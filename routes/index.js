@@ -222,7 +222,7 @@ router.get("/ordenes-usuario",
 authController.verificarInicioSesion,
   ordenController.ordenUsuario);
 
-  // Manual de usuario
+  // Términos y condiciones 
 router.get("/terminos", (req, res, next)=> {
   res.render("terminos");
 });
