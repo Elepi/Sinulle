@@ -116,4 +116,5 @@ dist
 .pnp.*
 
 #Imagenes subidas por los usuarios 
-public/uploads
+public/uploads/trabajos/*
+public/uploads/users/*
