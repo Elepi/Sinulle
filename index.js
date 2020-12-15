@@ -62,6 +62,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Implementar nuestro router
 // si el endpoint no existe retornara error 404
 app.use("/", router());
+const host="0.0.0.0";
+const port= process.env.PORT;
+//app.listen(process.env.PORT);
+app.listen(port,host,()=>{
+    console.log(`servidor ejecutandose en el puerto ${port} `
 
-
-app.listen(process.env.PORT);
+    );
+});
